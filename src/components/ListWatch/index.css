@@ -30,4 +30,18 @@
 .list-watch-img-swiperSlide {
   border: 1px solid #0a0a0a;
   border-radius: 5%;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  min-height: 350px;
+  background-repeat: no-repeat;
+}
+.list-watch-buttons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: red;
+  border: none;
+  border-radius: 5px 5px;
+  color: #fff;
 }

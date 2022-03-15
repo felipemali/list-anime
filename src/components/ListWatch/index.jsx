@@ -36,43 +36,64 @@ const ListWatch = ({ imgs }) => {
             disableOnInteraction: true,
           }}
           navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
-            <img
+            <div
               className="list-watch-img-swiperSlide"
-              src={"https://cdn.myanimelist.net/images/anime/1286/99889.jpg"}
-              alt=""
-            />
+              style={{
+                backgroundImage: `url(${imgs[0]?.images.jpg.image_url})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <button className="list-watch-buttons">
+                {imgs[0]?.episodes}
+              </button>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <div
               className="list-watch-img-swiperSlide"
-              src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg?s=685b7fa652f5b3df29bd20fc2c8cb32e"
-              alt=""
-            />
+              style={{
+                backgroundImage: `url(${imgs[1]?.images.jpg.image_url})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <button className="list-watch-buttons">
+                {imgs[0]?.episodes}
+              </button>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <div
               className="list-watch-img-swiperSlide"
-              src="https://cdn.myanimelist.net/images/anime/1722/120098.jpg?s=e43d08ad1b634703dd92ca091619c8f2"
-              alt=""
-            />
+              style={{
+                backgroundImage: `url(${imgs[2]?.images.jpg.image_url})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <button className="list-watch-buttons">
+                {imgs[0]?.episodes}
+              </button>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <div
               className="list-watch-img-swiperSlide"
-              src="https://cdn.myanimelist.net/images/anime/9/13134.jpg?s=7374607a6b33488ad66b2924fe97e19a"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              className="list-watch-img-swiperSlide"
-              src="https://cdn.myanimelist.net/images/anime/1435/97291.jpg?s=a620251bfb6c873185a049c0696e8783"
-              alt=""
-            />
+              style={{
+                backgroundImage: `url(${imgs[4]?.images.jpg.image_url})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            >
+              <button className="list-watch-buttons">
+                {imgs[0]?.episodes}
+              </button>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>
