@@ -33,6 +33,7 @@ const InfoAnime = ({ imgs }) => {
           <iframe
             className="info-anime-trailer"
             src={imgs[0]?.trailer.embed_url}
+            autoplay
             frameborder="0"
           ></iframe>
         </div>

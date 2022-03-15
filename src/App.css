@@ -1,12 +1,11 @@
 .App {
   font-family: Montserrat, sans-serif !important;
-  text-align: center;
-  background-color: #000000;
+  background-color: #0a0a0a;
+  height: 100vh;
 }
 
 body {
-  background: #000000 no-repeat;
-  border: 10px solid gold;
+  background: #000000;
 }
 
 .App-logo {
