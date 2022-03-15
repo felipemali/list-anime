@@ -1,0 +1,33 @@
+.list-watch {
+  height: 600px;
+}
+
+.title-list-watch {
+  font-family: Montserrat, sans-serif !important;
+  margin-top: 10%;
+  border-bottom: 2px solid #fff;
+  /* border: 1px solid gold; */
+  max-width: 145px;
+  margin-left: 5%;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0a0a0a;
+}
+
+.list-watch-carousel {
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-watch-carousel .carousel {
+  max-width: 300px;
+}
+.img {
+  width: 300px;
+  height: 40%;
+}
+.list-watch-img-swiperSlide {
+  border: 1px solid #0a0a0a;
+  border-radius: 5%;
+}
