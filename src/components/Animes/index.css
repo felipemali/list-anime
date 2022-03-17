@@ -1,0 +1,66 @@
+.anime {
+  animation-name: slidee;
+  transform: translateY(-100px);
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  background-color: #0a0a0a;
+  padding-bottom: 5%;
+}
+@keyframes slidee {
+  from {
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.title-anime {
+  font-family: Montserrat, sans-serif !important;
+  margin-top: 10%;
+  border-bottom: 2px solid #fff;
+  /* border: 1px solid gold; */
+  max-width: 60px;
+  margin-left: 5%;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0a0a0a;
+}
+
+.swiper-anime {
+  width: 90%;
+  height: 50%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* .swiper {
+  border: 1px solid red;
+  width: 100%;
+  min-width: 900px;
+} */
+.swiper-anime .carousel {
+  max-width: 300px;
+}
+.img {
+  width: 300px;
+  height: 40%;
+}
+.swiperSlide-anime {
+  border: 1px solid red;
+  border-radius: 5%;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  min-height: 350px;
+  background-repeat: no-repeat;
+}
+.anime-buttons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: red;
+  border: none;
+  border-radius: 5px 5px;
+  color: #fff;
+}
