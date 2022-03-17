@@ -6,11 +6,15 @@ import {
   CheckCircleOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
+import { StarOutlined } from "@ant-design/icons";
+import { Radio } from "antd";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { notification, Space } from "antd";
 
-const InfoAnime = ({ imgs, setDisplay }) => {
+const InfoAnime = ({ imgs, nameAnime }) => {
   const [episodes, setEpisodes] = useState([]);
+  const [colorStar, setColorStar] = useState("");
 
   useEffect(() => {
     axios
@@ -26,6 +30,40 @@ const InfoAnime = ({ imgs, setDisplay }) => {
       });
   }, [imgs]);
   // console.log(episodes);
+
+  const star = () => {
+    if (colorStar.color == "gold") {
+      setColorStar({ color: "", shadow: "" });
+      openNotification(
+        "warning",
+        {
+          messagee: `${nameAnime} retirado da lista`,
+          descriptionn: "Confira a lista de Favoritos na página Inicial",
+        },
+        "top"
+      );
+    } else {
+      setColorStar({ color: "gold", shadow: "1px 0.2px 5px 1px gold" });
+
+      openNotification(
+        "success",
+        {
+          messagee: `${nameAnime}  Adicionado na lista `,
+          descriptionn: "Confira a lista de Favoritos na página Inicial",
+        },
+        "top"
+      );
+    }
+  };
+
+  const openNotification = (type, obj, e) => {
+    notification[type]({
+      message: `${obj.messagee}`,
+      description: `${obj.descriptionn} `,
+      e,
+    });
+  };
+
   return (
     <>
       <div
@@ -46,11 +84,22 @@ const InfoAnime = ({ imgs, setDisplay }) => {
             src={imgs[0]?.images.jpg.image_url}
             alt=""
           />
+          <span className="title-favorite">Adicionar a favoritos</span>
+          <Space>
+            <StarOutlined
+              onClick={() => {
+                star();
+              }}
+              style={{
+                color: `${colorStar.color}`,
+                boxShadow: `${colorStar.shadow}`,
+              }}
+              className="icon-star"
+            />
+          </Space>
         </div>
         <Link to={"/list"}>
-          <button className="button-out" onClick={() => setDisplay("inline")}>
-            Voltar
-          </button>
+          <button className="button-out">Voltar</button>
         </Link>
         <div className="info-anime-synopse">
           <span className="title-synopse">Sinopse</span>
