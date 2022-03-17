@@ -1,6 +1,13 @@
 .menu-links {
   font-family: Montserrat, sans-serif !important;
   color: rgb(236, 233, 233);
-  font-size: 16px;
+  font-size: 15px;
   padding: 0px 2em;
+}
+.menu-background {
+  background-color: rgb(24, 23, 23);
+}
+
+.link-buttons:hover {
+  background-color: rgb(141, 42, 42);
 }

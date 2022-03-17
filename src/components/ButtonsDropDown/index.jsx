@@ -4,9 +4,10 @@ import React from "react";
 import "./index.css";
 
 const animes = (
-  <Menu>
-    <Menu.Item>
+  <Menu className="menu-background">
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -14,8 +15,9 @@ const animes = (
         lengendados
       </a>
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -27,9 +29,10 @@ const animes = (
 );
 
 const movies = (
-  <Menu>
-    <Menu.Item>
+  <Menu className="menu-background">
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -40,9 +43,10 @@ const movies = (
   </Menu>
 );
 const reader = (
-  <Menu>
-    <Menu.Item>
+  <Menu className="menu-background">
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -53,9 +57,10 @@ const reader = (
   </Menu>
 );
 const animesOn = (
-  <Menu>
-    <Menu.Item>
+  <Menu className="menu-background">
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -63,8 +68,9 @@ const animesOn = (
         Canal
       </a>
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item className="link-buttons">
       <a
+        style={{ color: "#fff" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
