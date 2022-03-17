@@ -1,0 +1,28 @@
+.footer {
+  /* border: 1px solid gold; */
+  background-color: #0d0d11;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 250px;
+}
+
+.footer-logo {
+  width: 9%;
+  /* border: 1px solid red; */
+}
+.footer ul {
+  font-size: 24px;
+}
+
+.footer ul li {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 2;
+  text-align: start;
+}
+.footer ul li:hover {
+  color: rgb(117, 115, 115);
+}
