@@ -5,7 +5,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: hidden;
-  box-shadow: 1px 0.2px 10px 3px #524b77;
+  /* min-width: 320px; */
 }
 .banner {
   background-repeat: no-repeat;
@@ -20,18 +20,59 @@
 .info-champ-img {
   width: 100%;
 }
+.title-favorite {
+  margin-left: 1em;
+  font-size: 20px;
+}
+.icon-star {
+  margin-left: 1em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  font-size: 20px;
+}
 .info-anime-synopse {
   /* border: 1px solid blue; */
+  overflow-x: hidden;
   padding-top: 5%;
   width: 70%;
   height: 100%;
-  min-width: 500px;
-  min-height: 300px;
 }
+.title-character {
+  font-family: Montserrat, sans-serif !important;
+  font-size: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+/* .div-character {
+  display: flex;
+  flex-wrap: wrap;
+} */
 .title-synopse {
   font-family: Montserrat, sans-serif !important;
   font-size: 20px;
   border-bottom: 2px solid #fff;
+}
+.character {
+  display: block;
+  background-size: cover;
+  height: 200px;
+  width: 500px;
+  margin-left: 0.5em;
+  margin-bottom: 5%;
+  cursor: pointer;
+  transition: all 0.6s;
+  animation-timing-function: ease;
+}
+.character:hover {
+  transform: scale(1.05);
+}
+
+.name-character {
+  width: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  font-size: 18px;
 }
 .text-synopsis {
   display: block;
@@ -40,6 +81,7 @@
   line-height: 1.7;
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 4%;
 }
 .button-out {
   background-color: red;
@@ -87,9 +129,10 @@
   color: #fff;
   width: 68%;
   flex-wrap: wrap;
+  /* margin-top: 11%; */
 }
 
-.div-img-episodes {
+.img-episodes {
   cursor: pointer;
   margin: 1em 1em;
   width: 150px;
@@ -97,7 +140,7 @@
   transition: all 0.6s;
   animation-timing-function: ease;
 }
-.div-img-episodes:hover {
+.img-episodes:hover {
   transform: scale(1.1);
 }
 .buttons-episode {
@@ -191,4 +234,132 @@ ul li {
 .dont-knowTwo {
   width: 70%;
   /* border: 1px solid gold; */
+}
+.div-character {
+  margin-top: 3%;
+  color: #fff;
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .div-character {
+    flex-wrap: wrap;
+  }
+  .character {
+    width: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .div-character {
+    flex-wrap: wrap;
+  }
+  .character {
+    width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .div-character {
+    flex-wrap: wrap;
+  }
+  .character {
+    width: 90px;
+  }
+  .info-anime-trailer {
+    min-height: 400px;
+  }
+  .div-info-anime-trailer {
+    width: 100%;
+  }
+  .library-buttons {
+    width: 80%;
+  }
+  .info-anime-buttons {
+    margin-bottom: 3%;
+    display: flex;
+    width: 60%;
+  }
+  .info-anime-buttons button {
+    margin-left: 0.5em;
+    height: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .banner {
+    display: none;
+  }
+  .button-out {
+    display: none;
+  }
+  .div-info-anime-img {
+    margin-top: 7%;
+    margin-left: 10%;
+    /* background-color: #2f2c38; */
+  }
+}
+@media (max-width: 425px) {
+  .banner {
+    display: none;
+  }
+  .button-out {
+    display: none;
+  }
+  .div-info-anime-img {
+    margin-top: 7%;
+    margin-left: 10%;
+    /* background-color: #2f2c38; */
+  }
+
+  .title-favorite {
+    margin: auto;
+  }
+
+  .text-synopsis {
+    font-size: 15px;
+  }
+  .div-character {
+    flex-wrap: wrap;
+    /* border: 1px solid gold; */
+    padding-left: 2%;
+  }
+  .title-character {
+    margin-left: 4%;
+    width: 20px;
+  }
+  .character {
+    width: 75px;
+    height: 120px;
+  }
+  .info-anime-synopse {
+    width: 95%;
+  }
+  .title-synopse {
+    margin-left: 3%;
+  }
+  .text-synopsis {
+    margin-left: 3%;
+  }
+  .info-anime-buttons {
+    display: flex;
+    width: 80%;
+  }
+  .info-anime-buttons button {
+    margin-left: 0.5em;
+    height: 80%;
+  }
+  .episodes {
+    padding-left: 5%;
+  }
+  .library {
+    display: block;
+  }
+  .library-buttons {
+    width: 100%;
+  }
+  .info-anime-trailer {
+    min-height: 200px;
+  }
+  .div-info-anime-trailer {
+    width: 95%;
+    margin-left: 3%;
+  }
 }
