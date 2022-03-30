@@ -1,0 +1,53 @@
+.carousel-anime {
+  height: 100%;
+  width: 85%;
+  min-width: 200px;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  display: block;
+}
+.carousel-button {
+  color: rgb(255, 255, 255);
+  border: 1px solid #00ffff;
+  background-color: #000000;
+  width: 40%;
+  padding: 1em;
+  margin-top: 3%;
+  border-radius: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 1px 5px 40px 0px #616296;
+  animation: effect-button 1s ease-in-out alternate infinite;
+}
+@keyframes effect-button {
+  to {
+    transform: translateY(10px);
+  }
+}
+.carousel-data {
+  margin-top: 6%;
+  width: 60%;
+  margin-left: 5%;
+}
+.carousel-title-anime {
+  color: rgb(255, 255, 255);
+  margin-top: 10%;
+  font-size: 50px;
+  border-bottom: 1px groove rgb(230, 229, 225);
+}
+.carousel-text-anime {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  opacity: 0.8;
+}
+.carousel-icon {
+  color: #fff;
+  margin-left: 3%;
+}
+.gradient {
+  background: linear-gradient(to top right, #000000, #000000);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+}
