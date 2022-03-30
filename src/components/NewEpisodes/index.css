@@ -1,0 +1,128 @@
+.anime {
+  animation-name: slidee;
+  transform: translateY(-100px);
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  background-color: #e2e2e2;
+  /* 
+    display: flex; */
+}
+@keyframes slidee {
+  from {
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.swiper-new-episodes {
+  height: 450px;
+}
+
+.div-title-new-episodes {
+  padding-top: 3%;
+  border-bottom: 1px solid #969999;
+  max-width: 300px;
+  margin-left: 16%;
+  font-size: 30px;
+  color: rgb(187, 165, 40);
+  background-color: #e2e2e2;
+  font-family: "Staatliches", cursive !important;
+}
+.title-anime {
+  font-family: "Staatliches", cursive !important;
+}
+
+.animes-input {
+  outline: 0;
+  border: none;
+  color: black;
+  background-color: transparent;
+  padding: 6px 10px 7px;
+}
+.icon-search {
+  /* border: 1px solid gold; */
+  font-size: 20px;
+  background-color: transparent;
+  padding: 7px 0.5em 10px;
+  margin-top: 2px;
+}
+.div-animes-input {
+  color: white;
+  border: 1px solid rgb(36, 36, 35);
+  height: 4%;
+  border-radius: 5px 5px;
+  width: 100%;
+  max-width: 300px;
+  margin-left: 16%;
+  box-shadow: 1px 0.2px 5px 1px #37727a;
+}
+
+.swiper-anime {
+  width: 80%;
+
+  height: 50%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5%;
+  flex-wrap: wrap;
+}
+/* .swiper {
+    border: 1px solid red;
+    width: 100%;
+    min-width: 900px;
+  } */
+.swiper-anime .carousel {
+  max-width: 300px;
+}
+.img {
+  width: 300px;
+  height: 40%;
+}
+.div-swiperSlide-new-episodes {
+  border: 10px solid #fff;
+  background-color: #fff;
+  border-radius: 10px 10px;
+  height: 380px;
+  width: 260px;
+  transition: all 0.4s;
+  animation-timing-function: ease;
+  margin: auto;
+}
+.div-swiperSlide-new-episodes:hover {
+  transform: translateY(5px);
+  /* transform: scale(1.03); */
+}
+.animes-data {
+  color: black;
+  margin-left: 0.2%;
+}
+.animes-icon {
+  color: black;
+}
+.swiperSlide-anime {
+  /* border-radius: 5%; */
+  height: 100%;
+  width: 85%;
+  min-width: 200px;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.new-episodes-name-anime {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  color: black;
+}
+.anime-buttons {
+  position: absolute;
+  right: 60px;
+  bottom: 10px;
+  background-color: red;
+  border: none;
+  border-radius: 5px 5px;
+  color: #fff;
+}
