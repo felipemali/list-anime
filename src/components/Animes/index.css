@@ -4,8 +4,9 @@
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  background-color: #0a0a0a;
-  padding-bottom: 5%;
+  background-color: #e2e2e2;
+  /* 
+  display: flex; */
 }
 @keyframes slidee {
   from {
@@ -14,25 +15,56 @@
     transform: translateY(0);
   }
 }
+.swiper {
+  height: 550px;
+}
 
+.div-title-anime {
+  border-bottom: 1px solid #969999;
+  max-width: 330px;
+  margin-left: 10%;
+  font-size: 30px;
+  color: rgb(187, 165, 40);
+  background-color: #e2e2e2;
+  font-family: "Staatliches", cursive !important;
+}
 .title-anime {
-  font-family: Montserrat, sans-serif !important;
-  margin-top: 10%;
-  border-bottom: 2px solid #fff;
-  /* border: 1px solid gold; */
-  max-width: 60px;
-  margin-left: 5%;
-  font-size: 18px;
+  font-family: "Staatliches", cursive !important;
+}
+
+.animes-input {
+  outline: 0;
+  border: none;
   color: #fff;
-  background-color: #0a0a0a;
+  background-color: transparent;
+  padding: 6px 10px 7px;
+}
+.icon-search {
+  /* border: 1px solid gold; */
+  font-size: 20px;
+  background-color: transparent;
+  padding: 7px 0.5em 10px;
+  margin-top: 2px;
+}
+.div-animes-input {
+  color: white;
+  border: 1px solid rgb(36, 36, 35);
+  height: 4%;
+  border-radius: 5px 5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 2% 0px 0px 5%;
+  box-shadow: 1px 0.2px 5px 1px #37727a;
 }
 
 .swiper-anime {
-  width: 90%;
+  width: 80%;
   height: 50%;
   margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 5%;
+  flex-wrap: wrap;
 }
 /* .swiper {
   border: 1px solid red;
@@ -46,18 +78,46 @@
   width: 300px;
   height: 40%;
 }
+.div-swiperSlide {
+  border: 10px solid #fff;
+  background-color: #fff;
+  border-radius: 10px 10px;
+  height: 427px;
+  width: 260px;
+  transition: all 0.4s;
+  animation-timing-function: ease;
+}
+.div-swiperSlide:hover {
+  transform: translateY(5px);
+  /* transform: scale(1.03); */
+}
+.animes-data {
+  color: black;
+  margin-left: 0.2%;
+}
+.animes-icon {
+  color: black;
+}
 .swiperSlide-anime {
-  border: 1px solid red;
-  border-radius: 5%;
+  /* border-radius: 5%; */
   height: 100%;
-  width: 100%;
+  width: 85%;
   min-width: 200px;
-  min-height: 350px;
+  min-height: 300px;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.animes-name {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  color: black;
+  margin: auto;
 }
 .anime-buttons {
   position: absolute;
-  right: 10px;
+  right: 60px;
   bottom: 10px;
   background-color: red;
   border: none;
