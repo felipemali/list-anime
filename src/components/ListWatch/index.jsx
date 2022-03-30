@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
-import { Carousel } from "antd";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 
@@ -9,95 +8,56 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
 
-const contentStyle = {
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-};
+import { AuthContext } from "../../providers/auth";
 
-const ListWatch = ({ imgs }) => {
+const ListWatch = () => {
+  const { imgs, favorites, teste } = useContext(AuthContext);
+
   SwiperCore.use([Autoplay]);
+
   return (
-    <div className="list-watch">
-      <div className="title-list-watch">
-        <span>Lista para Assistir</span>
-      </div>
+    <>
+      <div className="list-watch">
+        <div className="title-list-watch">
+          <span>Lista De Favoritos</span>
+        </div>
 
-      <div className="list-watch-carousel">
-        <Swiper
-          // install Swiper modules
+        <div className="list-watch-carousel">
+          <Swiper
+            // install Swiper modules
 
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={3}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: true,
-          }}
-          navigation
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
-        >
-          <SwiperSlide>
-            <div
-              className="list-watch-img-swiperSlide"
-              style={{
-                backgroundImage: `url(${imgs[0]?.images.jpg.image_url})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <button className="list-watch-buttons">
-                {imgs[0]?.episodes}
-              </button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              className="list-watch-img-swiperSlide"
-              style={{
-                backgroundImage: `url(${imgs[1]?.images.jpg.image_url})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <button className="list-watch-buttons">
-                {imgs[0]?.episodes}
-              </button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              className="list-watch-img-swiperSlide"
-              style={{
-                backgroundImage: `url(${imgs[2]?.images.jpg.image_url})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <button className="list-watch-buttons">
-                {imgs[0]?.episodes}
-              </button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              className="list-watch-img-swiperSlide"
-              style={{
-                backgroundImage: `url(${imgs[4]?.images.jpg.image_url})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <button className="list-watch-buttons">
-                {imgs[0]?.episodes}
-              </button>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={150}
+            slidesPerView={3}
+            navigation
+          >
+            {favorites.map((favorite) => (
+              <SwiperSlide>
+                <Link to="/sinopse">
+                  <div
+                    className="list-watch-img-swiperSlide"
+                    style={{
+                      backgroundImage: `url(${favorite.img})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      width: "450px",
+                      height: "300px",
+                      border: "15px outset #705669",
+                    }}
+                  >
+                    <button className="list-watch-buttons">
+                      {imgs[0]?.episodes}
+                    </button>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default ListWatch;
