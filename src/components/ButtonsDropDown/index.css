@@ -1,7 +1,7 @@
 .menu-links {
   font-family: Montserrat, sans-serif !important;
-  color: rgb(236, 233, 233);
-  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
   padding: 0px 2em;
 }
 .menu-background {
@@ -10,4 +10,36 @@
 
 .link-buttons:hover {
   background-color: rgb(141, 42, 42);
+}
+@media (max-width: 1247px) {
+  .menu-links {
+    font-family: Montserrat, sans-serif !important;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 0px 0.8em;
+  }
+}
+@media (max-width: 1024px) {
+  .menu-links {
+    font-family: Montserrat, sans-serif !important;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 0px 0.5em;
+  }
+}
+@media (max-width: 768px) {
+  .menu-links {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+  }
+  .container-buttonsDrop {
+    border: 2px solid gold;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* flex-wrap: wrap; */
+  }
 }
