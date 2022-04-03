@@ -82,7 +82,7 @@ const animesOn = (
 );
 const ButtonsDrop = () => {
   return (
-    <>
+    <div className="container-buttonsDrop">
       <Dropdown overlay={animes}>
         <a
           className="ant-dropdown-link menu-links"
@@ -131,7 +131,7 @@ const ButtonsDrop = () => {
           Animes On <DownOutlined />
         </a>
       </Dropdown>
-    </>
+    </div>
   );
 };
 

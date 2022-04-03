@@ -1,11 +1,12 @@
 .App {
   font-family: Montserrat, sans-serif !important;
-  background-color: #0a0a0a;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
-  background: #000000;
+  overflow-x: hidden;
+
 }
 
 .App-logo {

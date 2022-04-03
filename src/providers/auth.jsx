@@ -6,12 +6,24 @@ export const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(
-    JSON.parse(localStorage.getItem("favorites") || [])
+    JSON.parse(localStorage.getItem("favorites") || "[]")
   );
+  const [animesWatching, setAnimesWatching] = useState(
+    JSON.parse(localStorage.getItem("watching") || "[]")
+  );
+  const [animesComplete, setAnimesComplete] = useState(
+    JSON.parse(localStorage.getItem("complete") || "[]")
+  );
+  const [animesDrop, setAnimesDrop] = useState(
+    JSON.parse(localStorage.getItem("drop") || "[]")
+  );
+
   const [animesSeasons, setAnimesSeasons] = useState([]);
+  const [seasonsUpcoming, setSeasonsUpcoming] = useState([]);
   const [anime, setAnime] = useState([]);
   const [character, setCharacter] = useState([]);
-  const [nameAnime, setNameAnime] = useState("");
+  const [nameAnime, setNameAnime] = useState();
+  const [search, setSearch] = useState([]);
   const [menuMobile, setMenuMobile] = useState("none");
   const [imgs, setImgs] = useState([]);
   const [valueInputAnimes, setValueInputAnimes] = useState("");
@@ -36,7 +48,7 @@ const AuthProvider = ({ children }) => {
           origin: data.broadcast.timezone,
           episodes: data.episodes,
           type: data.type,
-          studio: data.studios[0].name,
+          // studio: data[0].studios[0].name,
           favorites: data.favorites,
           fromDay: data.aired.prop.from.day,
           fromMonth: data.aired.prop.from.month,
@@ -74,6 +86,35 @@ const AuthProvider = ({ children }) => {
       });
       setNewEpisodes(resultNewEpisodes);
     });
+
+    axios.get("https://api.jikan.moe/v4/seasons/upcoming").then((response) => {
+      const result = response.data.data.map((data) => {
+        return {
+          image: data.images.jpg.image_url,
+          image_large: data.images.jpg.large_image_url,
+          banner: data.trailer.images.maximum_image_url,
+          title: data.title,
+          title_japonese: data.title_japanese,
+          id: data.mal_id,
+          trailer: data.trailer.embed_url,
+          synopsis: data.synopsis,
+          duration: data.duration,
+          rank: data.rank,
+          origin: data.broadcast.timezone,
+          episodes: data.episodes,
+          type: data.type,
+          // studio: data[0].studios[0].name,
+          favorites: data.favorites,
+          fromDay: data.aired.prop.from.day,
+          fromMonth: data.aired.prop.from.month,
+          fromYear: data.aired.prop.from.year,
+          toDay: data.aired.prop.to.day,
+          toMonth: data.aired.prop.to.month,
+          toYear: data.aired.prop.to.year,
+        };
+      });
+      setSeasonsUpcoming(result);
+    });
   }, []);
 
   useEffect(() => {
@@ -92,35 +133,50 @@ const AuthProvider = ({ children }) => {
   }, [anime]);
 
   useEffect(() => {
-    axios
-      .get(`https://api.jikan.moe/v4/anime?q=${nameAnime}`)
-      .then((response) => {
-        const data = response.data.data[0];
-        // const result = response.data.data.map((data) => {
+    if (nameAnime) {
+      axios
+        .get(`https://api.jikan.moe/v4/anime?q=${nameAnime}`)
+        .then((response) => {
+          // const data = response.data.data[0].trailer.images.large_image_url;
+          const data = response.data.data[0];
 
-        setAnime({
-          banner: data.trailer.images.maximum_image_url,
-          image: data.trailer.images.image_url,
-          title: data.title,
-          image_large: data.trailer.images.large_image_url,
-          id: data.mal_id,
-          synopsis: data.synopsis,
-          duration: data.duration,
-          trailer: data.trailer.embed_url,
-          rank: data.rank,
-          origin: data.broadcast.timezone,
-          episodes: data.episodes,
-          type: data.type,
-          studio: data.studios.name,
-          favorites: data.favorites,
-          fromDay: data.aired.prop.from.day,
-          fromMonth: data.aired.prop.from.month,
-          fromYear: data.aired.prop.from.year,
-          toDay: data.aired.prop.to.day,
-          toMonth: data.aired.prop.to.month,
-          toYear: data.aired.prop.to.year,
+          // const result = response.data.data.map((data) => {
+          //   return {
+          //     image_large: data.trailer.images.large_image_url,
+          //   };
+          // });
+
+          setAnime({
+            banner: data.trailer.images.maximum_image_url,
+            image: data.images.jpg.image_url,
+            title: data.title,
+            image_large: data.trailer.images.large_image_url,
+            id: data.mal_id,
+            synopsis: data.synopsis,
+            duration: data.duration,
+            trailer: data.trailer.embed_url,
+            rank: data.rank,
+            origin: data.broadcast.timezone,
+            episodes: data.episodes,
+            type: data.type,
+            studio: data.studios.name,
+            favorites: data.favorites,
+            fromDay: data.aired.prop.from.day,
+            fromMonth: data.aired.prop.from.month,
+            fromYear: data.aired.prop.from.year,
+            toDay: data.aired.prop.to.day,
+            toMonth: data.aired.prop.to.month,
+            toYear: data.aired.prop.to.year,
+          });
+
+          setSearch({
+            // image: data.trailer.images.image_url,
+            title: data.title,
+            image: data.images.jpg.image_url,
+            id: data.mal_id,
+          });
         });
-      });
+    }
   }, [nameAnime]);
 
   const menuSx = () => {
@@ -164,26 +220,118 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const watching = (newAnime) => {
+    if (animesWatching.find((watching) => watching.name === newAnime.name)) {
+      openNotification(
+        "error",
+        {
+          messagee: `${anime.title} já foi adicionado há lista  Assistindo`,
+          descriptionn: "Para removê-lo vá ao Menu na página Inicial",
+        },
+        "top"
+      );
+    } else {
+      openNotification(
+        "success",
+        {
+          messagee: `${anime.title}  Adicionado há lista Assistindo`,
+          descriptionn: "Confira a lista  Assistindo na página Inicial",
+        },
+        "top"
+      );
+
+      setAnimesWatching([...animesWatching, newAnime]);
+      localStorage.setItem(
+        "watching",
+        JSON.stringify([...animesWatching, newAnime])
+      );
+    }
+  };
+  const complete = (newAnime) => {
+    if (animesComplete.find((complete) => complete.name === newAnime.name)) {
+      openNotification(
+        "error",
+        {
+          messagee: `${anime.title} já foi adicionado há lista de Completos`,
+          descriptionn: "Para removê-lo vá ao Menu na página Inicial",
+        },
+        "top"
+      );
+    } else {
+      openNotification(
+        "success",
+        {
+          messagee: `${anime.title}  Adicionado há lista Completos`,
+          descriptionn: "Confira a lista de Completos na página Inicial",
+        },
+        "top"
+      );
+
+      setAnimesComplete([...animesComplete, newAnime]);
+      localStorage.setItem(
+        "complete",
+        JSON.stringify([...animesComplete, newAnime])
+      );
+    }
+  };
+  const drop = (newAnime) => {
+    if (animesDrop.find((drop) => drop.name === newAnime.name)) {
+      openNotification(
+        "error",
+        {
+          messagee: `${anime.title} já foi adicionado há lista de Completos`,
+          descriptionn: "Para removê-lo vá ao Menu na página Inicial",
+        },
+        "top"
+      );
+    } else {
+      openNotification(
+        "success",
+        {
+          messagee: `${anime.title}  Adicionado há lista Completos`,
+          descriptionn: "Confira a lista de Completos na página Inicial",
+        },
+        "top"
+      );
+
+      setAnimesDrop([...animesDrop, newAnime]);
+      localStorage.setItem("drop", JSON.stringify([...animesDrop, newAnime]));
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
-        animesSeasons: animesSeasons,
-        favorites: favorites,
-        anime: anime,
-        character: character,
-        nameAnime: nameAnime,
-        menuMobile: menuMobile,
-        imgs: imgs,
-        valueInputAnimes: valueInputAnimes,
-        colorStar: colorStar,
-        animesRecommended: animesRecommended,
-        newEpisodes: newEpisodes,
+        animesSeasons,
+        favorites,
+        animesWatching,
+        animesComplete,
+        animesDrop,
+        anime,
+        search,
+        character,
+        nameAnime,
+        menuMobile,
+        imgs,
+        valueInputAnimes,
+        colorStar,
+        animesRecommended,
+        newEpisodes,
+        seasonsUpcoming,
         // deleteFavorite,
+
         setAnime,
         setNameAnime,
         setFavorites,
+        setSearch,
+        setAnimesWatching,
+        setAnimesComplete,
         setValueInputAnimes,
+        setAnimesDrop,
         animes,
+        watching,
+        complete,
+        drop,
         menuSx,
       }}
     >

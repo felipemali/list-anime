@@ -24,11 +24,42 @@
   margin-left: 1em;
   font-size: 20px;
 }
-.icon-star {
-  margin-left: 1em;
-  margin-top: 0.5em;
+.butons-options {
+  display: flex;
+  justify-content: center;
+}
+.options-background {
+  background-color: #fff;
+  width: 200px;
+}
+.options-link-buttons:hover {
+  background-color: rgb(211, 211, 208);
+}
+.button-favorite {
+  width: 30%;
+  background-color: rgb(189, 52, 52);
+  color: #fff;
+  font-size: 17px;
+  border-radius: 15px 15px;
+  border: none;
+  margin-top: 0.8em;
+  padding: 0.2em;
   cursor: pointer;
-  font-size: 20px;
+}
+.button-favorite:hover {
+  background-color: rgb(212, 33, 33);
+}
+
+.buttonsDrop-options {
+  margin-top: 5.5%;
+}
+.icon-options {
+  font-size: 25px;
+  color: black;
+  background-color: #fff;
+  width: 100%;
+  min-width: 10px;
+  border-radius: 5px 5px;
 }
 .info-anime-synopse {
   /* border: 1px solid blue; */

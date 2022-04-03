@@ -52,7 +52,7 @@ const NewEpisodes = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={-50}
           slidesPerView={3}
-          pagination={{ clickable: true }}
+          navigation
           autoplay={{
             delay: 2000,
             disableOnInteraction: true,
@@ -60,20 +60,20 @@ const NewEpisodes = () => {
           // onSwiper={(swiper) => console.log(swiper)}
           // onSlideChange={() => console.log("slide change")}
         >
-          {filter.map((dataAnimeSeason) => (
-            <SwiperSlide key={dataAnimeSeason.id}>
+          {filter.map((newEpisodes) => (
+            <SwiperSlide key={newEpisodes.id}>
               <div className="div-swiperSlide-new-episodes">
                 <div
                   // onMouseEnter={() => setDisPlayIcon("block")}
                   onMouseLeave={() => setDisPlayIcon("none")}
                   className="swiperSlide-anime"
                   style={{
-                    backgroundImage: `url(${dataAnimeSeason.image_large})`,
+                    backgroundImage: `url(${newEpisodes.image_large})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     width: "240px",
-                    height: "100px",
-                    opacity: "0.9",
+                    height: "150px",
+
                     // border: "15px outset #344653",
                   }}
                 >
@@ -87,7 +87,7 @@ const NewEpisodes = () => {
                   />
                 </div>
                 <span className="new-episodes-name-anime">
-                  {dataAnimeSeason.title}
+                  {newEpisodes.title}
                 </span>
               </div>
             </SwiperSlide>

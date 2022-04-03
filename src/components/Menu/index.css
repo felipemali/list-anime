@@ -43,15 +43,14 @@
 .div-menu-input {
   color: white;
   margin: auto 0px;
-  border: 1px solid rgb(36, 36, 35);
   height: 4%;
   border-radius: 5px 5px;
-  animation-name: slide;
+  /* animation-name: slide;
   transform: translateX(-100px);
   animation-duration: 3s;
   animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  box-shadow: 1px 0.2px 5px 1px #8b0c0c;
+  animation-fill-mode: forwards; */
+ 
 }
 .menu-input {
   outline: 0;
@@ -72,13 +71,13 @@ input::placeholder {
   margin-top: 2px;
 }
 
-@keyframes slide {
+/* @keyframes slide {
   from {
   }
   to {
     transform: translateX(0);
   }
-}
+} */
 a {
   color: inherit;
 }

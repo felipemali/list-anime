@@ -4,7 +4,9 @@
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  background-color: #e2e2e2;
+  background: linear-gradient(360deg, #000000 0, rgba(32, 32, 34, 0) 99%);
+  color: #fff;
+
   /* 
   display: flex; */
 }
@@ -16,16 +18,16 @@
   }
 }
 .swiper {
-  height: 550px;
+  height: 400px;
 }
 
 .div-title-anime {
-  border-bottom: 1px solid #969999;
   max-width: 330px;
   margin-left: 10%;
   font-size: 30px;
+  margin-top: 3%;
   color: rgb(187, 165, 40);
-  background-color: #e2e2e2;
+  background: rgba(32, 32, 34, 0);
   font-family: "Staatliches", cursive !important;
 }
 .title-anime {
@@ -59,44 +61,74 @@
 
 .swiper-anime {
   width: 80%;
-  height: 50%;
-  margin-top: 2%;
+  height: 40%;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 5%;
   flex-wrap: wrap;
 }
-/* .swiper {
-  border: 1px solid red;
-  width: 100%;
-  min-width: 900px;
-} */
-.swiper-anime .carousel {
-  max-width: 300px;
-}
+
 .img {
   width: 300px;
   height: 40%;
 }
 .div-swiperSlide {
-  border: 10px solid #fff;
-  background-color: #fff;
+  border: 10px solid #515255;
+  background-color: #515255;
   border-radius: 10px 10px;
-  height: 427px;
+  height: 437px;
   width: 260px;
   transition: all 0.4s;
   animation-timing-function: ease;
+  /* box-shadow: 6px 2px 15px 1px rgb(122, 122, 122); */
+  /* filter: blur(1px); */
+  /* rgb(83, 82, 82) */
 }
 .div-swiperSlide:hover {
   transform: translateY(5px);
-  /* transform: scale(1.03); */
+  border: 10px solid #3f7986;
+  background-color: #3f7986;
+}
+div.swiper-button-prev {
+  margin-left: 96%;
+  margin-top: 1%;
+  position: absolute;
+  height: 30%;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background-color: #2a2b31;
+  padding: 1.5%;
+  border-radius: 10px 10px;
+  cursor: pointer;
+}
+div.swiper-button-prev:hover {
+  background-color: #0652a3;
+}
+div.swiper-button-next {
+  color: #fff;
+  background-color: #2a2b31;
+  height: 30%;
+  padding: 1.5%;
+  border-radius: 10px 10px;
+  cursor: pointer;
+}
+div.swiper-button-next:hover {
+  background-color: #0652a3;
 }
 .animes-data {
-  color: black;
-  margin-left: 0.2%;
+  color: #fff;
+  margin-left: 0.5%;
 }
 .animes-icon {
-  color: black;
+  color: #fff;
+  padding-left: 1%;
+}
+.descriptions-anime {
+  color: #fff;
+}
+.div-descriptions-anime {
+  color: #fff;
 }
 .swiperSlide-anime {
   /* border-radius: 5%; */
@@ -112,8 +144,9 @@
   display: flex;
   justify-content: center;
   font-size: 17px;
-  color: black;
+  color: #fff;
   margin: auto;
+  padding-left: 1%;
 }
 .anime-buttons {
   position: absolute;

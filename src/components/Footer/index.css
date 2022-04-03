@@ -1,10 +1,12 @@
 .footer {
-  /* border: 1px solid gold; */
+  border: 1px solid #0d0d11;
   background-color: #0d0d11;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 250px;
+  height: 100%;
+  padding-top: 5em;
+ 
 }
 
 .footer-logo {
@@ -25,4 +27,18 @@
 }
 .footer ul li:hover {
   color: rgb(117, 115, 115);
+}
+@media (max-width: 767px) {
+  .footer-logo {
+    display: none;
+    /* border: 1px solid red; */
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    /* border: 1px solid gold; */
+    display: block;
+    flex-wrap: wrap;
+    height: 100%;
+  }
 }

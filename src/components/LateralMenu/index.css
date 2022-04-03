@@ -10,6 +10,7 @@
 .div-lateral-menu-item {
   display: flex;
   flex-wrap: wrap;
+  /* color: rgb(158, 139, 29); */
 }
 .lateral-menu-icon {
   color: black;

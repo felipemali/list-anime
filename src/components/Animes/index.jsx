@@ -3,7 +3,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
@@ -29,6 +29,10 @@ const Animes = () => {
     return anime.title.toLowerCase().includes(valueInputAnimes);
   });
 
+  // const style = {
+  //   display: "absolute",
+  // };
+
   return (
     <div className="anime">
       <div className="div-title-anime">
@@ -52,12 +56,12 @@ const Animes = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={2}
           slidesPerView={4}
-          pagination={{ clickable: true }}
+          navigation
           // onSwiper={(swiper) => console.log(swiper)}
           // onSlideChange={() => console.log("slide change")}
         >
           {filter.map((dataAnimeSeason) => (
-            <SwiperSlide key={dataAnimeSeason.id}>
+            <SwiperSlide>
               <Link to={"/sinopse"}>
                 <div className="div-swiperSlide">
                   <div
@@ -71,7 +75,6 @@ const Animes = () => {
                       backgroundSize: "cover",
                       width: "240px",
                       height: "100px",
-                      opacity: "0.9",
                       // border: "15px outset #344653",
                     }}
                   >
@@ -86,23 +89,22 @@ const Animes = () => {
                   </div>
                   <span className="animes-name">{dataAnimeSeason.title}</span>
                   <div className="animes-data">
-                    <div>
-                      <span>
-                        <PlayCircleOutlined className="animes-icon" />{" "}
+                    <div className="div-descriptions-anime">
+                      <PlayCircleOutlined className="animes-icon" />{" "}
+                      <span className="descriptions-anime">
                         {dataAnimeSeason.type}
                       </span>
                     </div>
 
-                    <div>
-                      <span>
-                        <ClockCircleOutlined className="animes-icon" />{" "}
+                    <div className="div-descriptions-anime">
+                      <ClockCircleOutlined className="animes-icon" />{" "}
+                      <span className="descriptions-anime">
                         {dataAnimeSeason.duration}
                       </span>
                     </div>
-                    <div>
-                      <span>
-                        {" "}
-                        <CalendarOutlined className="animes-icon" />{" "}
+                    <div className="div-descriptions-anime">
+                      <CalendarOutlined className="animes-icon" />{" "}
+                      <span className="descriptions-anime">
                         {dataAnimeSeason.toYear}
                       </span>
                     </div>

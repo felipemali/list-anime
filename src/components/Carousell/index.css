@@ -10,7 +10,7 @@
   color: rgb(255, 255, 255);
   border: 1px solid #00ffff;
   background-color: #000000;
-  width: 40%;
+  width: 30%;
   padding: 1em;
   margin-top: 3%;
   border-radius: 5px 5px;
@@ -26,14 +26,13 @@
 }
 .carousel-data {
   margin-top: 6%;
-  width: 60%;
+  width: 50%;
   margin-left: 5%;
 }
 .carousel-title-anime {
   color: rgb(255, 255, 255);
   margin-top: 10%;
   font-size: 50px;
-  border-bottom: 1px groove rgb(230, 229, 225);
 }
 .carousel-text-anime {
   font-size: 15px;

@@ -3,12 +3,12 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 import {
-  QqOutlined,
+  SearchOutlined,
   PlayCircleOutlined,
   ClockCircleOutlined,
   CalendarOutlined,
@@ -17,8 +17,9 @@ import {
 import { AuthContext } from "../../providers/auth";
 import "./index.css";
 
-const AnimesRecommended = () => {
-  const { animesRecommended, setNameAnime } = useContext(AuthContext);
+const SeasonUpcoming = () => {
+  const { seasonsUpcoming, setAnime, setValueInputAnimes, valueInputAnimes } =
+    useContext(AuthContext);
 
   const [displayIcon, setDisPlayIcon] = useState("none");
 
@@ -28,10 +29,14 @@ const AnimesRecommended = () => {
   //     return anime.title.toLowerCase().includes(valueInputAnimes);
   //   });
 
+  // const style = {
+  //   display: "absolute",
+  // };
+
   return (
-    <div className="anime-recommended">
-      <div className="div-title-anime-recommended">
-        <span className="title-anime">Animes Recomendados</span>
+    <div className="anime">
+      <div className="div-title-anime">
+        <span className="title-anime">Próxima Temporada</span>
       </div>
       {/* <div className="div-animes-input">
         <SearchOutlined className="icon-search-sx" />
@@ -55,22 +60,21 @@ const AnimesRecommended = () => {
           // onSwiper={(swiper) => console.log(swiper)}
           // onSlideChange={() => console.log("slide change")}
         >
-          {animesRecommended.map((recommended) => (
+          {seasonsUpcoming.map((dataAnimeSeason) => (
             <SwiperSlide>
               <Link to={"/sinopse"}>
-                <div className="div-swiperSlide-animes-recommended">
+                <div className="div-swiperSlide">
                   <div
-                    onClick={() => setNameAnime(recommended.title)}
+                    onClick={() => setAnime(dataAnimeSeason)}
                     // onMouseEnter={() => setDisPlayIcon("block")}
                     onMouseLeave={() => setDisPlayIcon("none")}
                     className="swiperSlide-anime"
                     style={{
-                      backgroundImage: `url(${recommended.image_large})`,
+                      backgroundImage: `url(${dataAnimeSeason.image_large})`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                       width: "240px",
                       height: "100px",
-
                       // border: "15px outset #344653",
                     }}
                   >
@@ -83,16 +87,26 @@ const AnimesRecommended = () => {
                       }}
                     />
                   </div>
-                  <span className="animes-name">{recommended.title}</span>
+                  <span className="animes-name">{dataAnimeSeason.title}</span>
                   <div className="animes-data">
                     <div className="div-descriptions-anime">
-                      <QqOutlined className="animes-icon" />{" "}
-                      <span>{recommended.username}</span>
+                      <PlayCircleOutlined className="animes-icon" />{" "}
+                      <span className="descriptions-anime">
+                        {dataAnimeSeason.type}
+                      </span>
                     </div>
 
                     <div className="div-descriptions-anime">
+                      <ClockCircleOutlined className="animes-icon" />{" "}
+                      <span className="descriptions-anime">
+                        {dataAnimeSeason.duration}
+                      </span>
+                    </div>
+                    <div className="div-descriptions-anime">
                       <CalendarOutlined className="animes-icon" />{" "}
-                      <span>{recommended.date}</span>
+                      <span className="descriptions-anime">
+                        {dataAnimeSeason.toYear}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -104,4 +118,4 @@ const AnimesRecommended = () => {
     </div>
   );
 };
-export default AnimesRecommended;
+export default SeasonUpcoming;
