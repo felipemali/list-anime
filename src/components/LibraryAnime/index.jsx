@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
+
 import { Divider } from "antd";
 import {
   PlusOutlined,
   CheckCircleOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
-import "./index.css";
 
 import { AuthContext } from "../../providers/auth";
+import "./index.css";
 
 const LibraryAnime = () => {
   const { anime } = useContext(AuthContext);
@@ -29,7 +30,8 @@ const LibraryAnime = () => {
           Assistido
         </button>
       </div>
-      {anime.length !== 0 && (
+
+      {anime?.trailer && (
         <div className="div-info-anime-trailer">
           <iframe
             className="info-anime-trailer"

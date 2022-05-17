@@ -1,5 +1,5 @@
 import { Menu, Dropdown } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, CalendarOutlined } from "@ant-design/icons";
 import React from "react";
 import "./index.css";
 
@@ -56,6 +56,53 @@ const reader = (
     </Menu.Item>
   </Menu>
 );
+const calendar = (
+  <Menu className="menu-background">
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Domingo
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Segunda-Feira
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Terça-Feira
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Quarta-Feira
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Quinta-Feira
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Sexta-Feira
+      </a>
+    </Menu.Item>
+    <Menu.Item className="link-buttons">
+      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+        <CalendarOutlined />
+        {""} Sábado
+      </a>
+    </Menu.Item>
+  </Menu>
+);
+
 const animesOn = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
@@ -115,12 +162,12 @@ const ButtonsDrop = () => {
           Hentais <DownOutlined />
         </a>
       </Dropdown>
-      <Dropdown overlay={animesOn}>
+      <Dropdown overlay={calendar}>
         <a
           className="ant-dropdown-link menu-links"
           onClick={(e) => e.preventDefault()}
         >
-          Calendários <DownOutlined />
+          Calendário <DownOutlined />
         </a>
       </Dropdown>
       <Dropdown overlay={reader}>

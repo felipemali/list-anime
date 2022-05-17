@@ -238,10 +238,11 @@
 
 .div-details {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   color: #fff;
   background-color: #0a0a0a;
   padding-top: 3%;
+  padding-bottom: 5rem;
 }
 .details {
   /* border: 1px solid blue; */

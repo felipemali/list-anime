@@ -1,6 +1,6 @@
 import { Divider } from "antd";
-import React, { useContext } from "react";
 
+import React, { useContext } from "react";
 import { AuthContext } from "../../providers/auth";
 
 const DetailsAnime = () => {
@@ -55,7 +55,7 @@ const DetailsAnime = () => {
           </li>
         </ul>
       </div>
-      <div className="dont-knowTwo"></div>
+      {/* <div className="dont-knowTwo"></div> */}
     </div>
   );
 };

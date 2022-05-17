@@ -1,22 +1,41 @@
 import React, { useContext, useState } from "react";
-import "./index.css";
-import ButtonsDrop from "../../components/ButtonsDropDown";
-import { AuthContext } from "../../providers/auth";
-import { Button } from "antd";
+
 import { Link } from "react-router-dom";
+
 import { SearchOutlined } from "@ant-design/icons";
+
+import { AuthContext } from "../../providers/auth";
+import "./index.css";
 
 const MenuMobile = () => {
   const { menuMobile, setNameAnime } = useContext(AuthContext);
   const [valueInput, setValueInput] = useState("");
 
   const buttons = [
-    "Animes",
-    "Filmes",
-    "Leitor",
-    "Hentais",
-    "Calendários",
-    "Animer On",
+    {
+      buttonn: "Animes",
+      id: "animes_1",
+    },
+    {
+      buttonn: "Filmes",
+      id: "animes_2",
+    },
+    {
+      buttonn: "Leitor",
+      id: "animes_3",
+    },
+    {
+      buttonn: "Hentais",
+      id: "animes_4",
+    },
+    {
+      buttonn: "Calendário",
+      id: "animes_5",
+    },
+    {
+      buttonn: "Animer On",
+      id: "animes_6",
+    },
   ];
   return (
     <>
@@ -60,7 +79,9 @@ const MenuMobile = () => {
         </div>
         <div className="menu-mobile-buttons">
           {buttons.map((button) => (
-            <button className="buttons">{button}</button>
+            <button key={button.id} className="buttons">
+              {button.buttonn}
+            </button>
           ))}
         </div>
       </div>

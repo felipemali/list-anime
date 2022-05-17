@@ -1,27 +1,33 @@
-import React, { useContext } from "react";
+import React from "react";
 import Animes from "../../components/Animes";
 import LateralMenu from "../../components/LateralMenu";
-import ListWatch from "../../components/ListWatch";
+
 import MenuMobile from "../../components/MenuMobile";
+import AnimesCalendar from "../../components/AnimesCalendar";
 import "./index.css";
 
-import { AuthContext } from "../../providers/auth";
 import AnimesRecommended from "../../components/AnimesRecommended";
 import NewEpisodes from "../../components/NewEpisodes";
 import SeasonUpcoming from "../../components/SeasonsUpcoming";
-const ContentStart = () => {
-  const { favorites, search } = useContext(AuthContext);
+import { ArrowsAltOutlined } from "@ant-design/icons";
+import DrawerMenuLateral from "../../components/DrawerMenuLateral";
+import Carousell from "../../components/Carousell";
+import TopAnimes from "../../components/TopAnimes";
+
+const ContentHome = () => {
   return (
     <>
       <MenuMobile />
 
-      <LateralMenu />
+      <Carousell />
+      <AnimesCalendar />
       <NewEpisodes />
       <Animes />
       <AnimesRecommended />
       <SeasonUpcoming />
+      <TopAnimes />
     </>
   );
 };
 
-export default ContentStart;
+export default ContentHome;

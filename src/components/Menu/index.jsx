@@ -1,26 +1,27 @@
+import { useContext } from "react";
+
 import { Card } from "antd";
-import "antd/dist/antd.css";
-import "./index.css";
-import Logo from "../../img/logo.png";
-import {
-  SearchOutlined,
-  UserAddOutlined,
-  MenuOutlined,
-} from "@ant-design/icons";
+import { UserAddOutlined, MenuOutlined } from "@ant-design/icons";
+
 import ButtonsDrop from "../ButtonsDropDown";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import Logo from "../../assets/img/logo.png";
+import Drawerr from "../Drawer";
+import DrawerMenuLateral from "../DrawerMenuLateral";
 
 import { AuthContext } from "../../providers/auth";
+import "antd/dist/antd.css";
+import "./index.css";
 
 const { Meta } = Card;
 
 const Menu = () => {
-  const { menuSx, setNameAnime, setDisplaySearch } = useContext(AuthContext);
+  const { menuSx } = useContext(AuthContext);
 
   return (
     <>
       <div className="menu">
+        <DrawerMenuLateral />
+
         <img className="menu-logo" src={Logo} alt="" />
 
         <div className="menu-buttons">
@@ -28,9 +29,7 @@ const Menu = () => {
         </div>
 
         <div className="div-menu-input">
-          <Link to={"/search"}>
-            <SearchOutlined className="icon-search" />
-          </Link>
+          <Drawerr />
         </div>
 
         <div className="menu-icons">

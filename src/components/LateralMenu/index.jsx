@@ -1,27 +1,24 @@
-import { Menu, Switch } from "antd";
+import { useContext, useState } from "react";
+
+import { Menu, Modal } from "antd";
+import { Link } from "react-router-dom";
+
 import {
   StarOutlined,
   UndoOutlined,
   DeleteOutlined,
-  MenuOutlined,
   CheckCircleOutlined,
-  ArrowsAltOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import "./index.css";
-import { Modal, Button } from "antd";
 
 import { AuthContext } from "../../providers/auth";
-import Carousell from "../Carousell";
+import "./index.css";
 
 const { SubMenu } = Menu;
 
 const LateralMenu = () => {
   const {
     favorites,
-    deleteFavorite,
     setNameAnime,
     setFavorites,
     setAnimesWatching,
@@ -41,12 +38,14 @@ const LateralMenu = () => {
   const showModal = () => {
     setVisible(true);
   };
+  const animesWatching_id = "animesWatching";
+  const animesDrop_id = "animesDrop";
+  const favorites_id = "favorites";
 
   const handleOk = (nameAnime) => {
-    const exclued = favorites.filter((name) => name.name !== nameAnime);
+    const exclued = favorites.filter((name) => name.id !== nameAnime);
     setFavorites(exclued);
     localStorage.setItem("favorites", JSON.stringify(exclued));
-    console.log(nameAnime);
 
     setModalText("Excluindo Anime...");
     setConfirmLoading(true);
@@ -55,12 +54,11 @@ const LateralMenu = () => {
       setConfirmLoading(false);
     }, 2000);
   };
-  console.log(animesWatching);
+
   const handleOkWatching = (nameAnime) => {
     const exclued = animesWatching.filter((name) => name.id !== nameAnime.id);
     console.log(exclued);
-    console.log(nameAnime);
-    console.log(animesWatching);
+
     setAnimesWatching(exclued);
     localStorage.setItem("watching", JSON.stringify(exclued));
 
@@ -84,7 +82,7 @@ const LateralMenu = () => {
     }, 2000);
   };
   const handleOkDrop = (nameAnime) => {
-    const exclued = animesDrop.filter((name) => name.name !== nameAnime);
+    const exclued = animesDrop.filter((name) => name.id !== nameAnime.id);
     setAnimesDrop(exclued);
     localStorage.setItem("drop", JSON.stringify(exclued));
 
@@ -97,7 +95,6 @@ const LateralMenu = () => {
   };
 
   const handleCancel = () => {
-    // console.log("Clicked cancel button");
     setVisible(false);
   };
   const menu = () => {
@@ -109,28 +106,23 @@ const LateralMenu = () => {
       <div className="lateral-menu">
         <Menu
           style={{
-            minWidth: `${menuSize}`,
-            color: "#fff",
-            background: "#e2e2e2",
+            color: "#222629",
 
-            // background: "#fff",
             marginTop: "0px",
           }}
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          <ArrowsAltOutlined className="lateral-menu-icon" onClick={menu} />
           <SubMenu
             style={{
-              color: "black",
-              background: "#fff",
-              opacity: "0.7",
+              color: "#4d5155",
+              background: "#faf6f6",
             }}
             icon={<UndoOutlined />}
             title="Assistindo"
           >
             {animesWatching?.map((anime) => (
-              <>
+              <div key={`${animesWatching_id}_${anime.id}`}>
                 <div className="div-lateral-menu-item">
                   <Link to={"/sinopse"}>
                     <Menu.Item
@@ -173,15 +165,14 @@ const LateralMenu = () => {
                     {modalText}
                   </p>
                 </Modal>
-              </>
+              </div>
             ))}
           </SubMenu>
 
           <SubMenu
             style={{
-              color: "black",
-              background: "#fff",
-              opacity: "0.7",
+              color: "#4d5155",
+              background: "#faf6f6",
             }}
             icon={<CheckCircleOutlined style={{ color: "green" }} />}
             title="Completo"
@@ -217,7 +208,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOkComplete(anime.name)}
+                  onOk={() => handleOkComplete(anime)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -236,15 +227,14 @@ const LateralMenu = () => {
 
           <SubMenu
             style={{
-              color: "black",
-              background: "#fff",
-              opacity: "0.7",
+              color: "#4d5155",
+              background: "#faf6f6",
             }}
             icon={<CloseCircleOutlined style={{ color: "red" }} />}
             title="Dropado"
           >
             {animesDrop?.map((anime) => (
-              <>
+              <div key={`${animesDrop_id}_${anime.id}`}>
                 <div className="div-lateral-menu-item">
                   <Link to={"/sinopse"}>
                     <Menu.Item
@@ -274,7 +264,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOkDrop(anime.name)}
+                  onOk={() => handleOkDrop(anime)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -287,23 +277,21 @@ const LateralMenu = () => {
                     {modalText}
                   </p>
                 </Modal>
-              </>
+              </div>
             ))}
           </SubMenu>
 
           <SubMenu
             style={{
-              overflow: "hidden",
-              background: "#fff",
-              color: "black",
-              opacity: "0.7",
+              color: "#4d5155",
+              background: "#faf6f6",
             }}
             key="sub4"
             icon={<StarOutlined style={{ color: "rgb(158, 139, 29)" }} />}
             title="Preferidos"
           >
             {favorites?.map((anime) => (
-              <>
+              <div key={`${favorites_id}_${anime.id}`}>
                 <div className="div-lateral-menu-item">
                   <Link to={"/sinopse"}>
                     <Menu.Item
@@ -333,7 +321,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOk(anime.name)}
+                  onOk={() => handleOk(anime.id)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -346,11 +334,10 @@ const LateralMenu = () => {
                     {modalText}
                   </p>
                 </Modal>
-              </>
+              </div>
             ))}
           </SubMenu>
         </Menu>
-        <Carousell />
       </div>
     </>
   );

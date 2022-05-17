@@ -1,6 +1,17 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { notification } from "antd";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  swiper: {
+    width: 260,
+    height: 450,
+    border: "10px solid #515255",
+    background: "#515255",
+    border_radius: "10px 10px",
+  },
+};
 
 export const AuthContext = createContext({});
 
@@ -30,12 +41,17 @@ const AuthProvider = ({ children }) => {
   const [colorStar, setColorStar] = useState("");
   const [animesRecommended, setAnimesRecommended] = useState([]);
   const [newEpisodes, setNewEpisodes] = useState([]);
+  const [animesSundays, setAnimesSundays] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const [visibleMenuLateral, setVisibleMenuLateral] = useState(false);
+  const [topAnimes, setTopAnimes] = useState([]);
 
   useEffect(() => {
     axios.get("https://api.jikan.moe/v4/seasons/now").then((response) => {
       const result = response.data.data.map((data) => {
         return {
           image: data.images.jpg.image_url,
+          small_image: data.images.jpg.small_image_url,
           image_large: data.images.jpg.large_image_url,
           banner: data.trailer.images.maximum_image_url,
           title: data.title,
@@ -48,6 +64,7 @@ const AuthProvider = ({ children }) => {
           origin: data.broadcast.timezone,
           episodes: data.episodes,
           type: data.type,
+          source: data.source,
           // studio: data[0].studios[0].name,
           favorites: data.favorites,
           fromDay: data.aired.prop.from.day,
@@ -56,10 +73,14 @@ const AuthProvider = ({ children }) => {
           toDay: data.aired.prop.to.day,
           toMonth: data.aired.prop.to.month,
           toYear: data.aired.prop.to.year,
+          genres: data.producers,
+          day: data.broadcast.day,
         };
       });
+
       setAnimesSeasons(result);
     });
+
     axios
       .get("https://api.jikan.moe/v4/recommendations/anime")
       .then((response) => {
@@ -80,10 +101,13 @@ const AuthProvider = ({ children }) => {
         return {
           id: data.entry.mal_id,
           image: data.entry.images.jpg.image_url,
+          small_image: data.entry.images.jpg.small_image_url,
           title: data.entry.title,
           image_large: data.entry.images.jpg.large_image_url,
+          episodes: data.episodes[0].title,
         };
       });
+
       setNewEpisodes(resultNewEpisodes);
     });
 
@@ -114,6 +138,41 @@ const AuthProvider = ({ children }) => {
         };
       });
       setSeasonsUpcoming(result);
+    });
+
+    axios.get("https://api.jikan.moe/v4/top/anime").then((response) => {
+      const result = response.data.data.map((data) => {
+        return {
+          image: data.images.jpg.image_url,
+          small_image: data.images.jpg.small_image_url,
+          image_large: data.images.jpg.large_image_url,
+          banner: data.trailer.images.maximum_image_url,
+          title: data.title,
+          title_japonese: data.title_japanese,
+          id: data.mal_id,
+          trailer: data.trailer.embed_url,
+          synopsis: data.synopsis,
+          duration: data.duration,
+          rank: data.rank,
+          popularity: data.popularity,
+          members: data.members,
+          origin: data.broadcast.timezone,
+          episodes: data.episodes,
+          type: data.type,
+          source: data.source,
+          // studio: data[0].studios[0].name,
+          favorites: data.favorites,
+          fromDay: data.aired.prop.from.day,
+          fromMonth: data.aired.prop.from.month,
+          fromYear: data.aired.prop.from.year,
+          toDay: data.aired.prop.to.day,
+          toMonth: data.aired.prop.to.month,
+          toYear: data.aired.prop.to.year,
+          genres: data.producers,
+          day: data.broadcast.day,
+        };
+      });
+      setTopAnimes(result);
     });
   }, []);
 
@@ -181,6 +240,19 @@ const AuthProvider = ({ children }) => {
 
   const menuSx = () => {
     menuMobile === "none" ? setMenuMobile("inline") : setMenuMobile("none");
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+  const showDrawer = () => {
+    setVisible(true);
+  };
+  const showDrawerMenuLateral = () => {
+    setVisibleMenuLateral(true);
+  };
+  const onCloseMenuLateral = () => {
+    setVisibleMenuLateral(false);
   };
 
   const openNotification = (type, obj, e) => {
@@ -299,6 +371,23 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const colors = [
+    "#002545",
+    "#14808c", //
+    "#ed874f",
+    "#781e1a",
+    "#6f72e3",
+    "#674075 ",
+    "#703064 ",
+    "#2f091e ", //
+    "#bc6021",
+    "#512948", //
+    "#122b4d",
+  ];
+
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  const randomColor = colors[randomIndex];
+
   return (
     <AuthContext.Provider
       value={{
@@ -318,6 +407,13 @@ const AuthProvider = ({ children }) => {
         animesRecommended,
         newEpisodes,
         seasonsUpcoming,
+        animesSundays,
+        theme,
+        randomColor,
+        visible,
+        visibleMenuLateral,
+        topAnimes,
+
         // deleteFavorite,
 
         setAnime,
@@ -333,6 +429,10 @@ const AuthProvider = ({ children }) => {
         complete,
         drop,
         menuSx,
+        onClose,
+        showDrawer,
+        showDrawerMenuLateral,
+        onCloseMenuLateral,
       }}
     >
       {children}

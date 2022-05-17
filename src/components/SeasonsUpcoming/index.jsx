@@ -2,120 +2,131 @@ import React, { useContext, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
+import { Container } from "../../styles/Container/styles";
+import { Title } from "../../styles/StylesBasics/Title/styles";
+import { ContainerSwiperSlide } from "../../styles/SwiperStyles/ContainerSwiperSlide/styles";
+import { Button } from "../../styles/StylesBasics/Button/styles";
+import { Slide } from "../../styles/SwiperStyles/Slide/styles";
+import { NameAnime } from "../../styles/DescriptionAnime/NameAnime/styles";
+import { Description } from "../../styles/DescriptionAnime/Description/styles";
+import { ContainerSwiperMedium } from "../../styles/SwiperStyles/ContainerSwiperMedium/styles";
+import { AuthContext } from "../../providers/auth";
+
+import { Link } from "react-router-dom";
+import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";
+import { Popover } from "antd";
 
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Link } from "react-router-dom";
-import {
-  SearchOutlined,
-  PlayCircleOutlined,
-  ClockCircleOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
-
-import { AuthContext } from "../../providers/auth";
-import "./index.css";
+import "swiper/css";
 
 const SeasonUpcoming = () => {
-  const { seasonsUpcoming, setAnime, setValueInputAnimes, valueInputAnimes } =
-    useContext(AuthContext);
-
+  const { seasonsUpcoming, setAnime, favorites } = useContext(AuthContext);
   const [displayIcon, setDisPlayIcon] = useState("none");
+  const [dataAnime, setDataAnime] = useState([]);
+  const seasonsUpcoming_Id = "seasonUpcomming";
 
   SwiperCore.use([Autoplay]);
 
-  //   const filter = animesSeasons.filter((anime) => {
-  //     return anime.title.toLowerCase().includes(valueInputAnimes);
-  //   });
-
-  // const style = {
-  //   display: "absolute",
-  // };
+  const content = (
+    <>
+      <div>
+        <span
+          style={{
+            display: "flex",
+            justifyContent: "end",
+            fontSize: "16px",
+            color: "gray",
+          }}
+        >
+          😀 {dataAnime.favorites}
+        </span>
+        <span style={{ fontSize: "16px", color: "#a02c3f " }}>Episodes :</span>{" "}
+        <span style={{ color: "gray" }}> {dataAnime.episodes}</span>
+        <div
+          style={{
+            display: "flex",
+            marginTop: "2%",
+            justifyContent: "space-around",
+          }}
+        >
+          <span style={{ color: "#7dc20b" }}>{dataAnime.type}</span>
+          {""} /<span style={{ color: "#7dc20b" }}>{dataAnime.source}</span>
+        </div>
+      </div>
+    </>
+  );
 
   return (
-    <div className="anime">
-      <div className="div-title-anime">
-        <span className="title-anime">Próxima Temporada</span>
-      </div>
-      {/* <div className="div-animes-input">
-        <SearchOutlined className="icon-search-sx" />
-        <input
-          value={valueInputAnimes}
-          onChange={(e) => setValueInputAnimes(e.target.value)}
-          className="animes-input"
-          type="text"
-          placeholder="Buscar..."
-        />
-      </div> */}
+    <Container>
+      <Title>
+        <span>Próxima Temporada</span>
+      </Title>
 
-      <div className="swiper-anime">
+      <ContainerSwiperMedium>
         <Swiper
           className="swiper"
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={2}
-          slidesPerView={4}
+          spaceBetween={0}
+          slidesPerView={3.9}
           navigation
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
         >
           {seasonsUpcoming.map((dataAnimeSeason) => (
-            <SwiperSlide>
-              <Link to={"/sinopse"}>
-                <div className="div-swiperSlide">
-                  <div
-                    onClick={() => setAnime(dataAnimeSeason)}
-                    // onMouseEnter={() => setDisPlayIcon("block")}
-                    onMouseLeave={() => setDisPlayIcon("none")}
-                    className="swiperSlide-anime"
-                    style={{
-                      backgroundImage: `url(${dataAnimeSeason.image_large})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                      width: "240px",
-                      height: "100px",
-                      // border: "15px outset #344653",
-                    }}
+            <SwiperSlide key={`${seasonsUpcoming_Id}_${dataAnimeSeason.id}`}>
+              <Popover placement="rightTop" content={content} title="Anime">
+                <Link to={"/sinopse"}>
+                  <ContainerSwiperSlide
+                    onMouseEnter={() => setDataAnime(dataAnimeSeason)}
                   >
-                    <PlayCircleOutlined
+                    <Slide
+                      onClick={() => setAnime(dataAnimeSeason)}
+                      onMouseLeave={() => setDisPlayIcon("none")}
                       style={{
-                        color: "red",
-                        fontSize: "100px",
-                        paddingTop: "1em",
-                        display: `${displayIcon}`,
+                        backgroundImage: `url(${dataAnimeSeason.image})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        width: "205px",
+                        height: "100px",
                       }}
-                    />
-                  </div>
-                  <span className="animes-name">{dataAnimeSeason.title}</span>
-                  <div className="animes-data">
-                    <div className="div-descriptions-anime">
-                      <PlayCircleOutlined className="animes-icon" />{" "}
-                      <span className="descriptions-anime">
-                        {dataAnimeSeason.type}
-                      </span>
-                    </div>
+                    >
+                      <PlayCircleOutlined
+                        style={{
+                          color: "red",
+                          fontSize: "100px",
+                          paddingTop: "1em",
+                          display: `${displayIcon}`,
+                        }}
+                      />
+                    </Slide>
+                    <NameAnime>{dataAnimeSeason.title}</NameAnime>
 
-                    <div className="div-descriptions-anime">
-                      <ClockCircleOutlined className="animes-icon" />{" "}
-                      <span className="descriptions-anime">
-                        {dataAnimeSeason.duration}
-                      </span>
-                    </div>
-                    <div className="div-descriptions-anime">
-                      <CalendarOutlined className="animes-icon" />{" "}
-                      <span className="descriptions-anime">
-                        {dataAnimeSeason.toYear}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+                    <Description>
+                      <Button> Detalhes </Button>
+                    </Description>
+                    <Description>
+                      {favorites.find(
+                        (favorite) => favorite.name === dataAnimeSeason.title
+                      ) && (
+                        <StarOutlined
+                          style={{
+                            color: "gold",
+                            fontSize: "40px",
+                            display: "flex",
+                            justifyContent: "end",
+                          }}
+                        />
+                      )}
+                    </Description>
+                  </ContainerSwiperSlide>
+                </Link>
+              </Popover>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </div>
+      </ContainerSwiperMedium>
+    </Container>
   );
 };
 export default SeasonUpcoming;

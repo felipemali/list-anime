@@ -1,24 +1,28 @@
-import { Button, Carousel } from "antd";
 import {
   ClockCircleOutlined,
   CalendarOutlined,
   PlayCircleOutlined,
 } from "@ant-design/icons";
-import { useContext } from "react";
+
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css";
 import "./index.css";
+
+import { useContext } from "react";
 import { AuthContext } from "../../providers/auth";
-import LateralMenu from "../LateralMenu";
+import { Link } from "react-router-dom";
+
 const Carousell = () => {
-  const { animesSeasons } = useContext(AuthContext);
+  const { animesSeasons, setAnime } = useContext(AuthContext);
 
   SwiperCore.use([Autoplay]);
+
   return (
     <Swiper
       style={{ height: "80vh" }}
@@ -26,8 +30,6 @@ const Carousell = () => {
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      // onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={() => console.log("slide change")}
       autoplay={{
         delay: 6000,
         disableOnInteraction: true,
@@ -58,7 +60,18 @@ const Carousell = () => {
                   {dataAnimeSeason.synopsis}
                 </span>
                 <br />
-                <button className="carousel-button">{"Saiba Mais..."}</button>
+                <Link to={"/sinopse"} onClick={() => setAnime(dataAnimeSeason)}>
+                  <button className="carousel-button">
+                    <PlayCircleOutlined
+                      style={{
+                        marginRight: "1rem",
+                        fontSize: "1rem",
+                        color: "red",
+                      }}
+                    />
+                    {"Detalhes..."}
+                  </button>
+                </Link>
 
                 <PlayCircleOutlined className="carousel-icon" />
                 <span style={{ color: "#fff", marginLeft: "1%" }}>
@@ -76,7 +89,6 @@ const Carousell = () => {
               </div>
             </div>
           </div>
-          {/* <span className="animes-name">{dataAnimeSeason.title}</span> */}
         </SwiperSlide>
       ))}
     </Swiper>

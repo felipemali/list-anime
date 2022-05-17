@@ -1,18 +1,14 @@
 import React, { useContext, useState } from "react";
+
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Link } from "react-router-dom";
-import {
-  SearchOutlined,
-  PlayCircleOutlined,
-  ClockCircleOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
+import "swiper/css";
+
+import { Popover } from "antd";
 
 import { AuthContext } from "../../providers/auth";
 import "./index.css";
@@ -21,7 +17,7 @@ const NewEpisodes = () => {
   const { newEpisodes, valueInputAnimes, setValueInputAnimes } =
     useContext(AuthContext);
 
-  const [displayIcon, setDisPlayIcon] = useState("none");
+  const [dataAnime, setDataAnime] = useState([]);
 
   SwiperCore.use([Autoplay]);
 
@@ -29,20 +25,19 @@ const NewEpisodes = () => {
     return anime.title.toLowerCase().includes(valueInputAnimes);
   });
 
+  const content = (
+    <div>
+      <p style={{ fontSize: "16px" }}>{dataAnime.title}</p>
+      <p style={{ fontSize: "16px", color: "#a02c3f " }}>
+        {dataAnime.episodes}
+      </p>
+    </div>
+  );
+
   return (
     <div className="anime">
       <div className="div-title-new-episodes">
         <span className="title-anime">Novos Episódios</span>
-      </div>
-      <div className="div-animes-input">
-        <SearchOutlined className="icon-search-sx" />
-        <input
-          value={valueInputAnimes}
-          onChange={(e) => setValueInputAnimes(e.target.value)}
-          className="animes-input"
-          type="text"
-          placeholder="Buscar..."
-        />
       </div>
 
       <div className="swiper-anime">
@@ -50,47 +45,40 @@ const NewEpisodes = () => {
           className="swiper-new-episodes"
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={-50}
-          slidesPerView={3}
+          spaceBetween={0}
+          slidesPerView={4.1}
           navigation
           autoplay={{
             delay: 2000,
             disableOnInteraction: true,
           }}
-          // onSwiper={(swiper) => console.log(swiper)}
-          // onSlideChange={() => console.log("slide change")}
         >
           {filter.map((newEpisodes) => (
-            <SwiperSlide key={newEpisodes.id}>
-              <div className="div-swiperSlide-new-episodes">
-                <div
-                  // onMouseEnter={() => setDisPlayIcon("block")}
-                  onMouseLeave={() => setDisPlayIcon("none")}
-                  className="swiperSlide-anime"
-                  style={{
-                    backgroundImage: `url(${newEpisodes.image_large})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    width: "240px",
-                    height: "150px",
-
-                    // border: "15px outset #344653",
-                  }}
-                >
-                  <PlayCircleOutlined
-                    style={{
-                      color: "red",
-                      fontSize: "100px",
-                      paddingTop: "1em",
-                      display: `${displayIcon}`,
-                    }}
-                  />
-                </div>
-                <span className="new-episodes-name-anime">
-                  {newEpisodes.title}
-                </span>
-              </div>
-            </SwiperSlide>
+            <>
+              <SwiperSlide className="slide" key={newEpisodes.id}>
+                <Popover placement="rightTop" content={content} title="Anime">
+                  <div
+                    className="div-swiperSlide-new-episodes"
+                    onMouseEnter={() => setDataAnime(newEpisodes)}
+                  >
+                    <div
+                      className="swiperSlide-anime"
+                      style={{
+                        backgroundImage: `url(${newEpisodes.image})`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        width: "200px",
+                        height: "100px",
+                      }}
+                    ></div>{" "}
+                    <span className="new-episodes-name-anime">
+                      {newEpisodes.title}
+                    </span>
+                    <button className="button-details">Detalhes</button>
+                  </div>
+                </Popover>
+              </SwiperSlide>
+            </>
           ))}
         </Swiper>
       </div>
