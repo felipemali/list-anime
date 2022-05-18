@@ -6,12 +6,12 @@ import { CaretDownOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Menu, Dropdown, Image } from "antd";
 
-import DetailsAnime from "../DetailsAnime";
-import MenuMobile from "../MenuMobile";
+import DetailsAnime from "../../AnimeInformation/DetailsAnime";
+import MenuMobile from "../../Menu/MenuMobile";
 import LibraryAnime from "../LibraryAnime";
-import CommentList from "../CommentList";
+import CommentList from "../../CommentList";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 
 const InfoAnime = () => {

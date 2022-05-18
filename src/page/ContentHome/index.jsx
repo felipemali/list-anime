@@ -1,18 +1,14 @@
 import React from "react";
-import Animes from "../../components/Animes";
-import LateralMenu from "../../components/LateralMenu";
 
-import MenuMobile from "../../components/MenuMobile";
-import AnimesCalendar from "../../components/AnimesCalendar";
-import "./index.css";
-
+import Animes from "../../components/Animes/AnimesNow";
+import MenuMobile from "../../components/Menu/MenuMobile";
+import AnimesCalendar from "../../components/Animes/AnimesCalendar";
 import AnimesRecommended from "../../components/AnimesRecommended";
-import NewEpisodes from "../../components/NewEpisodes";
-import SeasonUpcoming from "../../components/SeasonsUpcoming";
-import { ArrowsAltOutlined } from "@ant-design/icons";
-import DrawerMenuLateral from "../../components/DrawerMenuLateral";
+import NewEpisodes from "../../components/Animes/NewEpisodes";
+import SeasonUpcoming from "../../components/Animes/SeasonsUpcoming";
 import Carousell from "../../components/Carousell";
-import TopAnimes from "../../components/TopAnimes";
+import TopAnimes from "../../components/Animes/TopAnimes";
+import "./index.css";
 
 const ContentHome = () => {
   return (

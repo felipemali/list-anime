@@ -3,15 +3,15 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Container } from "../../styles/Container/styles";
-import { Title } from "../../styles/StylesBasics/Title/styles";
-import { ContainerSwiperSlide } from "../../styles/SwiperStyles/ContainerSwiperSlide/styles";
-import { Button } from "../../styles/StylesBasics/Button/styles";
-import { Slide } from "../../styles/SwiperStyles/Slide/styles";
-import { NameAnime } from "../../styles/DescriptionAnime/NameAnime/styles";
-import { Description } from "../../styles/DescriptionAnime/Description/styles";
-import { ContainerSwiperMedium } from "../../styles/SwiperStyles/ContainerSwiperMedium/styles";
-import { AuthContext } from "../../providers/auth";
+import { Container } from "../../../styles/Container/styles";
+import { Title } from "../../../styles/StylesBasics/Title/styles";
+import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
+import { Button } from "../../../styles/StylesBasics/Button/styles";
+import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
+import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
+import { Description } from "../../../styles/DescriptionAnime/Description/styles";
+import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
+import { AuthContext } from "../../../providers/auth";
 
 import { Link } from "react-router-dom";
 import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";

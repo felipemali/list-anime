@@ -4,11 +4,11 @@ import { Card } from "antd";
 import { UserAddOutlined, MenuOutlined } from "@ant-design/icons";
 
 import ButtonsDrop from "../ButtonsDropDown";
-import Logo from "../../assets/img/logo.png";
-import Drawerr from "../Drawer";
-import DrawerMenuLateral from "../DrawerMenuLateral";
+import Logo from "../../../assets/img/logo.png";
+import Drawerr from "../../Drawer";
+import DrawerMenuLateral from "../../Menu/DrawerMenuLateral";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import "antd/dist/antd.css";
 import "./index.css";
 

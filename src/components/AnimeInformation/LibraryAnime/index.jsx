@@ -7,7 +7,7 @@ import {
   CheckOutlined,
 } from "@ant-design/icons";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 
 const LibraryAnime = () => {

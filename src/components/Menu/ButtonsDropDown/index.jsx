@@ -7,7 +7,7 @@ const animes = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
       <a
-        style={{ color: "#fff" }}
+        style={{ color: "#000" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -17,7 +17,7 @@ const animes = (
     </Menu.Item>
     <Menu.Item className="link-buttons">
       <a
-        style={{ color: "#fff" }}
+        style={{ color: "#000" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -32,7 +32,7 @@ const movies = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
       <a
-        style={{ color: "#fff" }}
+        style={{ color: "#000" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
@@ -46,7 +46,7 @@ const reader = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
       <a
-        style={{ color: "#fff" }}
+        style={{ color: "#000" }}
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.antgroup.com"

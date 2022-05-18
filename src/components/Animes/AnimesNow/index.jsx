@@ -4,18 +4,18 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Container } from "../../styles/Container/styles";
-import { Title } from "../../styles/StylesBasics/Title/styles";
-import { ContainerSwiper } from "../../styles/./SwiperStyles/ContainerSwiper/styles";
-import { ContainerSwiperSlide } from "../../styles/SwiperStyles/ContainerSwiperSlide/styles";
-import { Button } from "../../styles/StylesBasics/Button/styles";
-import { Slide } from "../../styles/SwiperStyles/Slide/styles";
-import { NameAnime } from "../../styles/DescriptionAnime/NameAnime/styles";
-import { Description } from "../../styles/DescriptionAnime/Description/styles";
-import { ContainerGenres } from "../../styles/Genres/ContainerGenres/styles";
-import { TitleGenres } from "../../styles/Genres/TitleGenres/styles";
-import { ContainerButton } from "../../styles/StylesBasics/ContainerButton/styles";
-import { Genres } from "../../styles/Genres/GenresItem/styles";
+import { Container } from "../../../styles/Container/styles";
+import { Title } from "../../../styles/StylesBasics/Title/styles";
+import { ContainerSwiper } from "../../../styles/SwiperStyles/ContainerSwiper/styles";
+import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
+import { Button } from "../../../styles/StylesBasics/Button/styles";
+import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
+import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
+import { Description } from "../../../styles/DescriptionAnime/Description/styles";
+import { ContainerGenres } from "../../../styles/Genres/ContainerGenres/styles";
+import { TitleGenres } from "../../../styles/Genres/TitleGenres/styles";
+import { ContainerButton } from "../../../styles/StylesBasics/ContainerButton/styles";
+import { Genres } from "../../../styles/Genres/GenresItem/styles";
 
 import { Link } from "react-router-dom";
 import { StarOutlined } from "@ant-design/icons";
@@ -25,7 +25,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 
 const Animes = () => {
   const { animesSeasons, setAnime, valueInputAnimes, favorites } =

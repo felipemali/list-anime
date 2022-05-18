@@ -10,7 +10,7 @@ import "swiper/css";
 
 import { Popover } from "antd";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 
 const NewEpisodes = () => {

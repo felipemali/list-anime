@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { SearchOutlined } from "@ant-design/icons";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 
 const MenuMobile = () => {

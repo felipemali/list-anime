@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 import { CaretRightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./index.css";
