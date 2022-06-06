@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "../../components/Menu/MenuMaximum";
 import InfoAnime from "../../components/AnimeInformation/InfoAnime";
 import Footer from "../../components/Footer";
-import ListWatch from "../../components/ListWatch";
+import ListWatch from "../../components/Menu/ListWatch";
 import { BackTop } from "antd";
 import ContentHome from "../ContentHome";
 import AuthProvider from "../../providers/auth";

@@ -3,7 +3,7 @@ import React from "react";
 import Animes from "../../components/Animes/AnimesNow";
 import MenuMobile from "../../components/Menu/MenuMobile";
 import AnimesCalendar from "../../components/Animes/AnimesCalendar";
-import AnimesRecommended from "../../components/AnimesRecommended";
+import AnimesRecommended from "../../components/Animes/AnimesRecommended";
 import NewEpisodes from "../../components/Animes/NewEpisodes";
 import SeasonUpcoming from "../../components/Animes/SeasonsUpcoming";
 import Carousell from "../../components/Carousell";

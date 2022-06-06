@@ -59,43 +59,43 @@ const reader = (
 const calendar = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Domingo
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Segunda-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Terça-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Quarta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Quinta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Sexta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#fff" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
         <CalendarOutlined />
         {""} Sábado
       </a>

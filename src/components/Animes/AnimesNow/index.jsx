@@ -31,6 +31,8 @@ const Animes = () => {
   const { animesSeasons, setAnime, valueInputAnimes, favorites } =
     useContext(AuthContext);
 
+  const [color, setColor] = useState();
+
   const [dataAnime, setDataAnime] = useState([]);
   const idAnime = "Animes";
   const buttons = [
@@ -172,8 +174,29 @@ const Animes = () => {
     </>
   );
 
+  const randomColor = () => {
+    const colors = [
+      "#002545",
+      "#14808c", //
+      "#ed874f",
+      "#781e1a",
+      "#6f72e3",
+      "#674075 ",
+      "#703064 ",
+      "#2f091e ", //
+      "#bc6021",
+      "#512948", //
+      "#122b4d",
+    ];
+
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomIndex];
+
+    setColor(randomColor);
+  };
+
   return (
-    <Container>
+    <Container background={color}>
       <Title>
         <span>Animes da Temporada</span>
       </Title>
@@ -198,7 +221,7 @@ const Animes = () => {
         >
           {filter.map((dataAnimeSeason) => (
             <SwiperSlide key={`${idAnime}_${dataAnimeSeason.id}`}>
-              <Popover placement="rightTop" content={content} title="Anime">
+              <Popover placement="top" content={content} title="Anime">
                 <Link to={"/sinopse"}>
                   <ContainerSwiperSlide
                     onMouseEnter={() => setDataAnime(dataAnimeSeason)}
@@ -241,7 +264,13 @@ const Animes = () => {
           ))}
         </Swiper>
         <ContainerGenres>
-          <TitleGenres>GÊNEROS</TitleGenres>{" "}
+          <TitleGenres color={color}>GÊNEROS</TitleGenres>
+          <button
+            style={{ color: "black", cursor: "pointer" }}
+            onClick={randomColor}
+          >
+            change color
+          </button>
           <ContainerButton>
             {buttons.map((button) => (
               <Genres style={{ color: button.color }}>{button.genre}</Genres>

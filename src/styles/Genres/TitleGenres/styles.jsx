@@ -1,7 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TitleGenres = styled.span`
-  margin: auto;
-  font-size: 20px;
-  color: #72a8e2;
+  ${({ color }) => css`
+    color: ${color};
+    margin: auto;
+    font-size: 20px;
+  `}
 `;

@@ -11,7 +11,6 @@
   background-repeat: no-repeat;
 }
 .div-info-anime-img {
-  /* border: 1px solid red; */
   width: 20%;
   height: 100%;
   min-width: 300px;
@@ -65,7 +64,7 @@
   /* border: 1px solid blue; */
   overflow-x: hidden;
   padding-top: 5%;
-  width: 70%;
+  width: 75%;
   height: 100%;
 }
 .title-character {

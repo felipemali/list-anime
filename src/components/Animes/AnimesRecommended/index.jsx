@@ -4,14 +4,14 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Container } from "../../styles/Container/styles";
-import { Title } from "../../styles/StylesBasics/Title/styles";
-import { ContainerSwiperSlide } from "../../styles/SwiperStyles/ContainerSwiperSlide/styles";
-import { Button } from "../../styles/StylesBasics/Button/styles";
-import { Slide } from "../../styles/SwiperStyles/Slide/styles";
-import { NameAnime } from "../../styles/DescriptionAnime/NameAnime/styles";
-import { Description } from "../../styles/DescriptionAnime/Description/styles";
-import { ContainerSwiperMedium } from "../../styles/SwiperStyles/ContainerSwiperMedium/styles";
+import { Container } from "../../../styles/Container/styles";
+import { Title } from "../../../styles/StylesBasics/Title/styles";
+import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
+import { Button } from "../../../styles/StylesBasics/Button/styles";
+import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
+import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
+import { Description } from "../../../styles/DescriptionAnime/Description/styles";
+import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
 
 import { Link } from "react-router-dom";
 import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";
@@ -22,7 +22,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../../providers/auth";
 
 const AnimesRecommended = () => {
   const { animesRecommended, setNameAnime, favorites } =
@@ -79,33 +79,23 @@ const AnimesRecommended = () => {
           slidesPerView={3.9}
           navigation
         >
+          {/* display: `${displayIcon}`, */}
           {/* key={`${animesRecommended_id}_${recommended.id}`} */}
           {animesRecommended.map((recommended) => (
             <SwiperSlide>
-              <Popover placement="rightTop" content={content} title="Anime">
+              <Popover placement="top" content={content} title="Anime">
                 <Link to={"/sinopse"}>
                   <ContainerSwiperSlide
                     onMouseEnter={() => setDataAnime(recommended)}
                   >
                     <Slide
                       onClick={() => setNameAnime(recommended.title)}
-                      onMouseLeave={() => setDisPlayIcon("none")}
+                      // onMouseLeave={() => setDisPlayIcon("inline")}
                       style={{
                         backgroundImage: `url(${recommended.image})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        width: "205px",
-                        height: "100px",
                       }}
                     >
-                      <PlayCircleOutlined
-                        style={{
-                          color: "red",
-                          fontSize: "100px",
-                          paddingTop: "1em",
-                          display: `${displayIcon}`,
-                        }}
-                      />
+                      {/* <PlayCircleOutlined /> */}
                     </Slide>
                     <Description>
                       {favorites.find(

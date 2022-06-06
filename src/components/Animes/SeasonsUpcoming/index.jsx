@@ -75,7 +75,7 @@ const SeasonUpcoming = () => {
         >
           {seasonsUpcoming.map((dataAnimeSeason) => (
             <SwiperSlide key={`${seasonsUpcoming_Id}_${dataAnimeSeason.id}`}>
-              <Popover placement="rightTop" content={content} title="Anime">
+              <Popover placement="top" content={content} title="Anime">
                 <Link to={"/sinopse"}>
                   <ContainerSwiperSlide
                     onMouseEnter={() => setDataAnime(dataAnimeSeason)}

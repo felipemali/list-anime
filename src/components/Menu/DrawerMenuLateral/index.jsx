@@ -18,7 +18,7 @@ const DrawerMenuLateral = () => {
         <MenuOutlined
           style={{ fontSize: "20px", marginLeft: "90%" }}
           type="primary"
-          onClick={showDrawerMenuLateral}
+          onMouseEnter={showDrawerMenuLateral}
         />
       </Space>
       <Drawer
@@ -26,8 +26,8 @@ const DrawerMenuLateral = () => {
         placement={placement}
         width={350}
         height={800}
-        onClose={onCloseMenuLateral}
         visible={visibleMenuLateral}
+        onClose={onCloseMenuLateral}
         // extra={
         //   <Space>
         //     <Button onClick={onClose}>Cancel</Button>

@@ -146,7 +146,12 @@ div.swiper-button-next:hover {
   /*  */
   /* transform: scale(1.03); */
 }
-
+.swiperSlide-anime:on{
+ 
+  color: red;
+ /*  */
+ /* transform: scale(1.03); */
+}
 
 .button-details{ 
   /* display: none; */

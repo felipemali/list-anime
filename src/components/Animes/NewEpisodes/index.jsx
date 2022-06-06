@@ -56,7 +56,7 @@ const NewEpisodes = () => {
           {filter.map((newEpisodes) => (
             <>
               <SwiperSlide className="slide" key={newEpisodes.id}>
-                <Popover placement="rightTop" content={content} title="Anime">
+                <Popover placement="top" content={content} title="Anime">
                   <div
                     className="div-swiperSlide-new-episodes"
                     onMouseEnter={() => setDataAnime(newEpisodes)}
