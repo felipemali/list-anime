@@ -22,10 +22,9 @@ const Carousell = () => {
   const { animesSeasons, setAnime } = useContext(AuthContext);
 
   SwiperCore.use([Autoplay]);
-
+  console.log(window.innerWidth);
   return (
     <Swiper
-      style={{ height: "80vh" }}
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
@@ -36,59 +35,132 @@ const Carousell = () => {
       }}
     >
       {animesSeasons?.map((dataAnimeSeason) => (
-        <SwiperSlide key={dataAnimeSeason.id}>
-          <div
-            // onMouseEnter={() => setDisPlayIcon("block")}
+        <SwiperSlide key={dataAnimeSeason.id} style={{}}>
+          {window.innerWidth > 768 ? (
+            <div
+              className="carousel-anime"
+              style={{
+                background: `url(${dataAnimeSeason.banner}) `,
+                backgroundSize: "100%",
+                backgroundRepeat: "no-repeat",
+                height: "80vh",
+              }}
+            >
+              <div className="gradient">
+                <div className="carousel-data">
+                  <span className="carousel-title-anime">
+                    {dataAnimeSeason.title}
+                  </span>
+                  <br />
+                  {window.innerWidth <= 768 ? (
+                    ""
+                  ) : (
+                    <>
+                      <span className="carousel-text-anime">
+                        {dataAnimeSeason.synopsis}
+                      </span>
+                      <br />
+                    </>
+                  )}
 
-            className="carousel-anime"
-            style={{
-              background: `url(${dataAnimeSeason.banner}) `,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "100%",
-              width: "100%",
-              height: "100%",
-              margin: "auto",
-            }}
-          >
-            <div className="gradient">
-              <div className="carousel-data">
-                <span className="carousel-title-anime">
-                  {dataAnimeSeason.title}
-                </span>
-                <br />
-                <span className="carousel-text-anime">
-                  {dataAnimeSeason.synopsis}
-                </span>
-                <br />
-                <Link to={"/sinopse"} onClick={() => setAnime(dataAnimeSeason)}>
-                  <button className="carousel-button">
-                    <PlayCircleOutlined
-                      style={{
-                        marginRight: "1rem",
-                        fontSize: "1rem",
-                        color: "red",
-                      }}
-                    />
-                    {"Detalhes..."}
-                  </button>
-                </Link>
+                  <Link
+                    to={"/sinopse"}
+                    onClick={() => setAnime(dataAnimeSeason)}
+                  >
+                    <button className="carousel-button">
+                      <PlayCircleOutlined
+                        style={{
+                          marginRight: "1rem",
+                          fontSize: "1rem",
+                          color: "red",
+                        }}
+                      />
+                      {"Detalhes..."}
+                    </button>
+                  </Link>
 
-                <PlayCircleOutlined className="carousel-icon" />
-                <span style={{ color: "#fff", marginLeft: "1%" }}>
-                  {dataAnimeSeason.type}
-                </span>
+                  <PlayCircleOutlined className="carousel-icon" />
+                  <span style={{ color: "#fff", marginLeft: "1%" }}>
+                    {dataAnimeSeason.type}
+                  </span>
 
-                <ClockCircleOutlined className="carousel-icon" />
-                <span style={{ color: "#fff", marginLeft: "1%" }}>
-                  {dataAnimeSeason.duration}
-                </span>
-                <CalendarOutlined className="carousel-icon" />
-                <span style={{ color: "#fff", marginLeft: "1%" }}>
-                  {dataAnimeSeason.toYear}
-                </span>
+                  <ClockCircleOutlined className="carousel-icon" />
+                  <span style={{ color: "#fff", marginLeft: "1%" }}>
+                    {dataAnimeSeason.duration}
+                  </span>
+                  <CalendarOutlined className="carousel-icon" />
+                  <span style={{ color: "#fff", marginLeft: "1%" }}>
+                    {dataAnimeSeason.toYear}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div
+              className="carousel-anime"
+              style={{
+                background: `url(${dataAnimeSeason.banner}) `,
+                backgroundSize: "800px",
+                height: "58vh",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="gradient">
+                <div className="carousel-data">
+                  <span className="carousel-title-anime">
+                    {dataAnimeSeason.title}
+                  </span>
+                  <br />
+                  {window.innerWidth <= 768 ? (
+                    ""
+                  ) : (
+                    <>
+                      <span className="carousel-text-anime">
+                        {dataAnimeSeason.synopsis}
+                      </span>
+                      <br />
+                    </>
+                  )}
+
+                  <Link
+                    to={"/sinopse"}
+                    onClick={() => setAnime(dataAnimeSeason)}
+                  >
+                    <button className="carousel-button">
+                      <PlayCircleOutlined
+                        style={{
+                          marginRight: "1rem",
+                          fontSize: "1rem",
+                          color: "red",
+                        }}
+                      />
+                      {"Detalhes..."}
+                    </button>
+                  </Link>
+
+                  <PlayCircleOutlined className="carousel-icon" />
+                  <span style={{ color: "#fff", marginLeft: "1%" }}>
+                    {dataAnimeSeason.type}
+                  </span>
+
+                  <ClockCircleOutlined className="carousel-icon" />
+                  <span
+                    style={{
+                      color: "#fff",
+                      marginLeft: "1%",
+                    }}
+                  >
+                    {dataAnimeSeason.duration}
+                  </span>
+
+                  <CalendarOutlined className="carousel-icon" />
+                  <span style={{ color: "#fff", marginLeft: "1%" }}>
+                    {dataAnimeSeason.toYear}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
         </SwiperSlide>
       ))}
     </Swiper>

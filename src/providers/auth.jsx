@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { notification } from "antd";
-import { ThemeProvider } from "styled-components";
 
 const theme = {
   swiper: {
@@ -36,12 +35,12 @@ const AuthProvider = ({ children }) => {
   const [nameAnime, setNameAnime] = useState();
   const [search, setSearch] = useState([]);
   const [menuMobile, setMenuMobile] = useState("none");
-  const [imgs, setImgs] = useState([]);
+  // const [imgs, setImgs] = useState([]);
   const [valueInputAnimes, setValueInputAnimes] = useState("");
   const [colorStar, setColorStar] = useState("");
   const [animesRecommended, setAnimesRecommended] = useState([]);
   const [newEpisodes, setNewEpisodes] = useState([]);
-  const [animesSundays, setAnimesSundays] = useState([]);
+  // const [animesSundays, setAnimesSundays] = useState([]);
   const [visible, setVisible] = useState(false);
   const [visibleMenuLateral, setVisibleMenuLateral] = useState(false);
   const [topAnimes, setTopAnimes] = useState([]);
@@ -371,6 +370,13 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const randomAnime = () => {
+    const random = Math.floor(Math.random() * animesSeasons.length);
+    const randomm = animesSeasons[random];
+
+    setAnime(randomm);
+  };
+
   const colors = [
     "#002545",
     "#14808c", //
@@ -388,6 +394,8 @@ const AuthProvider = ({ children }) => {
   const randomIndex = Math.floor(Math.random() * colors.length);
   const randomColor = colors[randomIndex];
 
+  
+
   return (
     <AuthContext.Provider
       value={{
@@ -401,13 +409,13 @@ const AuthProvider = ({ children }) => {
         character,
         nameAnime,
         menuMobile,
-        imgs,
+        // imgs,
         valueInputAnimes,
         colorStar,
         animesRecommended,
         newEpisodes,
         seasonsUpcoming,
-        animesSundays,
+        // animesSundays,
         theme,
         randomColor,
         visible,
@@ -433,6 +441,7 @@ const AuthProvider = ({ children }) => {
         showDrawer,
         showDrawerMenuLateral,
         onCloseMenuLateral,
+        randomAnime,
       }}
     >
       {children}

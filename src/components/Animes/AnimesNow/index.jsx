@@ -16,6 +16,7 @@ import { ContainerGenres } from "../../../styles/Genres/ContainerGenres/styles";
 import { TitleGenres } from "../../../styles/Genres/TitleGenres/styles";
 import { ContainerButton } from "../../../styles/StylesBasics/ContainerButton/styles";
 import { Genres } from "../../../styles/Genres/GenresItem/styles";
+import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
 
 import { Link } from "react-router-dom";
 import { StarOutlined } from "@ant-design/icons";
@@ -201,11 +202,11 @@ const Animes = () => {
         <span>Animes da Temporada</span>
       </Title>
 
-      <ContainerSwiper>
+      <ContainerSwiperMedium>
         <Swiper
           style={{
             heigth: "400px",
-            width: "70%",
+            width: "100%",
             marginLeft: "2%",
             marginTop: "3%",
           }}
@@ -220,64 +221,117 @@ const Animes = () => {
           }}
         >
           {filter.map((dataAnimeSeason) => (
-            <SwiperSlide key={`${idAnime}_${dataAnimeSeason.id}`}>
-              <Popover placement="top" content={content} title="Anime">
-                <Link to={"/sinopse"}>
-                  <ContainerSwiperSlide
-                    onMouseEnter={() => setDataAnime(dataAnimeSeason)}
-                  >
-                    <Slide
-                      onClick={() => setAnime(dataAnimeSeason)}
-                      style={{
-                        backgroundImage: `url(${dataAnimeSeason.image})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        width: "205px",
-                        height: "100px",
-                        opacity: "0.9",
-                      }}
-                    >
-                      <Description>
-                        {favorites.find(
-                          (favorite) => favorite.id === dataAnimeSeason.id
-                        ) && (
-                          <StarOutlined
-                            style={{
-                              color: "#fffb57",
-                              fontSize: "30px",
-                              display: "flex",
-                              justifyContent: "end",
-                            }}
-                          />
-                        )}
-                      </Description>
-                    </Slide>
-                    <NameAnime>{dataAnimeSeason.title}</NameAnime>
+            <>
+              {window.innerWidth <= 768 ? (
+                <SwiperSlide
+                  key={`${idAnime}_${dataAnimeSeason.id}`}
+                  style={{ marginLeft: "50%" }}
+                >
+                  <Popover placement="top" content={content} title="Anime">
+                    <Link to={"/sinopse"}>
+                      <ContainerSwiperSlide
+                        onMouseEnter={() => setDataAnime(dataAnimeSeason)}
+                      >
+                        <Slide
+                          onClick={() => setAnime(dataAnimeSeason)}
+                          style={{
+                            backgroundImage: `url(${dataAnimeSeason.image})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            width: "205px",
+                            height: "100px",
+                            opacity: "0.9",
+                          }}
+                        >
+                          <Description>
+                            {favorites.find(
+                              (favorite) => favorite.id === dataAnimeSeason.id
+                            ) && (
+                              <StarOutlined
+                                style={{
+                                  color: "#fffb57",
+                                  fontSize: "30px",
+                                  display: "flex",
+                                  justifyContent: "end",
+                                }}
+                              />
+                            )}
+                          </Description>
+                        </Slide>
+                        <NameAnime>{dataAnimeSeason.title}</NameAnime>
 
-                    <Description>
-                      <Button> Detalhes </Button>
-                    </Description>
-                  </ContainerSwiperSlide>
-                </Link>
-              </Popover>
-            </SwiperSlide>
+                        <Description>
+                          <Button> Detalhes </Button>
+                        </Description>
+                      </ContainerSwiperSlide>
+                    </Link>
+                  </Popover>
+                </SwiperSlide>
+              ) : (
+                <SwiperSlide key={`${idAnime}_${dataAnimeSeason.id}`}>
+                  <Popover placement="top" content={content} title="Anime">
+                    <Link to={"/sinopse"}>
+                      <ContainerSwiperSlide
+                        onMouseEnter={() => setDataAnime(dataAnimeSeason)}
+                      >
+                        <Slide
+                          onClick={() => setAnime(dataAnimeSeason)}
+                          style={{
+                            backgroundImage: `url(${dataAnimeSeason.image})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            width: "205px",
+                            height: "100px",
+                            opacity: "0.9",
+                          }}
+                        >
+                          <Description>
+                            {favorites.find(
+                              (favorite) => favorite.id === dataAnimeSeason.id
+                            ) && (
+                              <StarOutlined
+                                style={{
+                                  color: "#fffb57",
+                                  fontSize: "30px",
+                                  display: "flex",
+                                  justifyContent: "end",
+                                }}
+                              />
+                            )}
+                          </Description>
+                        </Slide>
+                        <NameAnime>{dataAnimeSeason.title}</NameAnime>
+
+                        <Description>
+                          <Button> Detalhes </Button>
+                        </Description>
+                      </ContainerSwiperSlide>
+                    </Link>
+                  </Popover>
+                </SwiperSlide>
+              )}
+            </>
           ))}
         </Swiper>
-        <ContainerGenres>
-          <TitleGenres color={color}>GÊNEROS</TitleGenres>
-          <button
-            style={{ color: "black", cursor: "pointer" }}
-            onClick={randomColor}
-          >
-            change color
-          </button>
-          <ContainerButton>
-            {buttons.map((button) => (
-              <Genres style={{ color: button.color }}>{button.genre}</Genres>
-            ))}
-          </ContainerButton>
-        </ContainerGenres>
-      </ContainerSwiper>
+        {window.innerWidth > 768 ? (
+          <ContainerGenres>
+            <TitleGenres color={color}>GÊNEROS</TitleGenres>
+            <button
+              style={{ color: "black", cursor: "pointer" }}
+              onClick={randomColor}
+            >
+              change color
+            </button>
+            <ContainerButton>
+              {buttons.map((button) => (
+                <Genres style={{ color: button.color }}>{button.genre}</Genres>
+              ))}
+            </ContainerButton>
+          </ContainerGenres>
+        ) : (
+          ""
+        )}
+      </ContainerSwiperMedium>
     </Container>
   );
 };

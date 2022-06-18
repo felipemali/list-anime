@@ -1,9 +1,9 @@
 .menu {
   display: flex;
-  /* box-shadow: 1px 2px 10px 3px #c20605; */
+  box-shadow: 1px 2px 10px 3px #c20605;
   color: #fff;
   width:100%;
-
+  /* border: 1px solid red; */
   overflow-x: hidden;
   background-color: #0a0a0a;
   position: fixed;
@@ -90,9 +90,9 @@ a:hover {
 }
 @media (min-width: 1003px) {
  
-  .menu-mobilee {
+  /* .menu-mobilee {
     display: none;
-  }
+  } */
   .menu-icons .icons {
     /* border: 1px solid gold; */
     font-size: 20px;
@@ -164,7 +164,10 @@ a:hover {
   }
 }
 @media (max-width: 768px) {
- 
+  .menu{
+    width: 72%;
+   
+  }
   .menu-icons {
     /* border: 1px solid gold; */
     display: flex;
@@ -180,6 +183,7 @@ a:hover {
   }
 }
 @media (max-width: 767px) {
+  
   .menu-icons {
     /* border: 1px solid gold; */
     display: flex;

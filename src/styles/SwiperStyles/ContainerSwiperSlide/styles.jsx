@@ -11,6 +11,6 @@ export const ContainerSwiperSlide = styled.div`
 
   @media (max-width: 425px) {
     width: 220px;
-    height: 360px;
+    height: 415px;
   }
 `;

@@ -28,10 +28,7 @@ const AnimesRecommended = () => {
   const { animesRecommended, setNameAnime, favorites } =
     useContext(AuthContext);
 
-  const [displayIcon, setDisPlayIcon] = useState("none");
   const [dataAnime, setDataAnime] = useState([]);
-  const animesRecommended_id = "animeRecommended";
-  const a = 1;
 
   SwiperCore.use([Autoplay]);
 
@@ -79,47 +76,90 @@ const AnimesRecommended = () => {
           slidesPerView={3.9}
           navigation
         >
-          {/* display: `${displayIcon}`, */}
-          {/* key={`${animesRecommended_id}_${recommended.id}`} */}
           {animesRecommended.map((recommended) => (
-            <SwiperSlide>
-              <Popover placement="top" content={content} title="Anime">
-                <Link to={"/sinopse"}>
-                  <ContainerSwiperSlide
-                    onMouseEnter={() => setDataAnime(recommended)}
-                  >
-                    <Slide
-                      onClick={() => setNameAnime(recommended.title)}
-                      // onMouseLeave={() => setDisPlayIcon("inline")}
-                      style={{
-                        backgroundImage: `url(${recommended.image})`,
-                      }}
-                    >
-                      {/* <PlayCircleOutlined /> */}
-                    </Slide>
-                    <Description>
-                      {favorites.find(
-                        (favorite) => favorite.name === recommended.title
-                      ) && (
-                        <StarOutlined
-                          style={{
-                            color: "gold",
-                            fontSize: "40px",
-                            display: "flex",
-                            justifyContent: "end",
-                          }}
-                        />
-                      )}
-                    </Description>
-                    <NameAnime>{recommended.title}</NameAnime>
+            <>
+              {/* aqui tem um if */}
 
-                    <Description>
-                      <Button> Detalhes </Button>
-                    </Description>
-                  </ContainerSwiperSlide>
-                </Link>
-              </Popover>
-            </SwiperSlide>
+              {window.innerWidth <= 768 ? (
+                <SwiperSlide style={{ marginLeft: "50%" }}>
+                  <Popover placement="top" content={content} title="Anime">
+                    <Link to={"/sinopse"}>
+                      <ContainerSwiperSlide
+                        onMouseEnter={() => setDataAnime(recommended)}
+                      >
+                        <Slide
+                          onClick={() => setNameAnime(recommended.title)}
+                          // onMouseLeave={() => setDisPlayIcon("inline")}
+                          style={{
+                            backgroundImage: `url(${recommended.image})`,
+                          }}
+                        >
+                          {/* <PlayCircleOutlined /> */}
+                        </Slide>
+                        <Description>
+                          {favorites.find(
+                            (favorite) => favorite.name === recommended.title
+                          ) && (
+                            <StarOutlined
+                              style={{
+                                color: "gold",
+                                fontSize: "40px",
+                                display: "flex",
+                                justifyContent: "end",
+                              }}
+                            />
+                          )}
+                        </Description>
+                        <NameAnime>{recommended.title}</NameAnime>
+
+                        <Description>
+                          <Button> Detalhes </Button>
+                        </Description>
+                      </ContainerSwiperSlide>
+                    </Link>
+                  </Popover>
+                </SwiperSlide>
+              ) : (
+                <SwiperSlide>
+                  <Popover placement="top" content={content} title="Anime">
+                    <Link to={"/sinopse"}>
+                      <ContainerSwiperSlide
+                        onMouseEnter={() => setDataAnime(recommended)}
+                      >
+                        <Slide
+                          onClick={() => setNameAnime(recommended.title)}
+                          // onMouseLeave={() => setDisPlayIcon("inline")}
+                          style={{
+                            backgroundImage: `url(${recommended.image})`,
+                          }}
+                        >
+                          {/* <PlayCircleOutlined /> */}
+                        </Slide>
+                        <Description>
+                          {favorites.find(
+                            (favorite) => favorite.name === recommended.title
+                          ) && (
+                            <StarOutlined
+                              style={{
+                                color: "gold",
+                                fontSize: "40px",
+                                display: "flex",
+                                justifyContent: "end",
+                              }}
+                            />
+                          )}
+                        </Description>
+                        <NameAnime>{recommended.title}</NameAnime>
+
+                        <Description>
+                          <Button> Detalhes </Button>
+                        </Description>
+                      </ContainerSwiperSlide>
+                    </Link>
+                  </Popover>
+                </SwiperSlide>
+              )}
+            </>
           ))}
         </Swiper>
       </ContainerSwiperMedium>

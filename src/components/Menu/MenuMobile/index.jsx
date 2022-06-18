@@ -58,7 +58,7 @@ const MenuMobile = () => {
             paddingBottom: "1em",
           }}
         >
-          <div className="div-menu-input-sx">
+          {/* <div className="div-menu-input-sx">
             <Link to={"/"}>
               <SearchOutlined
                 onClick={() => {
@@ -75,7 +75,7 @@ const MenuMobile = () => {
               type="text"
               placeholder="Buscar por Animes"
             />
-          </div>
+          </div> */}
         </div>
         <div className="menu-mobile-buttons">
           {buttons.map((button) => (

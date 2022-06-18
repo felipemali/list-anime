@@ -1,7 +1,7 @@
 .position-anime{
     display: flex;  
     max-width: 1100px;
-    margin: 5rem auto;
+    margin: 5rem;
     
 }
 .position-anime h2{
@@ -66,4 +66,19 @@
 }
 .top-animes button:hover{
     background-color: #64a6ec;
+}
+@media (max-width: 768px){
+    .top-animes-title{
+       color: gold;
+       margin-left: 3rem;
+       margin-top: 3rem;
+    }
+    .position-anime{
+        margin: 0.5rem auto;
+        
+        
+    }
+    .container-top-animes-details{
+        width: 30%;
+    }
 }

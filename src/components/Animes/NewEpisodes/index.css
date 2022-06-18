@@ -276,6 +276,10 @@ div.swiper-button-next:hover {
 }
 
 @media (max-width: 425px){
+  .swiperSlide-anime {
+   
+    min-height: 250px;
+  }
   .div-swiperSlide-new-episodes{
     width: 220px;
     height: 360px;

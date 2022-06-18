@@ -70,7 +70,7 @@ const NewEpisodes = () => {
                         width: "200px",
                         height: "100px",
                       }}
-                    ></div>{" "}
+                    ></div>
                     <span className="new-episodes-name-anime">
                       {newEpisodes.title}
                     </span>
