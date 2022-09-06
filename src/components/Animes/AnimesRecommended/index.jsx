@@ -1,9 +1,7 @@
 import React, { useContext, useState } from "react";
-
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Container } from "../../../styles/Container/styles";
 import { Title } from "../../../styles/StylesBasics/Title/styles";
 import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
@@ -12,23 +10,23 @@ import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
 import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
 import { Description } from "../../../styles/DescriptionAnime/Description/styles";
 import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
-
 import { Link } from "react-router-dom";
 import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
-
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
-
 import { AuthContext } from "../../../providers/auth";
+import { GetAnimesRecommended } from "../../../api/animes";
+import { routes } from "../../../routes/routes";
 
 const AnimesRecommended = () => {
-  const { animesRecommended, setNameAnime, favorites } =
-    useContext(AuthContext);
+  const { setNameAnime, favorites } = useContext(AuthContext);
 
   const [dataAnime, setDataAnime] = useState([]);
+
+  const animesRecommended = GetAnimesRecommended();
 
   SwiperCore.use([Autoplay]);
 
@@ -60,6 +58,7 @@ const AnimesRecommended = () => {
       </div>
     </>
   );
+  const { path } = routes.infoAnime;
 
   return (
     <Container>
@@ -76,68 +75,25 @@ const AnimesRecommended = () => {
           slidesPerView={3.9}
           navigation
         >
-          {animesRecommended.map((recommended) => (
-            <>
-              {/* aqui tem um if */}
-
-              {window.innerWidth <= 768 ? (
-                <SwiperSlide style={{ marginLeft: "50%" }}>
-                  <Popover placement="top" content={content} title="Anime">
-                    <Link to={"/sinopse"}>
-                      <ContainerSwiperSlide
-                        onMouseEnter={() => setDataAnime(recommended)}
-                      >
-                        <Slide
-                          onClick={() => setNameAnime(recommended.title)}
-                          // onMouseLeave={() => setDisPlayIcon("inline")}
-                          style={{
-                            backgroundImage: `url(${recommended.image})`,
-                          }}
-                        >
-                          {/* <PlayCircleOutlined /> */}
-                        </Slide>
-                        <Description>
-                          {favorites.find(
-                            (favorite) => favorite.name === recommended.title
-                          ) && (
-                            <StarOutlined
-                              style={{
-                                color: "gold",
-                                fontSize: "40px",
-                                display: "flex",
-                                justifyContent: "end",
-                              }}
-                            />
-                          )}
-                        </Description>
-                        <NameAnime>{recommended.title}</NameAnime>
-
-                        <Description>
-                          <Button> Detalhes </Button>
-                        </Description>
-                      </ContainerSwiperSlide>
-                    </Link>
-                  </Popover>
-                </SwiperSlide>
-              ) : (
+          {animesRecommended.map((recomendaded) => {
+            const { title, image } = recomendaded;
+            return (
+              <>
                 <SwiperSlide>
                   <Popover placement="top" content={content} title="Anime">
-                    <Link to={"/sinopse"}>
+                    <Link to={path}>
                       <ContainerSwiperSlide
-                        onMouseEnter={() => setDataAnime(recommended)}
+                        onMouseEnter={() => setDataAnime(recomendaded)}
                       >
                         <Slide
-                          onClick={() => setNameAnime(recommended.title)}
-                          // onMouseLeave={() => setDisPlayIcon("inline")}
+                          onClick={() => setNameAnime(title)}
                           style={{
-                            backgroundImage: `url(${recommended.image})`,
+                            backgroundImage: `url(${image})`,
                           }}
-                        >
-                          {/* <PlayCircleOutlined /> */}
-                        </Slide>
+                        ></Slide>
                         <Description>
                           {favorites.find(
-                            (favorite) => favorite.name === recommended.title
+                            (favorite) => favorite.name === title
                           ) && (
                             <StarOutlined
                               style={{
@@ -149,7 +105,7 @@ const AnimesRecommended = () => {
                             />
                           )}
                         </Description>
-                        <NameAnime>{recommended.title}</NameAnime>
+                        <NameAnime>{title}</NameAnime>
 
                         <Description>
                           <Button> Detalhes </Button>
@@ -158,9 +114,9 @@ const AnimesRecommended = () => {
                     </Link>
                   </Popover>
                 </SwiperSlide>
-              )}
-            </>
-          ))}
+              </>
+            );
+          })}
         </Swiper>
       </ContainerSwiperMedium>
     </Container>

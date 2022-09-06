@@ -18,7 +18,7 @@ const DrawerMenuLateral = () => {
         <MenuOutlined
           style={{ fontSize: "20px", marginLeft: "90%" }}
           type="primary"
-          onMouseEnter={showDrawerMenuLateral}
+          onClick={showDrawerMenuLateral}
         />
       </Space>
       <Drawer

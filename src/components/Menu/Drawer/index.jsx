@@ -2,14 +2,20 @@ import React, { useContext, useState } from "react";
 
 import { Drawer, Space } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import ListWatch from "../../Menu/ListWatch";
+import SearchAnimeMenu from "../../../page/SearchAnimeMenu";
 
 import { AuthContext } from "../../../providers/auth";
 
 const Drawerr = () => {
-  const { onClose, visible, showDrawer } = useContext(AuthContext);
-
   const [placement, setPlacement] = useState("top");
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
     <>
@@ -36,7 +42,7 @@ const Drawerr = () => {
         //   </Space>
         // }
       >
-        <ListWatch />
+        <SearchAnimeMenu />
       </Drawer>
     </>
   );

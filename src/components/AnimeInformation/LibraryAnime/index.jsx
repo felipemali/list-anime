@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-
 import { Divider } from "antd";
 import {
   PlusOutlined,
   CheckCircleOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
-
 import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 

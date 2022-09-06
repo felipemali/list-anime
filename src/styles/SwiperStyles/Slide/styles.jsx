@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { PlayCircleOutlined } from "@ant-design/icons";
 
 export const Slide = styled.div`
   height: 100%;
@@ -12,10 +11,4 @@ export const Slide = styled.div`
   width: 205px;
   height: 100px;
   cursor: pointer;
-
-  & :hover ${PlayCircleOutlined} {
-    color: red;
-    font-size: 100px;
-    padding-top: 1em;
-  }
 `;

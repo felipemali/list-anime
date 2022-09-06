@@ -1,0 +1,161 @@
+.search {
+ 
+  max-width: 1444px;
+  margin: auto;
+  padding-bottom: 15%;
+  
+  
+}
+@keyframes slidee {
+  from {
+   
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.search-title{
+ text-align: center;
+  padding: 1%;
+  background-color: rgb(236, 108, 108);
+  color: #f0f8ff;
+  border-bottom: 1px solid #505562;
+  border-radius: 5px 5px;
+  
+  margin-top: 5em;
+}
+
+.div-search-input{
+  background-color: rgb(221, 218, 218);
+  color: #fff;
+  display: flex;
+  border-radius: 5px 5px;
+}
+.div-search-input:target{
+  border: 1px solid #fff;
+}
+.search-input{
+  width: 100%;
+  font-size: 17px;
+  border: none;
+  padding: 1%;
+  background-color: rgb(221, 218, 218);
+  text-align: center;
+  border-radius: 5px 5px;
+  color: #000;
+}
+input:focus{
+  outline: 0;
+}
+input::placeholder{
+  background-color: rgb(221, 218, 218);
+text-align: center;
+
+}
+.search-icon-search{
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-right: 0.3em;
+  cursor: pointer;
+}
+.search-genres{
+  background-color: #434857;
+  color: #f0f8ff;
+  padding: 0.5%;
+  text-align: center;
+  margin-top: 3%;
+  border-radius: 5px 5px;
+}
+.search-icon-close{
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  font-size: 22px;
+  
+}
+.search-buttons{
+  background-color: #434857;
+  color: #fff;
+  margin-top: 0.2%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-buttons button{
+  background-color: #434857;
+  color: #f0f8ff;
+  border:1px solid #505562;
+  border-radius: 5px 5px;
+  font-size: 15px;
+  padding: 1%;
+  width: 20%;
+  cursor: pointer;
+}
+.search-buttons button:hover{
+  background-color: #393c47;
+}
+
+.search-title-result{ 
+  color: #000;
+  padding: 1%;
+  font-size: 25px;
+  margin-top: 0.2%;
+  font-family: Montserrat,sans-serif;
+}
+.search-anime-found{
+  border: 10px solid #515255;
+  background-color: #515255;
+  width: 245px;
+  margin-top: 0.4%;
+  margin-left: 3%;
+  cursor: pointer;
+  animation-timing-function: ease;
+  transition: all 0.4s;
+
+
+}
+.search-anime-found:hover{
+  transform: scale(1.04);
+}
+.search-info-anime-found{
+  display: flex;
+  justify-content: center;
+  padding: 4%;
+  color: #fff;
+}
+.results-found{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.search-info-animes{
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  font-size: 16px;
+  text-Align: center; 
+}
+.search-animes-found{
+  border: 10px solid #515255;
+  background-color: #515255;
+  border-radius: 10px 10px;
+  margin-top: 3%;
+  margin-Left: 3%;
+  animation-timing-function: ease;
+  transition: all 0.4s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.search-animes-found:hover{
+  transform: translateY(5px);
+ 
+ 
+}
+
+.list-watch-swiper{
+  border: 1px solid red;
+}
+

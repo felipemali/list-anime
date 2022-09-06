@@ -78,11 +78,14 @@ const MenuMobile = () => {
           </div> */}
         </div>
         <div className="menu-mobile-buttons">
-          {buttons.map((button) => (
-            <button key={button.id} className="buttons">
-              {button.buttonn}
-            </button>
-          ))}
+          {buttons.map((button) => {
+            const { id, buttonn } = button;
+            return (
+              <button key={id} className="buttons">
+                {buttonn}
+              </button>
+            );
+          })}
         </div>
       </div>
     </>

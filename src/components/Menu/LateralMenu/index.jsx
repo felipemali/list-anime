@@ -13,6 +13,7 @@ import {
 
 import { AuthContext } from "../../../providers/auth";
 import "./index.css";
+import { routes } from "../../../routes/routes";
 
 const { SubMenu } = Menu;
 
@@ -100,6 +101,7 @@ const LateralMenu = () => {
   const menu = () => {
     menuSize == "70px" ? setMenuSize("370px") : setMenuSize("70px");
   };
+  const { path } = routes.infoAnime;
 
   return (
     <>
@@ -121,52 +123,55 @@ const LateralMenu = () => {
             icon={<UndoOutlined />}
             title="Assistindo"
           >
-            {animesWatching?.map((anime) => (
-              <div key={`${animesWatching_id}_${anime.id}`}>
-                <div className="div-lateral-menu-item">
-                  <Link to={"/sinopse"}>
-                    <Menu.Item
-                      className="lateral-menu-item"
-                      // key={}
+            {animesWatching?.map((anime) => {
+              const { id, name } = anime;
+              return (
+                <div key={`watching_${id}`}>
+                  <div className="div-lateral-menu-item">
+                    <Link to={path}>
+                      <Menu.Item
+                        className="lateral-menu-item"
+                        // key={}
+                        onClick={() => {
+                          setNameAnime(name);
+                        }}
+                      >
+                        <span className="lateral-menu-name">{name}</span>
+                      </Menu.Item>
+                    </Link>
+
+                    <DeleteOutlined
+                      style={{
+                        marginLeft: "1em",
+                        margin: "auto 0px",
+                      }}
                       onClick={() => {
-                        setNameAnime(anime.name);
+                        showModal();
+                        setModalText(`Deseja excluir ${name}?`);
+                        setColorText({ color: "#5e1403", size: "18px" });
+                      }}
+                    />
+                    {/* <div className="menu-lateral-data"></div> */}
+                  </div>
+                  <Modal
+                    title={<DeleteOutlined />}
+                    visible={visible}
+                    onOk={() => handleOkWatching(anime)}
+                    confirmLoading={confirmLoading}
+                    onCancel={handleCancel}
+                  >
+                    <p
+                      style={{
+                        color: `${colorText.color}`,
+                        fontSize: `${colorText.size}`,
                       }}
                     >
-                      <span className="lateral-menu-name">{anime.name}</span>
-                    </Menu.Item>
-                  </Link>
-
-                  <DeleteOutlined
-                    style={{
-                      marginLeft: "1em",
-                      margin: "auto 0px",
-                    }}
-                    onClick={() => {
-                      showModal();
-                      setModalText(`Deseja excluir ${anime.name}?`);
-                      setColorText({ color: "#5e1403", size: "18px" });
-                    }}
-                  />
-                  {/* <div className="menu-lateral-data"></div> */}
+                      {modalText}
+                    </p>
+                  </Modal>
                 </div>
-                <Modal
-                  title={<DeleteOutlined />}
-                  visible={visible}
-                  onOk={() => handleOkWatching(anime)}
-                  confirmLoading={confirmLoading}
-                  onCancel={handleCancel}
-                >
-                  <p
-                    style={{
-                      color: `${colorText.color}`,
-                      fontSize: `${colorText.size}`,
-                    }}
-                  >
-                    {modalText}
-                  </p>
-                </Modal>
-              </div>
-            ))}
+              );
+            })}
           </SubMenu>
 
           <SubMenu
@@ -177,52 +182,55 @@ const LateralMenu = () => {
             icon={<CheckCircleOutlined style={{ color: "green" }} />}
             title="Completo"
           >
-            {animesComplete?.map((anime) => (
-              <>
-                <div className="div-lateral-menu-item">
-                  <Link to={"/sinopse"}>
-                    <Menu.Item
-                      className="lateral-menu-item"
-                      // key={}
+            {animesComplete?.map((anime) => {
+              const { name, id } = anime;
+              return (
+                <>
+                  <div className="div-lateral-menu-item" key={`Complete_${id}`}>
+                    <Link to={path}>
+                      <Menu.Item
+                        className="lateral-menu-item"
+                        // key={}
+                        onClick={() => {
+                          setNameAnime(name);
+                        }}
+                      >
+                        <span className="lateral-menu-name">{name}</span>
+                      </Menu.Item>
+                    </Link>
+
+                    <DeleteOutlined
+                      style={{
+                        marginLeft: "1em",
+                        margin: "auto 0px",
+                      }}
                       onClick={() => {
-                        setNameAnime(anime.name);
+                        showModal();
+                        setModalText(`Deseja excluir ${name}?`);
+                        setColorText({ color: "#5e1403", size: "18px" });
+                      }}
+                    />
+                    {/* <div className="menu-lateral-data"></div> */}
+                  </div>
+                  <Modal
+                    title={<DeleteOutlined />}
+                    visible={visible}
+                    onOk={() => handleOkComplete(anime)}
+                    confirmLoading={confirmLoading}
+                    onCancel={handleCancel}
+                  >
+                    <p
+                      style={{
+                        color: `${colorText.color}`,
+                        fontSize: `${colorText.size}`,
                       }}
                     >
-                      <span className="lateral-menu-name">{anime.name}</span>
-                    </Menu.Item>
-                  </Link>
-
-                  <DeleteOutlined
-                    style={{
-                      marginLeft: "1em",
-                      margin: "auto 0px",
-                    }}
-                    onClick={() => {
-                      showModal();
-                      setModalText(`Deseja excluir ${anime.name}?`);
-                      setColorText({ color: "#5e1403", size: "18px" });
-                    }}
-                  />
-                  {/* <div className="menu-lateral-data"></div> */}
-                </div>
-                <Modal
-                  title={<DeleteOutlined />}
-                  visible={visible}
-                  onOk={() => handleOkComplete(anime)}
-                  confirmLoading={confirmLoading}
-                  onCancel={handleCancel}
-                >
-                  <p
-                    style={{
-                      color: `${colorText.color}`,
-                      fontSize: `${colorText.size}`,
-                    }}
-                  >
-                    {modalText}
-                  </p>
-                </Modal>
-              </>
-            ))}
+                      {modalText}
+                    </p>
+                  </Modal>
+                </>
+              );
+            })}
           </SubMenu>
 
           <SubMenu
@@ -233,52 +241,55 @@ const LateralMenu = () => {
             icon={<CloseCircleOutlined style={{ color: "red" }} />}
             title="Dropado"
           >
-            {animesDrop?.map((anime) => (
-              <div key={`${animesDrop_id}_${anime.id}`}>
-                <div className="div-lateral-menu-item">
-                  <Link to={"/sinopse"}>
-                    <Menu.Item
-                      className="lateral-menu-item"
-                      // key={}
+            {animesDrop?.map((anime) => {
+              const { id, name } = anime;
+              return (
+                <div key={`drop_${id}`}>
+                  <div className="div-lateral-menu-item">
+                    <Link to={path}>
+                      <Menu.Item
+                        className="lateral-menu-item"
+                        // key={}
+                        onClick={() => {
+                          setNameAnime(name);
+                        }}
+                      >
+                        <span className="lateral-menu-name">{name}</span>
+                      </Menu.Item>
+                    </Link>
+
+                    <DeleteOutlined
+                      style={{
+                        marginLeft: "1em",
+                        margin: "auto 0px",
+                      }}
                       onClick={() => {
-                        setNameAnime(anime.name);
+                        showModal();
+                        setModalText(`Deseja excluir ${name}?`);
+                        setColorText({ color: "#5e1403", size: "18px" });
+                      }}
+                    />
+                    {/* <div className="menu-lateral-data"></div> */}
+                  </div>
+                  <Modal
+                    title={<DeleteOutlined />}
+                    visible={visible}
+                    onOk={() => handleOkDrop(anime)}
+                    confirmLoading={confirmLoading}
+                    onCancel={handleCancel}
+                  >
+                    <p
+                      style={{
+                        color: `${colorText.color}`,
+                        fontSize: `${colorText.size}`,
                       }}
                     >
-                      <span className="lateral-menu-name">{anime.name}</span>
-                    </Menu.Item>
-                  </Link>
-
-                  <DeleteOutlined
-                    style={{
-                      marginLeft: "1em",
-                      margin: "auto 0px",
-                    }}
-                    onClick={() => {
-                      showModal();
-                      setModalText(`Deseja excluir ${anime.name}?`);
-                      setColorText({ color: "#5e1403", size: "18px" });
-                    }}
-                  />
-                  {/* <div className="menu-lateral-data"></div> */}
+                      {modalText}
+                    </p>
+                  </Modal>
                 </div>
-                <Modal
-                  title={<DeleteOutlined />}
-                  visible={visible}
-                  onOk={() => handleOkDrop(anime)}
-                  confirmLoading={confirmLoading}
-                  onCancel={handleCancel}
-                >
-                  <p
-                    style={{
-                      color: `${colorText.color}`,
-                      fontSize: `${colorText.size}`,
-                    }}
-                  >
-                    {modalText}
-                  </p>
-                </Modal>
-              </div>
-            ))}
+              );
+            })}
           </SubMenu>
 
           <SubMenu
@@ -290,52 +301,55 @@ const LateralMenu = () => {
             icon={<StarOutlined style={{ color: "rgb(158, 139, 29)" }} />}
             title="Preferidos"
           >
-            {favorites?.map((anime) => (
-              <div key={`${favorites_id}_${anime.id}`}>
-                <div className="div-lateral-menu-item">
-                  <Link to={"/sinopse"}>
-                    <Menu.Item
-                      className="lateral-menu-item"
-                      // key={}
+            {favorites?.map((anime) => {
+              const { id, name } = anime;
+              return (
+                <div key={`favorites_${id}`}>
+                  <div className="div-lateral-menu-item">
+                    <Link to={path}>
+                      <Menu.Item
+                        className="lateral-menu-item"
+                        // key={}
+                        onClick={() => {
+                          setNameAnime(name);
+                        }}
+                      >
+                        <span className="lateral-menu-name">{name}</span>
+                      </Menu.Item>
+                    </Link>
+
+                    <DeleteOutlined
+                      style={{
+                        marginLeft: "1em",
+                        margin: "auto 0px",
+                      }}
                       onClick={() => {
-                        setNameAnime(anime.name);
+                        showModal();
+                        setModalText(`Deseja excluir ${name}?`);
+                        setColorText({ color: "#5e1403", size: "18px" });
+                      }}
+                    />
+                    {/* <div className="menu-lateral-data"></div> */}
+                  </div>
+                  <Modal
+                    title={<DeleteOutlined />}
+                    visible={visible}
+                    onOk={() => handleOk(id)}
+                    confirmLoading={confirmLoading}
+                    onCancel={handleCancel}
+                  >
+                    <p
+                      style={{
+                        color: `${colorText.color}`,
+                        fontSize: `${colorText.size}`,
                       }}
                     >
-                      <span className="lateral-menu-name">{anime.name}</span>
-                    </Menu.Item>
-                  </Link>
-
-                  <DeleteOutlined
-                    style={{
-                      marginLeft: "1em",
-                      margin: "auto 0px",
-                    }}
-                    onClick={() => {
-                      showModal();
-                      setModalText(`Deseja excluir ${anime.name}?`);
-                      setColorText({ color: "#5e1403", size: "18px" });
-                    }}
-                  />
-                  {/* <div className="menu-lateral-data"></div> */}
+                      {modalText}
+                    </p>
+                  </Modal>
                 </div>
-                <Modal
-                  title={<DeleteOutlined />}
-                  visible={visible}
-                  onOk={() => handleOk(anime.id)}
-                  confirmLoading={confirmLoading}
-                  onCancel={handleCancel}
-                >
-                  <p
-                    style={{
-                      color: `${colorText.color}`,
-                      fontSize: `${colorText.size}`,
-                    }}
-                  >
-                    {modalText}
-                  </p>
-                </Modal>
-              </div>
-            ))}
+              );
+            })}
           </SubMenu>
         </Menu>
       </div>

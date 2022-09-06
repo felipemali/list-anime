@@ -12,14 +12,15 @@ import { Popover } from "antd";
 
 import { AuthContext } from "../../../providers/auth";
 import "./index.css";
+import { GetNewEpisodes } from "../../../api/newEpisodes";
 
 const NewEpisodes = () => {
-  const { newEpisodes, valueInputAnimes, setValueInputAnimes } =
-    useContext(AuthContext);
+  const { valueInputAnimes, setValueInputAnimes } = useContext(AuthContext);
 
   const [dataAnime, setDataAnime] = useState([]);
 
   SwiperCore.use([Autoplay]);
+  const newEpisodes = GetNewEpisodes();
 
   const filter = newEpisodes.filter((anime) => {
     return anime.title.toLowerCase().includes(valueInputAnimes);
@@ -53,9 +54,10 @@ const NewEpisodes = () => {
             disableOnInteraction: true,
           }}
         >
-          {filter.map((newEpisodes) => (
-            <>
-              <SwiperSlide className="slide" key={newEpisodes.id}>
+          {filter.map((newEpisodes) => {
+            const { id, image, title } = newEpisodes;
+            return (
+              <SwiperSlide className="slide" key={id}>
                 <Popover placement="top" content={content} title="Anime">
                   <div
                     className="div-swiperSlide-new-episodes"
@@ -64,22 +66,20 @@ const NewEpisodes = () => {
                     <div
                       className="swiperSlide-anime"
                       style={{
-                        backgroundImage: `url(${newEpisodes.image})`,
+                        backgroundImage: `url(${image})`,
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
                         width: "200px",
                         height: "100px",
                       }}
                     ></div>
-                    <span className="new-episodes-name-anime">
-                      {newEpisodes.title}
-                    </span>
+                    <span className="new-episodes-name-anime">{title}</span>
                     <button className="button-details">Detalhes</button>
                   </div>
                 </Popover>
               </SwiperSlide>
-            </>
-          ))}
+            );
+          })}
         </Swiper>
       </div>
     </div>

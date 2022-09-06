@@ -43,6 +43,10 @@
   color: #fff;
   margin-left: 3%;
 }
+.carousel-data{
+  color: #fff;
+   margin-left: 1%
+}
 .gradient {
   background: linear-gradient(to top right, #000000, #000000);
   width: 100%;

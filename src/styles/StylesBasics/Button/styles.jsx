@@ -10,4 +10,6 @@ export const Button = styled.button`
   color: #000;
   border-radius: 5px 5px;
   border: none;
+
+
 `;

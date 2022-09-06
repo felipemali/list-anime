@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const ContainerSwiperMedium = styled.div`
-  width: 80%;
+export const ContainerAnimeSeason = styled.div`
+  width: 100%;
   height: 40%;
   margin-left: auto;
   margin-right: auto;
@@ -9,7 +9,6 @@ export const ContainerSwiperMedium = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 2%;
-  /* border: 1px solid red; */
   @media (max-width: 1024px) {
     width: 90%;
   }

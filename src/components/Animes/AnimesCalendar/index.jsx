@@ -3,10 +3,14 @@ import { AuthContext } from "../../../providers/auth";
 import { CaretRightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./index.css";
+import { GetAnimesSeasons } from "../../../api/animes";
+import { routes } from "../../../routes/routes";
 
 const AnimesCalendar = () => {
-  const { animesSeasons, setAnime } = useContext(AuthContext);
+  const { setAnime } = useContext(AuthContext);
   const [selectedDay, setSelectedDay] = useState();
+
+  const animeSeason = GetAnimesSeasons();
 
   const animesCalendar_id = "calendar";
   const buttons = [
@@ -18,6 +22,7 @@ const AnimesCalendar = () => {
     { pt: "Sábado", en: "Saturdays" },
     { pt: "Domingo", en: "Sunday" },
   ];
+  const { path } = routes.infoAnime;
 
   return (
     <div className="animes-calendar">
@@ -29,22 +34,25 @@ const AnimesCalendar = () => {
           ))}
         </div>
         {selectedDay &&
-          animesSeasons
+          animeSeason
             .filter((anime) => anime.day === selectedDay.en)
-            .map((anime) => (
-              <div className="anime-calendar-animes">
-                <div>
-                  <img src={anime.small_image} alt="" />
-                  <span>{anime.title}</span>
+            .map((anime) => {
+              const { small_image, title } = anime;
+              return (
+                <div className="anime-calendar-animes">
+                  <div>
+                    <img src={small_image} alt="" />
+                    <span>{title}</span>
+                  </div>
+                  <Link to={path} onClick={() => setAnime(anime)}>
+                    <button>
+                      <CaretRightOutlined style={{ fontSize: "17px" }} />
+                      {""} Detalhes
+                    </button>
+                  </Link>
                 </div>
-                <Link to="/sinopse" onClick={() => setAnime(anime)}>
-                  <button>
-                    <CaretRightOutlined style={{ fontSize: "17px" }} />
-                    {""} Detalhes
-                  </button>
-                </Link>
-              </div>
-            ))}
+              );
+            })}
       </div>
     </div>
   );

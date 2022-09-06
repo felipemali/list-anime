@@ -17,15 +17,18 @@ import "./index.css";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/auth";
 import { Link } from "react-router-dom";
+import { GetAnimesSeasons } from "../../api/animes";
+import { routes } from "../../routes/routes";
 
 const Carousell = () => {
-  const { animesSeasons, setAnime } = useContext(AuthContext);
+  const { setAnime } = useContext(AuthContext);
+
+  const animeSeason = GetAnimesSeasons();
+  const { path } = routes.infoAnime;
 
   SwiperCore.use([Autoplay]);
-  console.log(window.innerWidth);
   return (
     <Swiper
-      // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -34,13 +37,15 @@ const Carousell = () => {
         disableOnInteraction: true,
       }}
     >
-      {animesSeasons?.map((dataAnimeSeason) => (
-        <SwiperSlide key={dataAnimeSeason.id} style={{}}>
-          {window.innerWidth > 768 ? (
+      {animeSeason?.map((dataAnimeSeason) => {
+        const { id, banner, title, synopsis, type, duration, toYear } =
+          dataAnimeSeason;
+        return (
+          <SwiperSlide key={id} style={{}}>
             <div
               className="carousel-anime"
               style={{
-                background: `url(${dataAnimeSeason.banner}) `,
+                background: `url(${banner}) `,
                 backgroundSize: "100%",
                 backgroundRepeat: "no-repeat",
                 height: "80vh",
@@ -48,25 +53,14 @@ const Carousell = () => {
             >
               <div className="gradient">
                 <div className="carousel-data">
-                  <span className="carousel-title-anime">
-                    {dataAnimeSeason.title}
-                  </span>
+                  <span className="carousel-title-anime">{title}</span>
                   <br />
-                  {window.innerWidth <= 768 ? (
-                    ""
-                  ) : (
-                    <>
-                      <span className="carousel-text-anime">
-                        {dataAnimeSeason.synopsis}
-                      </span>
-                      <br />
-                    </>
-                  )}
+                  <>
+                    <span className="carousel-text-anime">{synopsis}</span>
+                    <br />
+                  </>
 
-                  <Link
-                    to={"/sinopse"}
-                    onClick={() => setAnime(dataAnimeSeason)}
-                  >
+                  <Link to={path} onClick={() => setAnime(dataAnimeSeason)}>
                     <button className="carousel-button">
                       <PlayCircleOutlined
                         style={{
@@ -78,91 +72,18 @@ const Carousell = () => {
                       {"Detalhes..."}
                     </button>
                   </Link>
-
                   <PlayCircleOutlined className="carousel-icon" />
-                  <span style={{ color: "#fff", marginLeft: "1%" }}>
-                    {dataAnimeSeason.type}
-                  </span>
-
+                  <span className="carousel-data">{type}</span>
                   <ClockCircleOutlined className="carousel-icon" />
-                  <span style={{ color: "#fff", marginLeft: "1%" }}>
-                    {dataAnimeSeason.duration}
-                  </span>
+                  <span className="carousel-data">{duration}</span>
                   <CalendarOutlined className="carousel-icon" />
-                  <span style={{ color: "#fff", marginLeft: "1%" }}>
-                    {dataAnimeSeason.toYear}
-                  </span>
+                  <span className="carousel-data">{toYear}</span>
                 </div>
               </div>
             </div>
-          ) : (
-            <div
-              className="carousel-anime"
-              style={{
-                background: `url(${dataAnimeSeason.banner}) `,
-                backgroundSize: "800px",
-                height: "58vh",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="gradient">
-                <div className="carousel-data">
-                  <span className="carousel-title-anime">
-                    {dataAnimeSeason.title}
-                  </span>
-                  <br />
-                  {window.innerWidth <= 768 ? (
-                    ""
-                  ) : (
-                    <>
-                      <span className="carousel-text-anime">
-                        {dataAnimeSeason.synopsis}
-                      </span>
-                      <br />
-                    </>
-                  )}
-
-                  <Link
-                    to={"/sinopse"}
-                    onClick={() => setAnime(dataAnimeSeason)}
-                  >
-                    <button className="carousel-button">
-                      <PlayCircleOutlined
-                        style={{
-                          marginRight: "1rem",
-                          fontSize: "1rem",
-                          color: "red",
-                        }}
-                      />
-                      {"Detalhes..."}
-                    </button>
-                  </Link>
-
-                  <PlayCircleOutlined className="carousel-icon" />
-                  <span style={{ color: "#fff", marginLeft: "1%" }}>
-                    {dataAnimeSeason.type}
-                  </span>
-
-                  <ClockCircleOutlined className="carousel-icon" />
-                  <span
-                    style={{
-                      color: "#fff",
-                      marginLeft: "1%",
-                    }}
-                  >
-                    {dataAnimeSeason.duration}
-                  </span>
-
-                  <CalendarOutlined className="carousel-icon" />
-                  <span style={{ color: "#fff", marginLeft: "1%" }}>
-                    {dataAnimeSeason.toYear}
-                  </span>
-                </div>
-              </div>
-            </div>
-          )}
-        </SwiperSlide>
-      ))}
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };
