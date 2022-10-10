@@ -2,14 +2,6 @@ import React, { useContext, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Container } from "../../../styles/Container/styles";
-import { Title } from "../../../styles/StylesBasics/Title/styles";
-import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
-import { Button } from "../../../styles/StylesBasics/Button/styles";
-import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
-import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
-import { Description } from "../../../styles/DescriptionAnime/Description/styles";
-import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
 import { Link } from "react-router-dom";
 import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
@@ -20,13 +12,14 @@ import "swiper/css";
 import { AuthContext } from "../../../providers/auth";
 import { GetAnimesRecommended } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
-
+import "./index.css";
 const AnimesRecommended = () => {
   const { setNameAnime, favorites } = useContext(AuthContext);
 
   const [dataAnime, setDataAnime] = useState([]);
 
   const animesRecommended = GetAnimesRecommended();
+  console.log(animesRecommended[0]);
 
   SwiperCore.use([Autoplay]);
 
@@ -61,12 +54,12 @@ const AnimesRecommended = () => {
   const { path } = routes.infoAnime;
 
   return (
-    <Container>
-      <Title>
+    <div id="container-animes-recommended">
+      <div id="title">
         <span>Animes Recomendados</span>
-      </Title>
+      </div>
 
-      <ContainerSwiperMedium>
+      <div id="container-swiper">
         <Swiper
           style={{ heigth: "400px" }}
           // install Swiper modules
@@ -76,22 +69,24 @@ const AnimesRecommended = () => {
           navigation
         >
           {animesRecommended.map((recomendaded) => {
-            const { title, image } = recomendaded;
+            const { title, image, id } = recomendaded;
             return (
-              <>
+              <div key={`animesRecommended-${id}`}>
                 <SwiperSlide>
                   <Popover placement="top" content={content} title="Anime">
                     <Link to={path}>
-                      <ContainerSwiperSlide
+                      <div
+                        id="container-swiperSlide"
                         onMouseEnter={() => setDataAnime(recomendaded)}
                       >
-                        <Slide
+                        <div
+                          id="slide"
                           onClick={() => setNameAnime(title)}
                           style={{
                             backgroundImage: `url(${image})`,
                           }}
-                        ></Slide>
-                        <Description>
+                        ></div>
+                        <div className="description">
                           {favorites.find(
                             (favorite) => favorite.name === title
                           ) && (
@@ -104,22 +99,22 @@ const AnimesRecommended = () => {
                               }}
                             />
                           )}
-                        </Description>
-                        <NameAnime>{title}</NameAnime>
+                        </div>
+                        <span className="title-slide">{title}</span>
 
-                        <Description>
-                          <Button> Detalhes </Button>
-                        </Description>
-                      </ContainerSwiperSlide>
+                        <div className="description">
+                          <button> Detalhes </button>
+                        </div>
+                      </div>
                     </Link>
                   </Popover>
                 </SwiperSlide>
-              </>
+              </div>
             );
           })}
         </Swiper>
-      </ContainerSwiperMedium>
-    </Container>
+      </div>
+    </div>
   );
 };
 export default AnimesRecommended;

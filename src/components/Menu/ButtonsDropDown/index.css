@@ -27,7 +27,7 @@
     padding: 0px 0.5em;
   }
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .menu-links {
     font-size: 18px;
     color: rgb(255, 255, 255);
@@ -40,6 +40,6 @@
     display: flex;
     flex-wrap: wrap;
 
-    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap; 
   }
-}
+} */

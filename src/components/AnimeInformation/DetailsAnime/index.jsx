@@ -2,6 +2,19 @@ import { Divider } from "antd";
 import React, { useContext } from "react";
 import { AuthContext } from "../../../providers/auth";
 
+// type Data = {
+//   title: string;
+//   title_japanese: string;
+//   episodes: number;
+//   duration: number;
+//   rank: number;
+//   favorites: number;
+//   origin: string;
+//   studio: string;
+//   fromYear: number;
+//   toYear: string;
+// };
+
 const DetailsAnime = () => {
   const { anime } = useContext(AuthContext);
 

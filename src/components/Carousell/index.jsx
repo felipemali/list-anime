@@ -25,10 +25,12 @@ const Carousell = () => {
 
   const animeSeason = GetAnimesSeasons();
   const { path } = routes.infoAnime;
+  const carousel = "carousel";
 
   SwiperCore.use([Autoplay]);
   return (
     <Swiper
+      className="carousel-anime-swiper"
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -41,14 +43,13 @@ const Carousell = () => {
         const { id, banner, title, synopsis, type, duration, toYear } =
           dataAnimeSeason;
         return (
-          <SwiperSlide key={id} style={{}}>
+          <SwiperSlide key={`${carousel}-${id}`} style={{}}>
             <div
               className="carousel-anime"
               style={{
                 background: `url(${banner}) `,
-                backgroundSize: "100%",
                 backgroundRepeat: "no-repeat",
-                height: "80vh",
+                backgroundSize: "100%",
               }}
             >
               <div className="gradient">
@@ -59,25 +60,20 @@ const Carousell = () => {
                     <span className="carousel-text-anime">{synopsis}</span>
                     <br />
                   </>
-
-                  <Link to={path} onClick={() => setAnime(dataAnimeSeason)}>
-                    <button className="carousel-button">
-                      <PlayCircleOutlined
-                        style={{
-                          marginRight: "1rem",
-                          fontSize: "1rem",
-                          color: "red",
-                        }}
-                      />
-                      {"Detalhes..."}
-                    </button>
-                  </Link>
-                  <PlayCircleOutlined className="carousel-icon" />
-                  <span className="carousel-data">{type}</span>
-                  <ClockCircleOutlined className="carousel-icon" />
-                  <span className="carousel-data">{duration}</span>
-                  <CalendarOutlined className="carousel-icon" />
-                  <span className="carousel-data">{toYear}</span>
+                  <div className="carousel-details">
+                    <Link to={path} onClick={() => setAnime(dataAnimeSeason)}>
+                      <button className="carousel-button">
+                        <PlayCircleOutlined className="icon-play" />
+                        {"Detalhes..."}
+                      </button>
+                    </Link>
+                    <PlayCircleOutlined className="carousel-icon" />
+                    <span className="carousel-data">{type}</span>
+                    <ClockCircleOutlined className="carousel-icon" />
+                    <span className="carousel-data">{duration}</span>
+                    <CalendarOutlined className="carousel-icon" />
+                    <span className="carousel-data">{toYear}</span>
+                  </div>
                 </div>
               </div>
             </div>

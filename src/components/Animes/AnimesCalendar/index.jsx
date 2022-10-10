@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/auth";
-import { CaretRightOutlined } from "@ant-design/icons";
+import { CaretRightOutlined, ContactsOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./index.css";
 import { GetAnimesSeasons } from "../../../api/animes";
@@ -12,34 +12,36 @@ const AnimesCalendar = () => {
 
   const animeSeason = GetAnimesSeasons();
 
-  const animesCalendar_id = "calendar";
   const buttons = [
-    { pt: "Segunda-feira", en: "Monday" },
-    { pt: "Terça-feira", en: "Tuesdays" },
-    { pt: "Quarta-feira", en: "Wednesdays" },
-    { pt: "Quinta-feira", en: "Thursdays" },
-    { pt: "Sexta-feira", en: "Fridays" },
-    { pt: "Sábado", en: "Saturdays" },
-    { pt: "Domingo", en: "Sunday" },
+    { pt: "Segunda", en: "Monday", id: "btMonday" },
+    { pt: "Terça", en: "Tuesdays", id: "btTuesdays" },
+    { pt: "Quarta", en: "Wednesdays", id: "btWednesdays" },
+    { pt: "Quinta", en: "Thursdays", id: "btThursdays" },
+    { pt: "Sexta", en: "Fridays", id: "btFridays" },
+    { pt: "Sábado", en: "Saturdays", id: "btSaturdays" },
+    { pt: "Domingo", en: "Sunday", id: "btSunday" },
   ];
   const { path } = routes.infoAnime;
 
   return (
     <div className="animes-calendar">
-      <div className="animes-calendar-title">Calendário da Semana</div>
+      <h1 className="animes-calendar-title">Calendário da Semana</h1>
       <div className="div-anime-calendar-buttons">
         <div className="anime-calendar-buttons">
           {buttons.map((button) => (
-            <button onClick={() => setSelectedDay(button)}>{button.pt}</button>
+            <button key={button.id} onClick={() => setSelectedDay(button)}>
+              {button.pt}
+            </button>
           ))}
         </div>
         {selectedDay &&
           animeSeason
             .filter((anime) => anime.day === selectedDay.en)
             .map((anime) => {
-              const { small_image, title } = anime;
+              const { small_image, title, id } = anime;
+              console.log(id);
               return (
-                <div className="anime-calendar-animes">
+                <div key={id} className="anime-calendar-animes">
                   <div>
                     <img src={small_image} alt="" />
                     <span>{title}</span>

@@ -1,17 +1,12 @@
-.anime {
+.new-episodes {
   animation-name: slidee;
   transform: translateY(-100px);
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  /* background: linear-gradient(360deg, #000000 0, rgba(32, 32, 34, 0) 99%); */
   background-color: #222629;
- 
   border-top: 0.1px solid #6d6969;
   border-radius: 50px 50px;
-  
-  /* 
-    display: flex; */
 }
 
 @keyframes slidee {
@@ -42,7 +37,6 @@ div.swiper-button-prev:hover {
   background-color: #0652a3;
 }
 div.swiper-button-next {
-  
   color: #fff;
   background-color: #2a2b31;
   height: 30%;
@@ -54,23 +48,16 @@ div.swiper-button-next:hover {
   background-color: #0652a3;
 }
 
-
-
-.div-title-new-episodes {
-  padding-top: 3%;
-  max-width: 300px;
-  margin-left: 16%;
-  font-size: 30px;
+.new-episodes h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 600;
   color: rgb(187, 165, 40);
-  background: rgba(32, 32, 34, 0);
-  font-family: "Staatliches", cursive !important;
-}
-.title-anime {
-  font-family: "Staatliches", cursive !important;
+  margin: 2% 0 1rem 14%;
 }
 
 .animes-input {
-  
   outline: 0;
   border: none;
   color: #fff;
@@ -86,7 +73,6 @@ div.swiper-button-next:hover {
   margin-top: 2px;
 }
 .div-animes-input {
-  
   color: white;
   border: 2px solid rgb(36, 36, 35);
   height: 4%;
@@ -99,7 +85,6 @@ div.swiper-button-next:hover {
 }
 
 .swiper-anime {
-  
   width: 80%;
   height: 50%;
   margin-top: 2%;
@@ -108,71 +93,15 @@ div.swiper-button-next:hover {
   padding-bottom: 5%;
   flex-wrap: wrap;
 }
-/* .swiper {
-    border: 1px solid red;
-    width: 100%;
-    min-width: 900px;
-  } */
+
 .swiper-anime .carousel {
   max-width: 300px;
 }
-.img {
-  width: 300px;
-  height: 40%;
-}
-.div-swiperSlide-new-episodes {
-  transition: 0.6s;
-  animation: efeit 2s ease alternate infinite;
-  background: #3f7986;
-  border: 10px solid #343a40;
-  /* background-color: #343a40; */
-  border-radius: 10px 10px;
-  height: 435px;
-  width: 220px;
-   transition: all 0.4s; 
-  animation-timing-function: ease; 
-  margin: auto;
-  color: #fff;
-  /* box-shadow: 6px 2px 15px 1px rgb(122, 122, 122); */
-}
-.div-swiperSlide-new-episodes:hover {
-  /* transform: translateY(5px); */
-  /* border: 10px solid #3f7986; */
-  
-}
+
 .swiperSlide-anime:hover ~ .new-episodes-name-anime {
- 
-   color: rgb(245, 219, 219);
-  /*  */
-  /* transform: scale(1.03); */
-}
-.swiperSlide-anime:on{
- 
-  color: red;
- /*  */
- /* transform: scale(1.03); */
+  color: rgb(245, 219, 219);
 }
 
-.button-details{ 
-  /* display: none; */
-  display: inline;
-  font-style: oblique;
-  padding: 2%;
-  width: 80%;
-  margin-left: 10%;
- 
-  cursor: pointer;
-   background: linear-gradient(360deg, rgb(223, 210, 210) 0, #fff 99%); 
-  color: rgb(22, 18, 18);
-  border-radius: 5px 5px;
-  border: none;
-  font-size: 14px;
- 
-   /* background: linear-gradient(360deg, #000 0, #fff 99%);  */
-}
-.button-details:hover{
-  background-color: rgb(197, 194, 194);
-}
 @keyframes efeit {
   from {
     background-position: 100% 50%;
@@ -182,120 +111,91 @@ div.swiper-button-next:hover {
   }
 }
 
-/* .swiperSlide-anime:hover ~ .button-details{
- 
-  padding: 2%;
-  width: 80%;
-  margin-left: 15%;
-  color: #fff;
-  border-radius: 5px 5px;
-  border: none;
-  font-size: 14px;
-   background: linear-gradient(360deg, #000 0, #fff 99%); 
-  animation-name: button-details;
-  transform: translateX(-40px);
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-
-}
-@keyframes button-details {
-  from {
-  }
-  to {
-    transform: translateX(0);
-  }
-} */
-/* 
-.swiperSlide-anime:hover  .icon-play{
-  display: flex;
-  justify-content: center;
-  color: #92c0c9;
-  font-size: 100px;
-  padding-top: 1em;
-  animation-name: slidee;
-  transform: translateY(-5px);
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-.icon-play{ 
- display: none;
-} */
-.animes-data {
-  color: #fff;
-  margin-left: 0.5%;
-}
-.animes-icon {
-  color: #fff;
-}
-.swiperSlide-anime {
- 
-  /* border-radius: 5%; */
-  height: 100%;
-  width: 85%;
-  min-width: 200px;
-  min-height: 300px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.new-episodes-name-anime {
-  display: flex;
-  justify-content: center;
-  font-size: 17px;
-  
-  /* aqui */
-  
-}
-.anime-buttons {
-  position: absolute;
-  right: 60px;
-  bottom: 10px;
-  background-color: red;
-  border: none;
-  border-radius: 5px 5px;
-  color: #fff;
-}
-
-@media (max-width: 1024px){
-  .swiper-anime{
+/* @media (max-width: 1024px) {
+  .swiper-anime {
     width: 90%;
   }
 }
-@media (max-width: 768px){
-  .div-swiperSlide-new-episodes{
+@media (max-width: 768px) {
+  .div-swiperSlide-new-episodes {
     width: 220px;
     height: 360px;
   }
-  .slide{
+  .slide {
     margin-left: 20%;
   }
- 
-}
+} */
 
-@media (max-width: 425px){
-  .swiperSlide-anime {
-   
-    min-height: 250px;
+@media (max-width: 600px) {
+  /* .swiperSlide-anime {
+    min-width: 150px;
+    min-height: 300px;
+  } */
+  .new-episodes h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 1em;
+    min-width: 20%;
+    color: rgb(187, 165, 40);
   }
-  .div-swiperSlide-new-episodes{
+  .div-swiperSlide-new-episodes {
     width: 220px;
-    height: 360px;
+    height: 370px;
   }
-  .slide{
-    margin-left: 50%;
-   
+  /* .button-details {
+    display: none;
+  } */
+  .new-episodes {
+    border-top: none;
   }
-  div.swiper-button-prev{
+  .swiper-anime {
+    margin: 2% 0 0 0;
+  }
+  div.swiper-button-prev {
     display: none;
   }
-  div.swiper-button-next{
+  div.swiper-button-next {
     display: none;
   }
-  .div-animes-input{
+  .div-animes-input {
     width: 60%;
-    
+  }
+}
+@media (max-width: 900px) {
+  .swiperSlide-anime {
+    min-width: 150px;
+    min-height: 300px;
+  }
+  .new-episodes h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 1em;
+    min-width: 20%;
+    color: rgb(187, 165, 40);
+    background: rgba(32, 32, 34, 0);
+  }
+  .div-swiperSlide-new-episodes {
+    width: 220px;
+    height: 400px;
+    text-align: center;
+  }
+
+  .button-details {
+    display: none;
+  }
+  .new-episodes {
+    border-top: none;
+  }
+  .swiper-anime {
+    margin: 2% auto 0 auto;
+  }
+
+  div.swiper-button-prev {
+    display: none;
+  }
+  div.swiper-button-next {
+    display: none;
   }
 }

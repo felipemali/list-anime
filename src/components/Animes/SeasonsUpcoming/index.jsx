@@ -2,29 +2,21 @@ import React, { useContext, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Container } from "../../../styles/Container/styles";
-import { Title } from "../../../styles/StylesBasics/Title/styles";
-import { ContainerSwiperSlide } from "../../../styles/SwiperStyles/ContainerSwiperSlide/styles";
-import { Button } from "../../../styles/StylesBasics/Button/styles";
-import { Slide } from "../../../styles/SwiperStyles/Slide/styles";
-import { NameAnime } from "../../../styles/DescriptionAnime/NameAnime/styles";
-import { Description } from "../../../styles/DescriptionAnime/Description/styles";
-import { ContainerSwiperMedium } from "../../../styles/SwiperStyles/ContainerSwiperMedium/styles";
 import { AuthContext } from "../../../providers/auth";
 import { Link } from "react-router-dom";
-import { PlayCircleOutlined, StarOutlined } from "@ant-design/icons";
+import { StarOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 import { GetAnimesNextSeason } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
+import "./index.css";
+import CardAnime from "../../CardAnime";
 
 const SeasonUpcoming = () => {
   const { setAnime, favorites } = useContext(AuthContext);
-  const [displayIcon, setDisPlayIcon] = useState("none");
   const [dataAnime, setDataAnime] = useState([]);
-  const seasonsUpcoming_Id = "seasonUpcomming";
 
   const animesNextSeason = GetAnimesNextSeason();
 
@@ -61,12 +53,12 @@ const SeasonUpcoming = () => {
   const { path } = routes.infoAnime;
 
   return (
-    <Container>
-      <Title>
-        <span>Próxima Temporada</span>
-      </Title>
+    <div className="container-season-upcoming">
+      <div className="title">
+        <h1>Próxima Temporada</h1>
+      </div>
 
-      <ContainerSwiperMedium>
+      <div className="container-swiper">
         <Swiper
           className="swiper"
           // install Swiper modules
@@ -78,58 +70,40 @@ const SeasonUpcoming = () => {
           {animesNextSeason.map((dataAnimeSeason) => {
             const { id, image, title } = dataAnimeSeason;
             return (
-              <SwiperSlide key={`${seasonsUpcoming_Id}_${id}`}>
+              <SwiperSlide key={`seasonUpcomming_${id}`}>
                 <Popover placement="top" content={content} title="Anime">
                   <Link to={path}>
-                    <ContainerSwiperSlide
+                    {/* <div
+                      id="container-swiperSlide"
                       onMouseEnter={() => setDataAnime(dataAnimeSeason)}
                     >
-                      <Slide
+                      <div
+                        id="slide"
                         onClick={() => setAnime(dataAnimeSeason)}
-                        onMouseLeave={() => setDisPlayIcon("none")}
                         style={{
                           backgroundImage: `url(${image})`,
-                          backgroundRepeat: "no-repeat",
-                          backgroundSize: "cover",
-                          width: "205px",
-                          height: "100px",
                         }}
-                      >
-                        <PlayCircleOutlined
-                          style={{
-                            color: "red",
-                            fontSize: "100px",
-                            paddingTop: "1em",
-                            display: `${displayIcon}`,
-                          }}
-                        />
-                      </Slide>
-                      <NameAnime>{title}</NameAnime>
+                      ></div>
+                      <span className="title-slide">{title}</span>
 
-                      <Description>
-                        <Button> Detalhes </Button>
-                      </Description>
-                      <Description>
+                      <div className="description">
+                        <button className="button">Detalhes</button>
+                      </div>
+                      <div className="description">
                         {favorites.find(({ name }) => name === title) && (
-                          <StarOutlined
-                            style={{
-                              color: "gold",
-                              fontSize: "40px",
-                              display: "flex",
-                              justifyContent: "end",
-                            }}
-                          />
+                          <StarOutlined className="icon" />
                         )}
-                      </Description>
-                    </ContainerSwiperSlide>
+                      </div>
+                    </div> */}
+                    <CardAnime img={image} title={title} />
                   </Link>
                 </Popover>
               </SwiperSlide>
             );
           })}
         </Swiper>
-      </ContainerSwiperMedium>
-    </Container>
+      </div>
+    </div>
   );
 };
 export default SeasonUpcoming;

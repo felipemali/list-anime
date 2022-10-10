@@ -3,16 +3,6 @@ import React, { createContext, useEffect, useState } from "react";
 import { notification } from "antd";
 import { GetAnimesSeasons } from "../api/animes";
 
-const theme = {
-  swiper: {
-    width: 260,
-    height: 450,
-    border: "10px solid #515255",
-    background: "#515255",
-    border_radius: "10px 10px",
-  },
-};
-
 export const AuthContext = createContext({});
 
 const ProviderAnime = ({ children }) => {
@@ -249,7 +239,6 @@ const ProviderAnime = ({ children }) => {
         menuMobile,
         valueInputAnimes,
         colorStar,
-        theme,
         randomColor,
         visibleMenuLateral,
         topAnimes,

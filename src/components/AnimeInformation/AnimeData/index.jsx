@@ -11,12 +11,13 @@ import "./index.css";
 
 const AnimeData = () => {
   const { anime, animes, setSearch, setNameAnime } = useContext(AuthContext);
-
-  <Options />;
   const episodes = GetEpisodes(anime.id);
   const character = GetCharacter(anime.id);
   const imageError = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const { path } = routes.inicio;
+  const bollean = true;
+
+  <Options />;
 
   return (
     <div className="div-info-anime">

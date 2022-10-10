@@ -8,7 +8,48 @@ import { routes } from "../../../routes/routes";
 
 const TopAnimes = () => {
   const { setAnime, setNameAnime } = useContext(AuthContext);
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const arr = [
+    {
+      position: 1,
+      id: "1",
+    },
+    {
+      position: 2,
+      id: "2",
+    },
+    {
+      position: 3,
+      id: "3",
+    },
+    {
+      position: 4,
+      id: "4",
+    },
+    {
+      position: 5,
+      id: "5",
+    },
+    {
+      position: 6,
+      id: "6",
+    },
+    {
+      position: 7,
+      id: "7",
+    },
+    {
+      position: 8,
+      id: "8",
+    },
+    {
+      position: 9,
+      id: "9",
+    },
+    {
+      position: 10,
+      id: "10",
+    },
+  ];
 
   const topAnimes = GetTopAnimes();
   const { path } = routes.infoAnime;
@@ -19,16 +60,17 @@ const TopAnimes = () => {
       <div className="position-anime">
         <div>
           <ul style={{ minWidth: "80px" }}>
-            {arr.map((position) => (
-              <li># {position}</li>
-            ))}
+            {arr.map((position) => {
+              const { positionn, id } = position;
+              return <li key={id}># {positionn}</li>;
+            })}
           </ul>
         </div>
         <div className="container-top-animes">
           {topAnimes.slice(0, 10).map((anime) => {
-            const { small_image, title, popularity, type } = anime;
+            const { small_image, title, popularity, type, id } = anime;
             return (
-              <div>
+              <div key={`topAnimes-${id}`}>
                 <Link to={path}>
                   <div className="top-animes" onClick={() => setAnime(anime)}>
                     <div className="container-top-animes-details">

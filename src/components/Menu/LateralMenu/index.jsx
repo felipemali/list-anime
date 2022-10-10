@@ -39,9 +39,6 @@ const LateralMenu = () => {
   const showModal = () => {
     setVisible(true);
   };
-  const animesWatching_id = "animesWatching";
-  const animesDrop_id = "animesDrop";
-  const favorites_id = "favorites";
 
   const handleOk = (nameAnime) => {
     const exclued = favorites.filter((name) => name.id !== nameAnime);
@@ -102,6 +99,10 @@ const LateralMenu = () => {
     menuSize == "70px" ? setMenuSize("370px") : setMenuSize("70px");
   };
   const { path } = routes.infoAnime;
+  const animeswatching = "animesWatching";
+  const animescomplete = "animesComplete";
+  const animesdrop = "animesDrop";
+  const favoritess = "favorites";
 
   return (
     <>
@@ -126,7 +127,7 @@ const LateralMenu = () => {
             {animesWatching?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`watching_${id}`}>
+                <div key={`${animeswatching}-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
@@ -185,8 +186,8 @@ const LateralMenu = () => {
             {animesComplete?.map((anime) => {
               const { name, id } = anime;
               return (
-                <>
-                  <div className="div-lateral-menu-item" key={`Complete_${id}`}>
+                <div key={`${animescomplete}-${id}`}>
+                  <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
                         className="lateral-menu-item"
@@ -228,7 +229,7 @@ const LateralMenu = () => {
                       {modalText}
                     </p>
                   </Modal>
-                </>
+                </div>
               );
             })}
           </SubMenu>
@@ -244,7 +245,7 @@ const LateralMenu = () => {
             {animesDrop?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`drop_${id}`}>
+                <div key={`${animesdrop}-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
@@ -304,7 +305,7 @@ const LateralMenu = () => {
             {favorites?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`favorites_${id}`}>
+                <div key={`${favoritess}-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item

@@ -1,84 +1,74 @@
-.position-anime{
-    display: flex;  
-    max-width: 1100px;
-    margin: 5rem;
-    
+.position-anime {
+  display: flex;
+  max-width: 1100px;
+  margin: 5rem;
 }
-.position-anime h2{
-    
-    height: 100%;
-    width: 200px;
-    color: rgb(187, 165, 40);
+.position-anime h2 {
+  height: 100%;
+  width: 200px;
+  color: rgb(187, 165, 40);
 }
-.position-anime li{
-    line-height: 7.1;
-    /* margin-top: 1.3em; */
+.position-anime li {
+  line-height: 7.1;
+  /* margin-top: 1.3em; */
+  color: gold;
+}
+.container-top-animes {
+  width: 1100px;
+}
+
+.top-animes {
+  font-family: "Rubik Microbe", cursive !important;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1%;
+  background-color: #303538;
+  margin-top: 1em;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+.top-animes div {
+  display: flex;
+  align-items: center;
+}
+.top-animes span {
+  padding-left: 10px;
+}
+.popularity {
+  color: rgb(79, 189, 79);
+}
+
+.top-animes:hover {
+  background-color: #393e41;
+}
+.top-animes button {
+  font-family: "Staatliches", cursive !important;
+  color: #fff;
+  background-color: #2d6eb3;
+  border: none;
+  padding: 4% 0px;
+  width: 7rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px 5px;
+}
+.top-animes button:hover {
+  background-color: #64a6ec;
+}
+@media (max-width: 768px) {
+  .top-animes-title {
     color: gold;
-}
-.container-top-animes{
-    width: 1100px; 
-}
-
-.top-animes{
-    font-family: 'Rubik Microbe', cursive !important;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: auto;
-    padding: 1%;  
-    background-color:#303538;
-    margin-top: 1em;
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.4em;
-    
-    
-}
-.top-animes  div{
-   display: flex;
-   align-items: center;
-}
-.top-animes span{
-    
-    padding-left: 10px;
-   
-}
-.popularity{
-    
- color: rgb(79, 189, 79);
-   
-}
-
-.top-animes:hover{
-    background-color:#393e41 ;
-}
-.top-animes button{
-    font-family: "Staatliches", cursive !important;
-    color: #fff;
-    background-color: #2d6eb3;
-    border: none;
-    padding: 4% 0px; 
-    width: 7rem;
-   margin-top: 1rem;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px 5px;
-}
-.top-animes button:hover{
-    background-color: #64a6ec;
-}
-@media (max-width: 768px){
-    .top-animes-title{
-       color: gold;
-       margin-left: 3rem;
-       margin-top: 3rem;
-    }
-    .position-anime{
-        margin: 0.5rem auto;
-        
-        
-    }
-    .container-top-animes-details{
-        width: 30%;
-    }
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+  .position-anime {
+    margin: 0.5rem auto;
+  }
+  .container-top-animes-details {
+    width: 30%;
+  }
 }

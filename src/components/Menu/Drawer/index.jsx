@@ -4,7 +4,7 @@ import { Drawer, Space } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import SearchAnimeMenu from "../../../page/SearchAnimeMenu";
 
-import { AuthContext } from "../../../providers/auth";
+import "./index.css";
 
 const Drawerr = () => {
   const [placement, setPlacement] = useState("top");
@@ -20,11 +20,7 @@ const Drawerr = () => {
   return (
     <>
       <Space>
-        <SearchOutlined
-          style={{ fontSize: "20px" }}
-          type="primary"
-          onClick={showDrawer}
-        />
+        <SearchOutlined className="icon" type="primary" onClick={showDrawer} />
       </Space>
       <Drawer
         title="Fechar Menu"

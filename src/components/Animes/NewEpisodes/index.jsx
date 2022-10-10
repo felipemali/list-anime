@@ -13,6 +13,7 @@ import { Popover } from "antd";
 import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 import { GetNewEpisodes } from "../../../api/newEpisodes";
+import CardAnime from "../../CardAnime";
 
 const NewEpisodes = () => {
   const { valueInputAnimes, setValueInputAnimes } = useContext(AuthContext);
@@ -36,18 +37,16 @@ const NewEpisodes = () => {
   );
 
   return (
-    <div className="anime">
-      <div className="div-title-new-episodes">
-        <span className="title-anime">Novos Episódios</span>
-      </div>
+    <div className="new-episodes">
+      <h1>Novos Episódios</h1>
 
       <div className="swiper-anime">
         <Swiper
           className="swiper-new-episodes"
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={0}
-          slidesPerView={4.1}
+          spaceBetween={window.innerWidth <= 900 ? 150 : 0}
+          slidesPerView={window.innerWidth <= 600 ? 2.5 : 4}
           navigation
           autoplay={{
             delay: 2000,
@@ -55,27 +54,11 @@ const NewEpisodes = () => {
           }}
         >
           {filter.map((newEpisodes) => {
-            const { id, image, title } = newEpisodes;
+            const { id, image, small_image, title } = newEpisodes;
             return (
-              <SwiperSlide className="slide" key={id}>
+              <SwiperSlide className="slide" key={`newEpisodes-${id}`}>
                 <Popover placement="top" content={content} title="Anime">
-                  <div
-                    className="div-swiperSlide-new-episodes"
-                    onMouseEnter={() => setDataAnime(newEpisodes)}
-                  >
-                    <div
-                      className="swiperSlide-anime"
-                      style={{
-                        backgroundImage: `url(${image})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        width: "200px",
-                        height: "100px",
-                      }}
-                    ></div>
-                    <span className="new-episodes-name-anime">{title}</span>
-                    <button className="button-details">Detalhes</button>
-                  </div>
+                  <CardAnime img={image} title={title} />
                 </Popover>
               </SwiperSlide>
             );

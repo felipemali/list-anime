@@ -78,9 +78,10 @@ const FoundAnime = () => {
         {search.length === 0 && (
           <div className="results-found">
             {animesSeason.map((data) => {
-              const { image, title } = data;
+              const { image, title, id } = data;
               return (
                 <Link
+                  key={`foundAnime-${id}`}
                   to={path}
                   onClick={() => {
                     setAnime(data);

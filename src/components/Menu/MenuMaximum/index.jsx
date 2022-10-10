@@ -20,31 +20,31 @@ const Menu = () => {
   return (
     <>
       <div className="menu">
-        <DrawerMenuLateral />
-
-        <img className="menu-logo" src={Logo} alt="" />
+        <div className="e">
+          <DrawerMenuLateral />
+          <img className="menu-logo" src={Logo} alt="icone do site" />
+        </div>
 
         <div className="menu-buttons">
           <ButtonsDrop />
         </div>
 
-        <div className="div-menu-input">
+        <div className="div-menu-input"></div>
+
+        <div className="menu-icons">
           <Link to={path}>
             <Button className="button-random-anime" onClick={randomAnime}>
               Anime alatorio
             </Button>
           </Link>
-
           <Drawerr />
-        </div>
+          <UserAddOutlined className="user" />
 
-        <div className="menu-icons">
-          <UserAddOutlined className="icons" />
-          {window.innerWidth <= 1002 ? (
+          {/* {window.innerWidth <= 1002 ? (
             <MenuOutlined className="menu-mobilee" onClick={menuSx} />
           ) : (
             ""
-          )}
+          )} */}
         </div>
       </div>
     </>
