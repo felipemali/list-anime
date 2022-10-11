@@ -8,7 +8,9 @@
   /* min-width: 320px; */
 }
 .banner {
+  background-size: cover;
   background-repeat: no-repeat;
+  height: 60vh;
 }
 .div-info-anime-img {
   width: 20%;
@@ -16,7 +18,7 @@
   min-width: 300px;
   min-height: 350px;
 }
-.info-champ-img {
+.info-anime-img {
   width: 100%;
 }
 .title-favorite {
@@ -188,10 +190,12 @@
   box-shadow: 1px 0.2px 20px 3px #6a5fa1;
 }
 .library {
-  display: flex;
+  display: block;
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #0a0a0a;
+
+  padding-top: 2rem;
 }
 .library-buttons {
   width: 20%;
@@ -285,6 +289,12 @@ ul li {
   }
   .character {
     width: 100px;
+  }
+  .img-episodes {
+    margin: 0.9rem;
+  }
+  .info-anime-img {
+    margin-top: 3rem;
   }
 }
 

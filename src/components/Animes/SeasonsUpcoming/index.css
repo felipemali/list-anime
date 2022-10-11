@@ -9,35 +9,24 @@
   padding-top: 1%;
   padding-bottom: 5%;
 }
-.container-season-upcoming .title {
-  max-width: 330px;
-  margin-left: 10%;
-  margin-top: 3%;
-  background: rgba(32, 32, 34, 0);
-}
+
 .container-season-upcoming h1 {
-  font-family: "Staatliches", cursive !important;
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 600;
   color: rgb(187, 165, 40);
-  font-size: 30px;
+  margin: 2% 0 1rem 6%;
 }
-.container-season-upcoming .container-swiper {
+
+.container-season-upcoming .swiper {
   width: 80%;
-  height: 40%;
+  height: 50%;
+  margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  justify-content: space-between;
+  padding-bottom: 5%;
   flex-wrap: wrap;
-  padding-top: 2%;
-}
-.container-season-upcoming .container-swiperSlide {
-  border: 10px solid #343a40;
-  background: #3f7986;
-  border-radius: 10px 10px;
-  height: 445px;
-  width: 225px;
-  transition: all 0.4s;
-  animation-timing-function: ease;
 }
 
 .container-season-upcoming .description .icon {
@@ -45,4 +34,14 @@
   font-size: 30px;
   display: flex;
   justify-content: end;
+}
+@media (max-width: 768px) {
+  .container-season-upcoming .swiper {
+    height: 430px;
+  }
+}
+@media (max-width: 600px) {
+  .container-season-upcoming .swiper {
+    height: 400px;
+  }
 }

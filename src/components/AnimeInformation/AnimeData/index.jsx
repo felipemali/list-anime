@@ -25,40 +25,39 @@ const AnimeData = () => {
         className="banner"
         style={{
           backgroundImage: `url(${anime?.banner})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          height: "60vh",
         }}
       ></div>
 
       <div className="info-anime">
         <div className="div-info-anime-img">
-          <img className="info-champ-img" src={anime?.image} alt="" />
-          <div className="butons-options">
-            <button
-              onClick={() => {
-                animes({
-                  name: anime.title,
-                  img: anime.image_large,
-                  id: anime.id,
-                });
-              }}
-              className="button-favorite"
-            >
-              Favoritar
-            </button>
+          <img className="info-anime-img" src={anime?.image} alt="" />
+          {anime.image && (
+            <div className="butons-options">
+              <button
+                className="button-favorite"
+                onClick={() => {
+                  animes({
+                    name: anime.title,
+                    img: anime.image_large,
+                    id: anime.id,
+                  });
+                }}
+              >
+                Favoritar
+              </button>
 
-            <div className="buttonsDrop-options">
-              <Dropdown overlay={<Options />}>
-                <a
-                  className="ant-dropdown-link menu-links"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <CaretDownOutlined className="icon-options" />
-                </a>
-              </Dropdown>
+              <div className="buttonsDrop-options">
+                <Dropdown overlay={<Options />}>
+                  <a
+                    className="ant-dropdown-link menu-links"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <CaretDownOutlined className="icon-options" />
+                  </a>
+                </Dropdown>
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <Link to={path}>
           <button
@@ -112,6 +111,7 @@ const AnimeData = () => {
             {imageError?.map((img) => (
               <div className="img-episodes">
                 <Image
+                  className="img-error"
                   width={130}
                   height={130}
                   src="error"

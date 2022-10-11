@@ -4,7 +4,6 @@
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  /* background: linear-gradient(360deg, #000000 0, rgba(32, 32, 34, 0) 99%); */
   color: #fff;
   padding-top: 1%;
   padding-bottom: 5%;
@@ -15,10 +14,13 @@
   margin-top: 3%;
   background: rgba(32, 32, 34, 0);
 }
-.container-animes-season .title h1 {
-  font-family: "Staatliches", cursive !important;
+.container-animes-season h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 600;
   color: rgb(187, 165, 40);
-  font-size: 30px;
+  margin: 2% 0 1rem 6%;
 }
 
 .container-animes-season .container-swiper {
@@ -37,14 +39,6 @@
   margin-left: 2%;
   margin-top: 3%;
 }
-/* border: 1px solid red; */
-
-.container-animes-season .description .icon {
-  color: #fffb57;
-  font-size: 30px;
-  display: flex;
-  justify-content: end;
-}
 
 .container-animes-season .title-slide {
   display: flex;
@@ -53,4 +47,40 @@
   color: #fff;
   margin: auto;
   padding-left: 1%;
+}
+@media (max-width: 600px) {
+  .container-animes-season .container-swiper {
+    display: block;
+  }
+  .container-animes-season .container-swiper .swiper {
+    width: 80%;
+    margin: auto;
+    max-height: 350px;
+  }
+}
+@media (max-width: 900px) {
+  .container-animes-season .container-swiper {
+    flex-direction: column;
+  }
+  .container-animes-season .container-swiper .swiper {
+    width: 80%;
+    margin: auto;
+    height: 450px;
+  }
+}
+
+@media (max-width: 1485px) {
+  .container-animes-season .container-swiper {
+    flex-direction: column;
+  }
+  .container-animes-season .container-swiper .swiper {
+    width: 80%;
+    margin: auto;
+  }
+  div.swiper-button-prev {
+    display: none;
+  }
+  div.swiper-button-next {
+    display: none;
+  }
 }

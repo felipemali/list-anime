@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <BrowserRouter>
-      <div className="home">
+      <div>
         <ProviderAnime>
           <Menu />
 

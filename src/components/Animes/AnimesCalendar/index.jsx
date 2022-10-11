@@ -2,16 +2,14 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/auth";
 import { CaretRightOutlined, ContactsOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import "./index.css";
 import { GetAnimesSeasons } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
+import "./index.css";
 
 const AnimesCalendar = () => {
   const { setAnime } = useContext(AuthContext);
   const [selectedDay, setSelectedDay] = useState();
-
   const animeSeason = GetAnimesSeasons();
-
   const buttons = [
     { pt: "Segunda", en: "Monday", id: "btMonday" },
     { pt: "Terça", en: "Tuesdays", id: "btTuesdays" },

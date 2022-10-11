@@ -33,3 +33,33 @@
 .container-button button:hover {
   background-color: #434a50;
 }
+@media (max-width: 600px) {
+  .container-genres {
+    max-width: 370px;
+  }
+}
+@media (max-width: 768px) {
+  .container-genres {
+    margin: 2rem auto 0 auto;
+    width: 70%;
+  }
+}
+@media (max-width: 900px) {
+  .container-genres {
+    margin: auto;
+    margin-top: 2rem;
+    width: 90%;
+  }
+}
+@media (max-width: 1487px) {
+  .container-genres {
+    display: none;
+  }
+}
+@media (max-width: 1485px) {
+  .container-genres {
+    margin: auto;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}

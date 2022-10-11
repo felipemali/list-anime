@@ -30,7 +30,7 @@
 }
 
 .anime-calendar-buttons button {
-  font-family: "Staatliches", cursive !important;
+  font-family: Montserrat, sans-serif;
   background-color: #52657a;
   color: #fff;
   padding: 0.6%;
@@ -48,7 +48,8 @@
   background-color: #2d6eb3;
 }
 .anime-calendar-animes {
-  font-family: "Rubik Microbe", cursive !important;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
   padding: 1%;
@@ -67,7 +68,8 @@
   background-color: #393e41;
 }
 .anime-calendar-animes button {
-  font-family: "Staatliches", cursive !important;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
   color: #fff;
   background-color: #2d6eb3;
   border: none;

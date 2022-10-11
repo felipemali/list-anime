@@ -16,9 +16,7 @@
     transform: translateY(0);
   }
 }
-.swiper-new-episodes {
-  height: 450px;
-}
+
 div.swiper-button-prev {
   margin-left: 96%;
   margin-top: 1%;
@@ -84,7 +82,7 @@ div.swiper-button-next:hover {
   box-shadow: 1px 0.2px 5px 1px rgb(235, 233, 233);
 }
 
-.swiper-anime {
+.swiper-new-episodes {
   width: 80%;
   height: 50%;
   margin-top: 2%;
@@ -127,10 +125,6 @@ div.swiper-button-next:hover {
 } */
 
 @media (max-width: 600px) {
-  /* .swiperSlide-anime {
-    min-width: 150px;
-    min-height: 300px;
-  } */
   .new-episodes h1 {
     font-family: Montserrat, sans-serif;
     font-size: 25px;
@@ -149,8 +143,12 @@ div.swiper-button-next:hover {
   .new-episodes {
     border-top: none;
   }
-  .swiper-anime {
+  .swiperSlide {
+    margin-left: 5rem;
+  }
+  .swiper-new-episodes {
     margin: 2% 0 0 0;
+    max-height: 350px;
   }
   div.swiper-button-prev {
     display: none;
@@ -181,6 +179,9 @@ div.swiper-button-next:hover {
     height: 400px;
     text-align: center;
   }
+  .swiperSlide {
+    margin-left: 5rem;
+  }
 
   .button-details {
     display: none;
@@ -188,8 +189,9 @@ div.swiper-button-next:hover {
   .new-episodes {
     border-top: none;
   }
-  .swiper-anime {
+  .swiper-new-episodes {
     margin: 2% auto 0 auto;
+    height: 450px;
   }
 
   div.swiper-button-prev {
@@ -197,5 +199,10 @@ div.swiper-button-next:hover {
   }
   div.swiper-button-next {
     display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .swiperSlide {
+    margin-left: 5rem;
   }
 }

@@ -3,7 +3,6 @@ import "./index.css";
 
 const Genres = () => {
   const [color, setColor] = useState();
-
   const buttons = [
     {
       genre: "Acao",

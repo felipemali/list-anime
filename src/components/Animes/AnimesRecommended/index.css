@@ -1,99 +1,44 @@
-
- #container-animes-recommended{
+.container-animes-recommended {
   animation-name: slidee;
   transform: translateY(-100px);
   animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-  /* background: linear-gradient(360deg, #000000 0, rgba(32, 32, 34, 0) 99%); */
   color: #fff;
   padding-top: 1%;
   padding-bottom: 5%;
+}
 
- }
- #container-animes-recommended #title{
-  max-width: 330px;
-  margin-left: 10%;
-  margin-top: 3%;
-  background: rgba(32, 32, 34, 0);
- 
- }
- #container-animes-recommended #title span {
-    font-family: "Staatliches", cursive !important;
-    color: rgb(187, 165, 40);
-    font-size: 30px;
-  }
+.container-animes-recommended h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 600;
+  color: rgb(187, 165, 40);
+  margin: 2% 0 1rem 6%;
+}
 
-  #container-animes-recommended #container-swiper{
+.container-animes-recommended .swiper {
   width: 80%;
-  height: 40%;
+  height: 50%;
+  margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  justify-content: space-between;
+  padding-bottom: 5%;
   flex-wrap: wrap;
-  padding-top: 2%;
 }
-  /* border: 1px solid red; */
-  
-
-  #container-animes-recommended #container-swiperSlide{
-  border: 10px solid #343a40;
-  background: #3f7986;
-  border-radius: 10px 10px;
-  height: 445px;
-  width: 225px;
-  transition: all 0.4s;
-  animation-timing-function: ease;
+@media (max-width: 600px) {
+  .container-animes-recommended .swiper {
+    max-height: 350px;
   }
-  
-
-#container-animes-recommended #slide{
-  height: 100%;
-  width: 85%;
-  min-width: 200px;
-  min-height: 300px;
-  background-repeat: no-repeat;
-
-  background-size: cover;
-  width: 205px;
-  height: 100px;
-  cursor: pointer;
 }
-#container-animes-recommended .description{
-  color: #fff;
-  padding-top: 3%;
+@media (max-width: 900px) {
+  .container-animes-recommended .swiper {
+    height: 460px;
+  }
 }
-#container-animes-recommended button{
-  padding: 2%;
-  font-style: oblique;
-  width: 80%;
-  background: linear-gradient(360deg, rgb(223, 210, 210) 0, #fff 99%);
-  margin-left: 10%;
-  cursor: pointer;
-  color: #000;
-  border-radius: 5px 5px;
-  border: none;
-}
-#container-animes-recommended .title-slide{
-  display: flex;
-  justify-content: center;
-  font-size: 17px;
-  color: #fff;
-  margin: auto;
-  padding-left: 1%;
-}
-
-@media(max-width: 1024px) {
-  #container-animes-recommended #container-swiper{
+@media (max-width: 1024px) {
+  #container-animes-recommended #container-swiper {
     width: 90%;
   }
- 
-}
-@media (max-width: 425px) {
-  #container-animes-recommended #container-swiperSlide{
-    width: 220px;
-    height: 415px;
-  }
- 
 }

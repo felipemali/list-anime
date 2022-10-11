@@ -56,7 +56,7 @@ const TopAnimes = () => {
 
   return (
     <>
-      <h2 className="top-animes-title">TOP 10 ANIMES</h2>
+      <h2 className="top-animes-title">Top 10 Animes</h2>
       <div className="position-anime">
         <div>
           <ul style={{ minWidth: "80px" }}>

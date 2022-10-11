@@ -6,7 +6,7 @@ import {
   CheckOutlined,
 } from "@ant-design/icons";
 import { AuthContext } from "../../../providers/auth";
-import "./index.css";
+import "../AnimeData/index.css";
 
 const LibraryAnime = () => {
   const { anime } = useContext(AuthContext);

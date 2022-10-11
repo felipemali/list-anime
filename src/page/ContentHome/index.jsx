@@ -7,7 +7,6 @@ import NewEpisodes from "../../components/Animes/NewEpisodes";
 import SeasonUpcoming from "../../components/Animes/SeasonsUpcoming";
 import Carousell from "../../components/Carousell";
 import TopAnimes from "../../components/Animes/TopAnimes";
-// import Theme from "../../styles/Theme";
 
 const ContentHome = () => {
   return (
