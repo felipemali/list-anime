@@ -1,5 +1,5 @@
 .footer {
-  background-color: #0d0d11;
+  background-color: #18181f;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -46,8 +46,8 @@
 .rights-reserved {
   color: #fff;
   text-align: center;
-  background-color: #0d0d11;
-  opacity: 0.97;
+  background-color: #18181f;
+  opacity: 0.9;
   font-style: oblique;
   margin: 0;
 }
