@@ -116,8 +116,7 @@ a:hover {
   .menu {
     padding: 5%;
   }
-  .menu-buttons {
-  }
+
   .menu {
     display: flex;
     padding: 2% 0px;
@@ -199,8 +198,7 @@ a:hover {
   .menu-buttons {
     margin-left: 3rem;
   }
-  .button-random-anime {
-  }
+
   .menu-icons {
     display: flex;
   }
@@ -224,8 +222,6 @@ a:hover {
   }
   .menu-buttons {
     display: none;
-  }
-  .button-random-anime {
   }
 }
 @media (max-width: 600px) {
