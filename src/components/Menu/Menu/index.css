@@ -1,7 +1,6 @@
 .menu {
   display: flex;
-  /* box-shadow: 1px 2px 10px 3px #c20605; */
-  box-shadow: 1px 2px 10px 3px #22343f;
+  box-shadow: 1px 2px 10px 3px #f26420;
 
   color: #fff;
   width: 100%;
