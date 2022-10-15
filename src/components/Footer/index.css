@@ -9,7 +9,6 @@
 
 .footer-logo {
   width: 9%;
-  /* border: 1px solid red; */
 }
 .footer ul {
   font-size: 24px;
@@ -39,14 +38,16 @@
   margin: 0.5rem 0 0 0.5rem;
 }
 .icons img:hover {
-  width: 33px;
+  transform: scale(1.09);
+  transition: all 0.6s;
+  animation-timing-function: ease;
   cursor: pointer;
 }
 .rights-reserved {
   color: #fff;
   text-align: center;
   background-color: #0d0d11;
-  opacity: 0.7;
+  opacity: 0.97;
   font-style: oblique;
   margin: 0;
 }

@@ -23,6 +23,7 @@ const AnimesSeason = () => {
   return (
     <div className="container-animes-season">
       <h1>Animes da Temporada</h1>
+      <div className="border-title"></div>
       <div className="container-swiper">
         <Swiper
           className="swiper"

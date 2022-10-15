@@ -11,7 +11,7 @@ const Footer = () => {
     <>
       <div className="footer">
         <div className="icons">
-          <span>Nos encontre aqui:</span>
+          <span>Contate-nos:</span>
           <br />
           <img src={facebook} alt="logo do facebook" />
           <img src={instagram} alt="logo do instagram" />

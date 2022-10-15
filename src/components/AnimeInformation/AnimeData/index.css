@@ -204,6 +204,10 @@
   min-width: 100px;
   flex-wrap: wrap;
 }
+.library .icons-library {
+  padding-right: 0.4em;
+}
+
 .dividerr {
   color: #fff;
 }
@@ -212,7 +216,7 @@
   /* border: 1px solid gold; */
   height: 100%;
   min-height: 300px;
-  margin-top: 3%;
+  margin: 3% auto 0 auto;
 }
 .library button {
   display: block;

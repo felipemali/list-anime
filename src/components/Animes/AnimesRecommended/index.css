@@ -1,31 +1,51 @@
-.container-animes-recommended {
-  animation-name: slidee;
+.swiper-container-animes-recommended {
+  /* animation-name: slidee;
   transform: translateY(-100px);
   animation-duration: 3s;
   animation-timing-function: ease;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
   color: #fff;
-  padding-top: 1%;
   padding-bottom: 5%;
+  margin-top: 0;
+  width: 80%;
 }
 
+.container-animes-recommended {
+  display: flex;
+  background: #0f161b
+    linear-gradient(180deg, #0000, #22343f, #22343f, #22343f, #131d24);
+}
+.character-home {
+  width: 20%;
+  height: 100%;
+  padding-top: 2rem;
+  margin: auto 0 auto 1rem;
+}
+.character-home img {
+  height: 30%;
+}
+.character-home img:hover {
+  transform: scale(1.05);
+  transition: all 0.6s;
+  animation-timing-function: ease;
+  cursor: pointer;
+}
 .container-animes-recommended h1 {
   font-family: Montserrat, sans-serif;
   font-size: 25px;
-  line-height: 40px;
   font-weight: 600;
-  color: rgb(187, 165, 40);
-  margin: 2% 0 1rem 6%;
+  /* color: rgb(187, 165, 40); */
+  color: #fff;
+  margin: 0 0 1rem 14%;
+  padding-top: 2rem;
 }
 
 .container-animes-recommended .swiper {
   width: 80%;
-  height: 50%;
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 5%;
+  height: 350px;
+  margin: 2% auto 0 auto;
   flex-wrap: wrap;
+  border-top: 5px solid #f26420;
 }
 @media (max-width: 600px) {
   .container-animes-recommended .swiper {

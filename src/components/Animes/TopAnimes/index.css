@@ -6,7 +6,8 @@
 .position-anime h2 {
   height: 100%;
   width: 200px;
-  color: rgb(187, 165, 40);
+  /* color: rgb(187, 165, 40); */
+  color: #fff;
 }
 .top-animes-title {
   font-family: Montserrat, sans-serif;

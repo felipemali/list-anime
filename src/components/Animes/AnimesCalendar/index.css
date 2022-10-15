@@ -3,6 +3,7 @@
   max-width: 1200px;
   border-top: 0.1px solid #6d6969;
   border-radius: 10px 10px;
+  background-color: #0d0d11;
 }
 .animes-calendar-title {
   font-family: Montserrat, sans-serif;
@@ -17,11 +18,10 @@
 .div-anime-calendar-buttons {
   color: #fff;
   /* background-color:rgb(223, 217, 217); */
-  background-color: #222629;
+  background-color: #0d0d11;
   height: 100%;
   max-width: 1200px;
   margin-left: 1.5%;
-  border: 0.1px solid #6d6969;
 }
 .anime-calendar-buttons {
   display: flex;
@@ -38,11 +38,9 @@
   font-size: 16px;
   font-weight: 500;
   width: 12.5%;
-  margin-top: 1em;
-  margin-left: 1em;
+  margin: 1em 1em 1.5em 0;
   border: none;
   cursor: pointer;
-  margin-bottom: 1.5em;
 }
 .anime-calendar-buttons button:focus {
   background-color: #2d6eb3;

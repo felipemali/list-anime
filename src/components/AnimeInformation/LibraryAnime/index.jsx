@@ -14,17 +14,17 @@ const LibraryAnime = () => {
   return (
     <div className="library">
       <div className="library-buttons">
-        <Divider style={{ color: "#fff" }}>Biblioteca</Divider>
+        <Divider color="#fff">Biblioteca</Divider>
         <button className="library-button-watch">
           <PlusOutlined style={{ paddingRight: "0.7em" }} />
           Assistir
         </button>
         <button className="library-button-favorite">
-          <CheckCircleOutlined style={{ paddingRight: "0.4em" }} />
+          <CheckCircleOutlined className="icons-library" />
           Favoritar
         </button>
         <button className="library-button-watched">
-          <CheckOutlined style={{ paddingRight: "0.4em" }} />
+          <CheckOutlined className="icons-library" />
           Assistido
         </button>
       </div>

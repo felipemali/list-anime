@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from "../../components/Menu/MenuMaximum";
+import Menu from "../../components/Menu/Menu";
 import InfoAnime from "../InfoAnime";
 import Footer from "../../components/Footer";
 import SearchAnimeMenu from "../SearchAnimeMenu";
@@ -26,8 +26,6 @@ const Home = () => {
     <BrowserRouter>
       <div>
         <ProviderAnime>
-          <Menu />
-
           <Routes>
             <Route
               exact
@@ -42,7 +40,6 @@ const Home = () => {
         <BackTop>
           <div style={style}>Topo</div>
         </BackTop>
-        <Footer />
       </div>
     </BrowserRouter>
   );
