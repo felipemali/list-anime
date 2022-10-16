@@ -102,12 +102,12 @@ const Genres = () => {
     {
       genre: "Superpoderes",
       color: "#be5175",
-      id: "genre19",
+      id: "genre20",
     },
     {
       genre: "Guerra",
       color: "#6f72e3",
-      id: "genre20",
+      id: "genre21",
     },
   ];
   return (

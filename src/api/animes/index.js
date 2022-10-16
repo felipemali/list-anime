@@ -92,7 +92,7 @@ export const GetAnimesNextSeason = () => {
       });
       setNextSeason(result);
     });
-  });
+  }, []);
   return nextSeason;
 };
 
