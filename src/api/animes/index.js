@@ -138,8 +138,6 @@ export const GetTopAnimes = () => {
 
 export const SearchAnime = (nameAnime) => {
   const [foundAnime, setFoundAnime] = useState([]);
-  console.log(nameAnime);
-  console.log(foundAnime);
 
   useEffect(() => {
     axios

@@ -9,7 +9,6 @@
   z-index: 999;
   top: 0;
   padding: 0;
-  max-width: 1800px;
 }
 .menu:hover {
   background-color: rgb(24, 23, 23);
@@ -28,7 +27,7 @@
   font-family: Montserrat, sans-serif !important;
   font-weight: 600;
   display: flex;
-  margin: 0px auto;
+  margin: 0 auto;
   align-items: center;
 }
 .container-drawer {
@@ -57,11 +56,6 @@
   margin: auto 0px;
   height: 4%;
   border-radius: 5px 5px;
-  /* animation-name: slide;
-  transform: translateX(-100px);
-  animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards; */
 }
 .menu-input {
   outline: 0;
@@ -105,11 +99,7 @@ a {
 a:hover {
   color: inherit;
 }
-@media (min-width: 1800px) {
-  .menu {
-    box-shadow: none;
-  }
-}
+
 @media (max-width: 1200px) {
 }
 @media (max-width: 900px) {

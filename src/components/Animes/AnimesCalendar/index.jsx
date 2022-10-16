@@ -37,7 +37,6 @@ const AnimesCalendar = () => {
             .filter((anime) => anime.day === selectedDay.en)
             .map((anime) => {
               const { small_image, title, id } = anime;
-              console.log(id);
               return (
                 <div key={id} className="anime-calendar-animes">
                   <div>

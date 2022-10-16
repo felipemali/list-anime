@@ -1,4 +1,4 @@
-.container-season-upcoming {
+.container-season-upcoming-swiper {
   /* animation-name: slidee;
   transform: translateY(-100px);
   animation-duration: 3s;
@@ -10,7 +10,7 @@
   padding-top: 1%;
   padding-bottom: 5%;
 }
-.r {
+.container-season-upcoming {
   display: flex;
   width: 100%;
   background: #131d24
@@ -20,16 +20,14 @@
 .container-season-upcoming h1 {
   font-family: Montserrat, sans-serif;
   font-size: 25px;
-
   font-weight: 600;
-  /* color: rgb(187, 165, 40); */
   color: #fff;
   margin: 0 0 1rem 14%;
 }
 
 .container-season-upcoming .swiper {
   width: 80%;
-  height: 400px;
+  height: 410px;
   margin: 2% auto 0 auto;
   padding-bottom: 5%;
   flex-wrap: wrap;

@@ -43,7 +43,6 @@ const NewEpisodes = () => {
         >
           {filter.map((newEpisodes) => {
             const { id, image, small_image, title } = newEpisodes;
-            console.log(newEpisodes);
             return (
               <SwiperSlide className="swiperSlide" key={`newEpisodes-${id}`}>
                 <CardAnime

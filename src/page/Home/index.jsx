@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from "../../components/Menu/Menu";
 import InfoAnime from "../InfoAnime";
 import Footer from "../../components/Footer";
 import SearchAnimeMenu from "../SearchAnimeMenu";
@@ -7,6 +6,7 @@ import { BackTop } from "antd";
 import ContentHome from "../ContentHome";
 import ProviderAnime from "../../providers/auth";
 import { routes } from "../../routes/routes";
+import Menu from "../../components/Menu/Menu";
 
 const Home = () => {
   const style = {
@@ -26,6 +26,7 @@ const Home = () => {
     <BrowserRouter>
       <div>
         <ProviderAnime>
+          <Menu />
           <Routes>
             <Route
               exact

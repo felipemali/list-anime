@@ -14,11 +14,11 @@ const SeasonUpcoming = () => {
   const animesNextSeason = GetAnimesNextSeason();
   SwiperCore.use([Autoplay]);
   return (
-    <div className="r">
+    <div className="container-season-upcoming">
       <div className="character-home ">
         <img src={person} alt="" />
       </div>
-      <div className="container-season-upcoming">
+      <div className="container-season-upcoming-swiper">
         <h1>Próxima Temporada</h1>
         <div className="container-swiper">
           <Swiper
