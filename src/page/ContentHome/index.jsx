@@ -10,9 +10,8 @@ import Footer from "../../components/Footer";
 
 const ContentHome = () => {
   return (
-    <div style={{ maxWidth: "1800px", margin: "auto" }}>
+    <div>
       {/* o problema da repetição de key ta no componente AnimesRecommended */}
-     
       <Carousell />
       <AnimesCalendar />
       <NewEpisodes />

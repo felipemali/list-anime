@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InfoAnime from "../InfoAnime";
-import Footer from "../../components/Footer";
-import SearchAnimeMenu from "../SearchAnimeMenu";
+import SearchAnime from "../SearchAnime";
 import { BackTop } from "antd";
 import ContentHome from "../ContentHome";
 import ProviderAnime from "../../providers/auth";
@@ -19,8 +18,6 @@ const Home = () => {
     textAlign: "center",
     fontSize: 14,
   };
-  const { path } = routes.infoAnime;
-  console.log(path);
 
   return (
     <BrowserRouter>
@@ -31,7 +28,7 @@ const Home = () => {
             <Route
               exact
               path={routes.searchMenu.path}
-              element={<SearchAnimeMenu />}
+              element={<SearchAnime />}
             />
             <Route exact path={routes.inicio.path} element={<ContentHome />} />
             <Route exact path={routes.infoAnime.path} element={<InfoAnime />} />

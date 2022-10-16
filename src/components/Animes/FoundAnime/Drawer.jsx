@@ -1,9 +1,7 @@
-import React, { useContext, useState } from "react";
-
+import React, { useState } from "react";
 import { Drawer, Space } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import SearchAnimeMenu from "../../../page/SearchAnimeMenu";
-
+import SearchAnime from "../../../page/SearchAnime";
 import "./index.css";
 
 const Drawerr = () => {
@@ -26,9 +24,10 @@ const Drawerr = () => {
         title="Fechar Menu"
         placement={placement}
         width={500}
-        height={800}
+        height={1150}
         onClose={onClose}
         visible={visible}
+
         // extra={
         //   <Space>
         //     <Button onClick={onClose}>Cancel</Button>
@@ -38,7 +37,7 @@ const Drawerr = () => {
         //   </Space>
         // }
       >
-        <SearchAnimeMenu />
+        <SearchAnime setVisible={setVisible} />
       </Drawer>
     </>
   );

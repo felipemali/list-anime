@@ -52,7 +52,7 @@
 }
 
 .div-menu-input {
-  color: white;
+  color: #fff;
   margin: auto 0px;
   height: 4%;
   border-radius: 5px 5px;
@@ -69,7 +69,6 @@ input::placeholder {
 }
 
 .icon-search {
-  /* border: 1px solid gold; */
   font-size: 20px;
   background-color: transparent;
   padding: 7px 0.5em 10px;
@@ -86,13 +85,6 @@ input::placeholder {
   background: #1b1b1b;
 }
 
-/* @keyframes slide {
-  from {
-  }
-  to {
-    transform: translateX(0);
-  }
-} */
 a {
   color: inherit;
 }
@@ -100,26 +92,17 @@ a:hover {
   color: inherit;
 }
 
-@media (max-width: 1200px) {
-}
 @media (max-width: 900px) {
-  .menu {
-    padding: 5%;
-  }
-
   .menu {
     display: flex;
     padding: 2% 0px;
   }
-
   .menu-logo {
     cursor: pointer;
     width: 3rem;
   }
-
   .div-menu-input {
-    color: white;
-
+    color: #fff;
     padding: 0;
     height: 4%;
     border-radius: 5px 5px;
@@ -131,7 +114,6 @@ a:hover {
   }
 
   .menu-icons {
-    /* border: 1px solid gold; */
     display: flex;
     margin: auto 0;
   }
@@ -145,15 +127,12 @@ a:hover {
     padding: 2% 0px;
     justify-content: space-between;
   }
-
   .menu-logo {
     cursor: pointer;
     width: 3rem;
   }
-
   .div-menu-input {
-    color: white;
-
+    color: #fff;
     padding: 0;
     height: 4%;
     border-radius: 5px 5px;
@@ -163,9 +142,7 @@ a:hover {
     animation-timing-function: ease;
     animation-fill-mode: forwards;
   }
-
   .menu-icons {
-    /* border: 1px solid gold; */
     display: flex;
     margin: auto 0;
   }

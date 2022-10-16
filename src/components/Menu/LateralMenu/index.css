@@ -1,35 +1,13 @@
 .lateral-menu {
-  /* border: 2px solid gold; */
- 
   background-color: #fff;
- 
-  /* box-shadow: 1px 1px 20px #f80908 !important; */
-
   padding-top: 5%;
 }
-
-/* input[type="radio"]:checked {
-  animation-name: menuu;
-  transform: translateY(-100px);
-  animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-@keyframes menuu {
-  from {
-  }
-  to {
-    transform: translateY(0);
-  }
-} */
 .div-lateral-menu-item {
   display: flex;
   flex-wrap: wrap;
-  /* color: rgb(158, 139, 29); */
 }
 .lateral-menu-icon {
   color: #fff;
-
   display: flex;
   justify-content: end;
   font-size: 22px;
@@ -54,9 +32,6 @@
 
 @media (max-width: 600px) {
   .lateral-menu {
-    /* border: 2px solid gold; */
-    /* display: flex; */
-    /* justify-content: space-around; */
     margin-top: 5%;
   }
 }

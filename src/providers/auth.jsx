@@ -75,10 +75,6 @@ const ProviderAnime = ({ children }) => {
     }
   }, [nameAnime]);
 
-  const menuSx = () => {
-    menuMobile === "none" ? setMenuMobile("inline") : setMenuMobile("none");
-  };
-
   const showDrawerMenuLateral = () => {
     setVisibleMenuLateral(true);
   };
@@ -211,15 +207,15 @@ const ProviderAnime = ({ children }) => {
 
   const colors = [
     "#002545",
-    "#14808c", //
+    "#14808c",
     "#ed874f",
     "#781e1a",
     "#6f72e3",
     "#674075 ",
     "#703064 ",
-    "#2f091e ", //
+    "#2f091e ",
     "#bc6021",
-    "#512948", //
+    "#512948",
     "#122b4d",
   ];
 
@@ -254,7 +250,6 @@ const ProviderAnime = ({ children }) => {
         watching,
         complete,
         drop,
-        menuSx,
         showDrawerMenuLateral,
         onCloseMenuLateral,
         randomAnime,

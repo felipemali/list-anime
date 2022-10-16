@@ -21,42 +21,44 @@ const AnimesSeason = () => {
     return anime.title.toLowerCase().includes(valueInputAnimes);
   });
   return (
-    <div className="container-animes-season">
-      <h1>Animes da Temporada</h1>
-      <div className="border-title"></div>
-      <div className="container-swiper">
-        <Swiper
-          className="swiper"
-          // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={window.innerWidth <= 900 ? 150 : 0}
-          slidesPerView={window.innerWidth <= 768 ? 2.5 : 4}
-          pagination={window.innerWidth <= 1526 ? true : false}
-          navigation
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: true,
-          }}
-        >
-          {filter.map((dataAnimeSeason) => {
-            const { image, title, id } = dataAnimeSeason;
-            return (
-              <div key={`animeSeason-${id}`}>
-                <SwiperSlide className="swiperSlide" key={`animes_${id}`}>
-                  <Link to={routes.infoAnime.path}>
-                    <CardAnime
-                      img={image}
-                      title={title}
-                      dataAnime={dataAnimeSeason}
-                      id={id}
-                    />
-                  </Link>
-                </SwiperSlide>
-              </div>
-            );
-          })}
-        </Swiper>
-        <Genres />
+    <div className="container-full-width">
+      <div className="container-animes-season">
+        <h1>Animes da Temporada</h1>
+        <div className="border-title"></div>
+        <div className="container-swiper">
+          <Swiper
+            className="swiper"
+            // install Swiper modules
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={window.innerWidth <= 900 ? 150 : 0}
+            slidesPerView={window.innerWidth <= 768 ? 2.5 : 4}
+            pagination={window.innerWidth <= 1526 ? true : false}
+            navigation
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: true,
+            }}
+          >
+            {filter.map((dataAnimeSeason) => {
+              const { image, title, id } = dataAnimeSeason;
+              return (
+                <div key={`animeSeason-${id}`}>
+                  <SwiperSlide className="swiperSlide" key={`animes_${id}`}>
+                    <Link to={routes.infoAnime.path}>
+                      <CardAnime
+                        img={image}
+                        title={title}
+                        dataAnime={dataAnimeSeason}
+                        id={id}
+                      />
+                    </Link>
+                  </SwiperSlide>
+                </div>
+              );
+            })}
+          </Swiper>
+          <Genres />
+        </div>
       </div>
     </div>
   );

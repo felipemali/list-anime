@@ -14,38 +14,40 @@ const SeasonUpcoming = () => {
   const animesNextSeason = GetAnimesNextSeason();
   SwiperCore.use([Autoplay]);
   return (
-    <div className="container-season-upcoming">
-      <div className="character-home ">
-        <img src={person} alt="" />
-      </div>
-      <div className="container-season-upcoming-swiper">
-        <h1>Próxima Temporada</h1>
-        <div className="container-swiper">
-          <Swiper
-            className="swiper"
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={window.innerWidth <= 900 ? 150 : 0}
-            slidesPerView={window.innerWidth <= 768 ? 2.5 : 4}
-            pagination={window.innerWidth <= 1526 ? true : false}
-            navigation
-          >
-            {animesNextSeason.map((dataAnimeSeason) => {
-              const { id, image, title } = dataAnimeSeason;
-              return (
-                <SwiperSlide
-                  className="swiperSlide"
-                  key={`seasonUpcomming_${id}`}
-                >
-                  <CardAnime
-                    img={image}
-                    title={title}
-                    id={id}
-                    dataAnime={dataAnimeSeason}
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+    <div className="container-full-width">
+      <div className="container-season-upcoming">
+        <div className="character-home ">
+          <img src={person} alt="imagem de uma personagem de anime" />
+        </div>
+        <div className="container-season-upcoming-swiper">
+          <h1>Próxima Temporada</h1>
+          <div className="container-swiper">
+            <Swiper
+              className="swiper"
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={window.innerWidth <= 900 ? 150 : 0}
+              slidesPerView={window.innerWidth <= 768 ? 2.5 : 4}
+              pagination={window.innerWidth <= 1526 ? true : false}
+              navigation
+            >
+              {animesNextSeason.map((dataAnimeSeason) => {
+                const { id, image, title } = dataAnimeSeason;
+                return (
+                  <SwiperSlide
+                    className="swiperSlide"
+                    key={`seasonUpcomming_${id}`}
+                  >
+                    <CardAnime
+                      img={image}
+                      title={title}
+                      id={id}
+                      dataAnime={dataAnimeSeason}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { Button, Card } from "antd";
 import { UserAddOutlined, MenuOutlined } from "@ant-design/icons";
 import ButtonsDrop from "../ButtonsDropDown";
 import Logo from "../../../assets/img/logo.png";
-import Drawerr from "../Drawer";
+import Drawerr from "../../Animes/FoundAnime/Drawer";
 import DrawerMenuLateral from "../DrawerMenuLateral";
 import { AuthContext } from "../../../providers/auth";
 import "antd/dist/antd.css";

@@ -3,7 +3,7 @@
   max-width: 1200px;
   border-top: 0.1px solid #6d6969;
   border-radius: 10px 10px;
-  background-color: #0d0d11;
+  background-color: #fff;
 }
 .animes-calendar-title {
   font-family: Montserrat, sans-serif;
@@ -17,15 +17,13 @@
 }
 .div-anime-calendar-buttons {
   color: #fff;
-  /* background-color:rgb(223, 217, 217); */
-  background-color: #0d0d11;
+  background-color: #fff;
   height: 100%;
   max-width: 1200px;
   margin-left: 1.5%;
 }
 .anime-calendar-buttons {
   display: flex;
-  /* border: 1px solid red; */
   flex-wrap: wrap;
 }
 
@@ -51,11 +49,10 @@
   display: flex;
   justify-content: space-between;
   padding: 1%;
-  background-color: #303538;
+  background-color: #fff;
   margin-top: 0.3em;
-  color: #fff;
+  color: #000;
   font-size: 16px;
-
   line-height: 1.4em;
 }
 .anime-calendar-animes span {
@@ -63,7 +60,7 @@
 }
 
 .anime-calendar-animes:hover {
-  background-color: #393e41;
+  background-color: rgb(223, 217, 217);
 }
 .anime-calendar-animes button {
   font-family: Montserrat, sans-serif;
@@ -83,11 +80,24 @@
 }
 
 @media (max-width: 600px) {
+  .animes-calendar {
+    margin-top: 8rem;
+  }
+  .anime-calendar-buttons {
+    padding-left: 3rem;
+  }
   .animes-calendar-title {
-    margin-top: 4rem;
+    margin-top: 1rem;
+    text-align: center;
   }
   .anime-calendar-buttons button {
     width: 20%;
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .animes-calendar {
+    width: 90%;
   }
 }

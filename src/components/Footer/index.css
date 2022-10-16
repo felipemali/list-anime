@@ -58,7 +58,6 @@
 }
 @media (max-width: 600px) {
   .footer {
-    /* border: 1px solid gold; */
     display: flex;
     flex-wrap: wrap;
     height: 100%;

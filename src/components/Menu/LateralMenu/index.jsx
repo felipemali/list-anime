@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
-
 import { Menu, Modal } from "antd";
 import { Link } from "react-router-dom";
-
 import {
   StarOutlined,
   UndoOutlined,
@@ -10,7 +8,6 @@ import {
   CheckCircleOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-
 import { AuthContext } from "../../../providers/auth";
 import "./index.css";
 import { routes } from "../../../routes/routes";
@@ -34,7 +31,6 @@ const LateralMenu = () => {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("");
   const [colorText, setColorText] = useState("");
-  const [menuSize, setMenuSize] = useState("70px");
 
   const showModal = () => {
     setVisible(true);
@@ -95,15 +91,8 @@ const LateralMenu = () => {
   const handleCancel = () => {
     setVisible(false);
   };
-  const menu = () => {
-    menuSize == "70px" ? setMenuSize("370px") : setMenuSize("70px");
-  };
-  const { path } = routes.infoAnime;
-  const animeswatching = "animesWatching";
-  const animescomplete = "animesComplete";
-  const animesdrop = "animesDrop";
-  const favoritess = "favorites";
 
+  const { path } = routes.infoAnime;
   return (
     <>
       <div className="lateral-menu">
@@ -111,7 +100,7 @@ const LateralMenu = () => {
           style={{
             color: "#222629",
 
-            marginTop: "0px",
+            marginTop: "0",
           }}
           defaultOpenKeys={["sub1"]}
           mode="inline"
@@ -127,7 +116,7 @@ const LateralMenu = () => {
             {animesWatching?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`${animeswatching}-${id}`}>
+                <div key={`animesWatching-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
@@ -186,7 +175,7 @@ const LateralMenu = () => {
             {animesComplete?.map((anime) => {
               const { name, id } = anime;
               return (
-                <div key={`${animescomplete}-${id}`}>
+                <div key={`animesComplete-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
@@ -245,7 +234,7 @@ const LateralMenu = () => {
             {animesDrop?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`${animesdrop}-${id}`}>
+                <div key={`animesDrop-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item
@@ -305,7 +294,7 @@ const LateralMenu = () => {
             {favorites?.map((anime) => {
               const { id, name } = anime;
               return (
-                <div key={`${favoritess}-${id}`}>
+                <div key={`favorites-${id}`}>
                   <div className="div-lateral-menu-item">
                     <Link to={path}>
                       <Menu.Item

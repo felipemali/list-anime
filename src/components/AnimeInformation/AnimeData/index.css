@@ -5,7 +5,6 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: hidden;
-  /* min-width: 320px; */
 }
 .banner {
   background-size: cover;
@@ -63,7 +62,6 @@
   border-radius: 5px 5px;
 }
 .info-anime-synopse {
-  /* border: 1px solid blue; */
   overflow-x: hidden;
   padding-top: 5%;
   width: 75%;
@@ -75,10 +73,6 @@
   border-bottom: 2px solid #fff;
 }
 
-/* .div-character {
-  display: flex;
-  flex-wrap: wrap;
-} */
 .title-synopse {
   font-family: Montserrat, sans-serif !important;
   font-size: 20px;
@@ -125,14 +119,12 @@
   cursor: pointer;
 }
 .buttons-and-trailer {
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-around;
   background-color: #0a0a0a;
   flex-wrap: wrap;
 }
 .info-anime-buttons {
-  /* border: 1px solid gold; */
   display: block;
   min-width: 100px;
   width: 20%;
@@ -154,14 +146,11 @@
   background-color: rgb(187, 20, 20);
 }
 .episodes {
-  /* border: 1px solid red; */
-  /* border: 1px solid gold; */
   min-width: 380px;
   display: flex;
   color: #fff;
   width: 68%;
   flex-wrap: wrap;
-  /* margin-top: 11%; */
 }
 
 .img-episodes {
@@ -252,7 +241,6 @@
   padding-bottom: 5rem;
 }
 .details {
-  /* border: 1px solid blue; */
   min-width: 300px;
   width: 20%;
 }
@@ -272,7 +260,6 @@ ul li {
 
 .dont-knowTwo {
   width: 70%;
-  /* border: 1px solid gold; */
 }
 .div-character {
   margin-top: 3%;
