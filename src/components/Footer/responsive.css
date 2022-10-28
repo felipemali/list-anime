@@ -1,3 +1,5 @@
+@media (min-width: 1400px) {
+}
 @media (max-width: 767px) {
   .footer-logo {
     display: none;

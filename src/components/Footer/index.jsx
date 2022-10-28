@@ -9,7 +9,7 @@ import "./responsive.css";
 
 const Footer = () => {
   return (
-    <>
+    <div className="container-footer">
       <div className="footer">
         <div className="icons">
           <span>Contate-nos:</span>
@@ -45,8 +45,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
       <h3 className="rights-reserved">©2022 - Todos direitos reservados </h3>
-    </>
+    </div>
   );
 };
 export default Footer;

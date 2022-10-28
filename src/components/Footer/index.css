@@ -33,13 +33,14 @@
 }
 .icons span {
   font-size: 17px;
+  font-weight: 600;
 }
 .icons img {
   margin: 0.5rem 0 0 0.5rem;
 }
 .icons img:hover {
-  transform: scale(1.09);
-  transition: all 0.6s;
+  transform: scale(1.1);
+  transition: all 0.8s;
   animation-timing-function: ease;
   cursor: pointer;
 }
@@ -51,4 +52,3 @@
   font-style: oblique;
   margin: 0;
 }
-
