@@ -3,29 +3,27 @@ import {
   CalendarOutlined,
   PlayCircleOutlined,
 } from "@ant-design/icons";
-
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 import "./index.css";
-
+import "./responsive.css";
 import { useContext } from "react";
-import { AuthContext } from "../../providers/auth";
+import { AuthContext } from "../../providers/provider";
 import { Link } from "react-router-dom";
 import { GetAnimesSeasons } from "../../api/animes";
 import { routes } from "../../routes/routes";
+import { Button } from "antd";
 
-const Carousell = () => {
+const Carousel = () => {
   const { setAnime } = useContext(AuthContext);
 
   const animeSeason = GetAnimesSeasons();
   const { path } = routes.infoAnime;
-  const carousel = "carousel";
 
   SwiperCore.use([Autoplay]);
   return (
@@ -43,7 +41,7 @@ const Carousell = () => {
         const { id, banner, title, synopsis, type, duration, toYear } =
           dataAnimeSeason;
         return (
-          <SwiperSlide key={`${carousel}-${id}`} style={{}}>
+          <SwiperSlide key={`carousel-${id}`}>
             <div
               className="carousel-anime"
               style={{
@@ -62,10 +60,15 @@ const Carousell = () => {
                   </>
                   <div className="carousel-details">
                     <Link to={path} onClick={() => setAnime(dataAnimeSeason)}>
-                      <button className="carousel-button">
+                      {/* <button className="carousel-button">
                         <PlayCircleOutlined className="icon-play" />
                         {"Detalhes..."}
-                      </button>
+                      </button> */}
+
+                      <Button className="carousel-button ">
+                        <PlayCircleOutlined className="icon-play" />
+                        Detalhes
+                      </Button>
                     </Link>
                     <PlayCircleOutlined className="carousel-icon" />
                     <span className="carousel-data">{type}</span>
@@ -84,4 +87,4 @@ const Carousell = () => {
   );
 };
 
-export default Carousell;
+export default Carousel;

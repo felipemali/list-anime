@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import "./responsive.css";
 
 const Genres = () => {
   const [color, setColor] = useState();

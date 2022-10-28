@@ -2,28 +2,15 @@ import { Menu, Dropdown } from "antd";
 import { DownOutlined, CalendarOutlined } from "@ant-design/icons";
 import React from "react";
 import "./index.css";
+import "./responsive.css";
 
 const animes = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#000" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        lengendados
-      </a>
+      <a style={{ color: "#000" }}>lengendados</a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#000" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        dublados
-      </a>
+      <a style={{ color: "#000" }}>dublados</a>
     </Menu.Item>
   </Menu>
 );
@@ -31,71 +18,57 @@ const animes = (
 const movies = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#000" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        lengendados
-      </a>
+      <a style={{ color: "#000" }}>lengendados</a>
     </Menu.Item>
   </Menu>
 );
 const reader = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#000" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Em breve
-      </a>
+      <a style={{ color: "#000" }}>Em breve</a>
     </Menu.Item>
   </Menu>
 );
 const calendar = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Domingo
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Segunda-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Terça-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Quarta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Quinta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Sexta-Feira
       </a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a style={{ color: "#000" }} target="_blank" rel="noopener noreferrer">
+      <a style={{ color: "#000" }}>
         <CalendarOutlined />
         {""} Sábado
       </a>
@@ -106,24 +79,10 @@ const calendar = (
 const animesOn = (
   <Menu className="menu-background">
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#fff" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Canal
-      </a>
+      <a style={{ color: "#fff" }}>Canal</a>
     </Menu.Item>
     <Menu.Item className="link-buttons">
-      <a
-        style={{ color: "#fff" }}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Discord
-      </a>
+      <a style={{ color: "#fff" }}>Discord</a>
     </Menu.Item>
   </Menu>
 );

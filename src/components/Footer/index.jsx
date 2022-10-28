@@ -5,6 +5,7 @@ import instagram from "../../icons/instagram.png";
 import twitter from "../../icons/twitter.png";
 import whatsapp from "../../icons/whatsapp.png";
 import "./index.css";
+import "./responsive.css";
 
 const Footer = () => {
   return (

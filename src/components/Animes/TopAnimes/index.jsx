@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../../providers/auth";
-import { CaretRightOutlined } from "@ant-design/icons";
+import { AuthContext } from "../../../providers/provider";
 import { Link } from "react-router-dom";
 import "./index.css";
+import "./responsive.css";
 import { GetTopAnimes } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 

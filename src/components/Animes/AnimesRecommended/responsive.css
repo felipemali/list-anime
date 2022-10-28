@@ -1,0 +1,72 @@
+@media (min-width: 600px) and (max-width: 900px) {
+  .character-home img {
+    display: none;
+  }
+  .container-animes-recommended {
+    width: 100%;
+  }
+  .container-animes-recommended .swiper-container-animes-recommended {
+    margin: auto;
+    width: 100%;
+  }
+  .container-animes-recommended .swiper {
+    width: 80%;
+  }
+}
+@media (max-width: 1024px) {
+  #container-animes-recommended #container-swiper {
+    width: 90%;
+  }
+}
+@media (max-width: 1199px) {
+  .character-home img {
+    display: none;
+  }
+  .container-animes-recommended {
+    width: 100%;
+  }
+  .swiper-container-animes-recommended {
+    margin: auto;
+    width: 100%;
+  }
+  .container-animes-recommended h1 {
+    margin: 0 0 1rem 13%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .character-home img {
+    display: none;
+  }
+  .container-season-upcoming h1 {
+    margin: 0 0 1rem 5%;
+  }
+  .swiper-container-animes-recommended {
+    width: 100%;
+    /* margin: 4rem auto 0 auto;*/
+  }
+  .container-animes-recommended {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container-animes-recommended {
+    width: 100%;
+  }
+  .swiper-container-animes-recommended {
+    width: 70%;
+  }
+  .character-home img {
+    height: 400px;
+  }
+  .character-home {
+    width: 30%;
+  }
+  .container-animes-recommended .swiper {
+    width: 100%;
+  }
+}
+@media (min-width: 1500px) {
+  .character-home img {
+    height: 450px;
+  }
+}

@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
-
 import { Drawer, Space } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import LateralMenu from "../../Menu/LateralMenu";
-
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 
 const DrawerMenuLateral = () => {
   const { showDrawerMenuLateral, visibleMenuLateral, onCloseMenuLateral } =
     useContext(AuthContext);
-
   const [placement, setPlacement] = useState("left");
 
   return (

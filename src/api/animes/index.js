@@ -140,34 +140,37 @@ export const SearchAnime = (nameAnime) => {
   const [foundAnime, setFoundAnime] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`https://api.jikan.moe/v4/anime?q=${nameAnime}`)
-      .then((response) => {
-        const result = response.data.data.map((data) => ({
-          banner: data.trailer.images.maximum_image_url,
-          image: data.images.jpg.image_url,
-          title: data.title,
-          image_large: data.trailer.images.large_image_url,
-          id: data.mal_id,
-          synopsis: data.synopsis,
-          duration: data.duration,
-          trailer: data.trailer.embed_url,
-          rank: data.rank,
-          origin: data.broadcast.timezone,
-          episodes: data.episodes,
-          type: data.type,
-          studio: data.studios.name,
-          favorites: data.favorites,
-          fromDay: data.aired.prop.from.day,
-          fromMonth: data.aired.prop.from.month,
-          fromYear: data.aired.prop.from.year,
-          toDay: data.aired.prop.to.day,
-          toMonth: data.aired.prop.to.month,
-          toYear: data.aired.prop.to.year,
-        }));
-        setFoundAnime(result);
-      });
-  });
+    if (nameAnime) {
+      axios
+        .get(`https://api.jikan.moe/v4/anime?q=${nameAnime}`)
+        .then((response) => {
+          const result = response.data.data.map((data) => ({
+            banner: data.trailer.images.maximum_image_url,
+            image: data.images.jpg.image_url,
+            title: data.title,
+            image_large: data.trailer.images.large_image_url,
+            id: data.mal_id,
+            synopsis: data.synopsis,
+            duration: data.duration,
+            trailer: data.trailer.embed_url,
+            rank: data.rank,
+            origin: data.broadcast.timezone,
+            episodes: data.episodes,
+            type: data.type,
+            studio: data.studios.name,
+            favorites: data.favorites,
+            fromDay: data.aired.prop.from.day,
+            fromMonth: data.aired.prop.from.month,
+            fromYear: data.aired.prop.from.year,
+            toDay: data.aired.prop.to.day,
+            toMonth: data.aired.prop.to.month,
+            toYear: data.aired.prop.to.year,
+          }));
+          setFoundAnime(result);
+          return foundAnime;
+        });
+    }
+  }, [nameAnime]);
 
   return foundAnime;
 };

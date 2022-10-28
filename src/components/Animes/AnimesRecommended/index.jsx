@@ -9,8 +9,8 @@ import "swiper/css";
 import { GetAnimesRecommended } from "../../../api/animes";
 import CardAnime from "../../CardAnime";
 import person from "../../../assets/img/character1.png";
-
 import "./index.css";
+import "./responsive.css";
 const AnimesRecommended = () => {
   const animesRecommended = GetAnimesRecommended();
   SwiperCore.use([Autoplay]);

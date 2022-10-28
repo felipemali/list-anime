@@ -43,43 +43,4 @@
   margin: auto;
   padding-left: 1%;
 }
-@media (max-width: 600px) {
-  .container-animes-season .container-swiper {
-    display: block;
-  }
-  .container-animes-season .container-swiper .swiper {
-    width: 80%;
-    margin: auto;
-    max-height: 400px;
-  }
-}
-@media (max-width: 900px) {
-  .container-animes-season .container-swiper {
-    flex-direction: column;
-  }
-  .container-animes-season .container-swiper .swiper {
-    width: 80%;
-    margin: auto;
-    min-height: 500px;
-  }
-}
-@media (max-width: 1485px) {
-  .container-animes-season .container-swiper {
-    flex-direction: column;
-  }
-  .container-animes-season .container-swiper .swiper {
-    width: 80%;
-    margin: auto;
-  }
-  div.swiper-button-prev {
-    display: none;
-  }
-  div.swiper-button-next {
-    display: none;
-  }
-}
-@media (max-width: 1200px) {
-  .container-animes-season .container-swiper .swiper {
-    min-height: 450px;
-  }
-}
+

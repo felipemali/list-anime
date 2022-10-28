@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { notification } from "antd";
 import { GetAnimesSeasons } from "../api/animes";
 
@@ -20,61 +19,13 @@ const ProviderAnime = ({ children }) => {
   );
 
   const [anime, setAnime] = useState([]);
-  const [nameAnime, setNameAnime] = useState();
   const [search, setSearch] = useState([]);
-  const [menuMobile, setMenuMobile] = useState("none");
   const [valueInputAnimes, setValueInputAnimes] = useState("");
   const [colorStar, setColorStar] = useState("");
   const [visibleMenuLateral, setVisibleMenuLateral] = useState(false);
   const [topAnimes, setTopAnimes] = useState([]);
 
-  useEffect(() => {
-    if (nameAnime) {
-      axios
-        .get(`https://api.jikan.moe/v4/anime?q=${nameAnime}`)
-        .then((response) => {
-          // const data = response.data.data[0].trailer.images.large_image_url;
-          const data = response.data.data[0];
-
-          // const result = response.data.data.map((data) => {
-          //   return {
-          //     image_large: data.trailer.images.large_image_url,
-          //   };
-          // });
-
-          setAnime({
-            banner: data.trailer.images.maximum_image_url,
-            image: data.images.jpg.image_url,
-            title: data.title,
-            image_large: data.trailer.images.large_image_url,
-            id: data.mal_id,
-            synopsis: data.synopsis,
-            duration: data.duration,
-            trailer: data.trailer.embed_url,
-            rank: data.rank,
-            origin: data.broadcast.timezone,
-            episodes: data.episodes,
-            type: data.type,
-            studio: data.studios.name,
-            favorites: data.favorites,
-            fromDay: data.aired.prop.from.day,
-            fromMonth: data.aired.prop.from.month,
-            fromYear: data.aired.prop.from.year,
-            toDay: data.aired.prop.to.day,
-            toMonth: data.aired.prop.to.month,
-            toYear: data.aired.prop.to.year,
-          });
-
-          setSearch({
-            // image: data.trailer.images.image_url,
-            title: data.title,
-            image: data.images.jpg.image_url,
-            id: data.mal_id,
-          });
-        });
-    }
-  }, [nameAnime]);
-
+  const animesSeason = GetAnimesSeasons();
   const showDrawerMenuLateral = () => {
     setVisibleMenuLateral(true);
   };
@@ -199,28 +150,11 @@ const ProviderAnime = ({ children }) => {
   };
 
   const randomAnime = () => {
-    const random = Math.floor(Math.random() * GetAnimesSeasons().length);
-    const randomm = GetAnimesSeasons()[random];
-
+    const random = Math.floor(Math.random() * animesSeason.length);
+    const randomm = animesSeason[random];
     setAnime(randomm);
   };
-
-  const colors = [
-    "#002545",
-    "#14808c",
-    "#ed874f",
-    "#781e1a",
-    "#6f72e3",
-    "#674075 ",
-    "#703064 ",
-    "#2f091e ",
-    "#bc6021",
-    "#512948",
-    "#122b4d",
-  ];
-
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const randomColor = colors[randomIndex];
+  console.log(search);
 
   return (
     <AuthContext.Provider
@@ -231,15 +165,11 @@ const ProviderAnime = ({ children }) => {
         animesDrop,
         anime,
         search,
-        nameAnime,
-        menuMobile,
         valueInputAnimes,
         colorStar,
-        randomColor,
         visibleMenuLateral,
         topAnimes,
         setAnime,
-        setNameAnime,
         setFavorites,
         setSearch,
         setAnimesWatching,

@@ -1,0 +1,45 @@
+@media (max-width: 1200px) {
+  .carousel-data {
+    margin-top: 6.3rem;
+    width: 65%;
+  }
+  .carousel-text-anime {
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 900px) {
+  .carousel-data {
+    margin-top: 6.3rem;
+    width: 65%;
+  }
+  .carousel-title-anime {
+    font-size: 35px;
+  }
+  .carousel-button {
+    width: 30%;
+    padding: 0.5em;
+    margin-top: 4%;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-title-anime {
+    font-size: 35px;
+  }
+  .carousel-text-anime {
+    display: none;
+  }
+  .carousel-data {
+    margin-top: 25%;
+    width: 65%;
+  }
+  .carousel-button {
+    width: 30%;
+    padding: 0.5em;
+    margin-top: 4%;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-anime-swiper {
+    display: none;
+  }
+}

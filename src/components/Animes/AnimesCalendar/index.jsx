@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import { CaretRightOutlined, ContactsOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { GetAnimesSeasons } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 import "./index.css";
+import "./responsive.css";
 
 const AnimesCalendar = () => {
   const { setAnime } = useContext(AuthContext);

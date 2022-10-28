@@ -5,7 +5,7 @@ import {
   CheckCircleOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import "../AnimeData/index.css";
 
 const LibraryAnime = () => {
@@ -14,7 +14,7 @@ const LibraryAnime = () => {
   return (
     <div className="library">
       <div className="library-buttons">
-        <Divider color="#fff">Biblioteca</Divider>
+        <Divider style={{ color: "#fff" }}>Biblioteca</Divider>
         <button className="library-button-watch">
           <PlusOutlined style={{ paddingRight: "0.7em" }} />
           Assistir

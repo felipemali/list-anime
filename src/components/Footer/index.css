@@ -51,28 +51,4 @@
   font-style: oblique;
   margin: 0;
 }
-@media (max-width: 767px) {
-  .footer-logo {
-    display: none;
-  }
-}
-@media (max-width: 600px) {
-  .footer {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-content: start;
-    padding-top: 1rem;
-    margin: auto;
-  }
-  .icons {
-    text-align: center;
-    width: 100%;
-  }
-  .icons img {
-    margin: 0.3rem 0 0 0.7rem;
-  }
-  .footer-logo {
-    border: 1px solid red;
-  }
-}
+

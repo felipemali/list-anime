@@ -1,8 +1,6 @@
 import { Divider } from "antd";
 import React, { useContext } from "react";
-import { AuthContext } from "../../../providers/auth";
-
-
+import { AuthContext } from "../../../providers/provider";
 
 const DetailsAnime = () => {
   const { anime } = useContext(AuthContext);
@@ -24,42 +22,52 @@ const DetailsAnime = () => {
     {
       title: "titulo",
       data: title,
+      id: "title1",
     },
     {
       title: "Japones",
       data: title_japanese,
+      id: "title2",
     },
     {
       title: "Nº Episódios",
       data: episodes,
+      id: "title3",
     },
     {
       title: "Tempo de Episódio",
       data: duration,
+      id: "title4",
     },
     {
       title: "Ranking dos Usuarios",
       data: rank,
+      id: "title5",
     },
     {
       title: "Favoritos",
       data: favorites,
+      id: "title6",
     },
     {
       title: "Origem",
       data: origin,
+      id: "title7",
     },
     {
       title: "Studio",
       data: studio,
+      id: "title8",
     },
     {
       title: "Início",
       data: fromYear,
+      id: "title9",
     },
     {
       title: "Fim",
       data: toYear,
+      id: "title10",
     },
   ];
 
@@ -73,15 +81,15 @@ const DetailsAnime = () => {
           >
             Detalhes
           </Divider>
-          {dataAnime.map(({ title, data }) => (
-            <ul>
+          {dataAnime.map(({ title, data, id }) => (
+            <ul key={id}>
               <li>
                 {title}: <span>{data}</span>
               </li>
             </ul>
           ))}
         </div>
-        {/* <div className="dont-knowTwo"></div> */}
+        {/* <div className="dont-knowTwo">aaaaaaaaaa</div> */}
       </div>
     </>
   );

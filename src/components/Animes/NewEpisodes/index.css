@@ -6,33 +6,17 @@
 }
 
 div.swiper-button-prev {
-  margin-left: 96%;
-  margin-top: 1%;
-  position: absolute;
-  height: 30%;
-  top: 0;
-  left: 0;
-  right: 0;
   color: #fff;
-  background-color: #2a2b31;
-  padding: 1.5%;
-  border-radius: 10px 10px;
-  cursor: pointer;
 }
-div.swiper-button-prev:hover {
+/* div.swiper-button-prev:hover {
   background-color: #0652a3;
-}
+} */
 div.swiper-button-next {
   color: #fff;
-  background-color: #2a2b31;
-  height: 30%;
-  padding: 1.5%;
-  border-radius: 10px 10px;
-  cursor: pointer;
 }
-div.swiper-button-next:hover {
+/* div.swiper-button-next:hover {
   background-color: #0652a3;
-}
+} */
 
 .new-episodes h1 {
   font-family: Montserrat, sans-serif;
@@ -86,75 +70,3 @@ div.swiper-button-next:hover {
   color: rgb(245, 219, 219);
 }
 
-@media (max-width: 600px) {
-  .div-swiperSlide-new-episodes {
-    width: 220px;
-    height: 370px;
-  }
-
-  .new-episodes {
-    border-top: none;
-  }
-  .swiperSlide {
-    margin-left: 5rem;
-  }
-  .swiper-new-episodes {
-    margin: 2% 0 0 0;
-    max-height: 400px;
-  }
-  div.swiper-button-prev {
-    display: none;
-  }
-  div.swiper-button-next {
-    display: none;
-  }
-  .div-animes-input {
-    width: 60%;
-  }
-}
-@media (max-width: 900px) {
-  .swiperSlide-anime {
-    min-width: 150px;
-    min-height: 300px;
-  }
-
-  .div-swiperSlide-new-episodes {
-    width: 220px;
-    height: 400px;
-    text-align: center;
-  }
-  .swiperSlide {
-    margin-left: 5rem;
-  }
-
-  .button-details {
-    display: none;
-  }
-  .new-episodes {
-    border-top: none;
-  }
-  .swiper-new-episodes {
-    margin: 2% auto 0 auto;
-    height: 450px;
-  }
-
-  div.swiper-button-prev {
-    display: none;
-  }
-  div.swiper-button-next {
-    display: none;
-  }
-}
-@media (max-width: 1100px) {
-  .swiperSlide {
-    margin-left: 5rem;
-  }
-}
-@media (min-width: 1800px) {
-  .container-full-width {
-    margin-top: 0rem;
-    background: #0f181d
-      linear-gradient(180deg, #1b2730, #131d24, #131d24, #1a2931);
-    width: 100%;
-  }
-}

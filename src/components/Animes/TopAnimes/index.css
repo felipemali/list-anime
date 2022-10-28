@@ -70,28 +70,3 @@
 .top-animes button:hover {
   background-color: #64a6ec;
 }
-@media (max-width: 600px) {
-  .position-anime div ul {
-    display: none;
-  }
-  .container-top-animes {
-    width: 95%;
-    margin: auto;
-  }
-}
-@media (max-width: 768px) {
-  .top-animes-title {
-    font-family: Montserrat, sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    margin-left: 1em;
-    min-width: 20%;
-    color: rgb(187, 165, 40);
-  }
-  .position-anime {
-    margin: 0.5rem auto;
-  }
-  .container-top-animes-details {
-    width: 30%;
-  }
-}

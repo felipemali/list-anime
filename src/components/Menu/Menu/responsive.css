@@ -1,0 +1,126 @@
+@media (max-width: 900px) {
+  .menu {
+    display: flex;
+    padding: 2% 0px;
+  }
+  .menu-logo {
+    cursor: pointer;
+    width: 3rem;
+  }
+  .div-menu-input {
+    color: #fff;
+    padding: 0;
+    height: 4%;
+    border-radius: 5px 5px;
+    animation-name: slide;
+    transform: translateX(-100px);
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  .menu-icons {
+    display: flex;
+    margin: auto 0;
+  }
+  .user {
+    margin: auto 0;
+  }
+}
+@media (max-width: 825px) {
+  .menu {
+    display: flex;
+    padding: 2% 0px;
+    justify-content: space-between;
+  }
+  .menu-logo {
+    cursor: pointer;
+    width: 3rem;
+  }
+  .div-menu-input {
+    color: #fff;
+    padding: 0;
+    height: 4%;
+    border-radius: 5px 5px;
+    animation-name: slide;
+    transform: translateX(-100px);
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  .menu-icons {
+    display: flex;
+    margin: auto 0;
+  }
+  .user {
+    margin: auto 0;
+  }
+  .menu-buttons {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    padding: 1% 0px;
+  }
+  .menu-logo {
+    margin: 0 0 0.5rem 1.5rem;
+    width: 5rem;
+  }
+  .menu-buttons {
+    margin-left: 3rem;
+  }
+
+  .menu-icons {
+    display: flex;
+  }
+}
+@media (max-width: 638px) {
+  .menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    background-color: #000000;
+    color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .menu-logo {
+    width: 5rem;
+    margin-left: 2rem;
+  }
+  .menu-buttons {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    background-color: #000000;
+    color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 1% 0;
+    justify-content: space-between;
+  }
+  .menu-logo {
+    width: 4rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-buttons {
+    display: none;
+  }
+  .button-random-anime {
+    display: none;
+  }
+  .menu-logo {
+    margin-left: 2rem;
+  }
+}

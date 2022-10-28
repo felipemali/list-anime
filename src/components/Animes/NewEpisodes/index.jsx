@@ -6,11 +6,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
-import { Popover } from "antd";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import { GetNewEpisodes } from "../../../api/newEpisodes";
 import CardAnime from "../../CardAnime";
 import "./index.css";
+import "./responsive.css";
 
 const NewEpisodes = () => {
   const { valueInputAnimes } = useContext(AuthContext);

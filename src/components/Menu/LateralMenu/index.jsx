@@ -8,8 +8,9 @@ import {
   CheckCircleOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import "./index.css";
+import "./responsive.css";
 import { routes } from "../../../routes/routes";
 
 const { SubMenu } = Menu;

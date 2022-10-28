@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import { GetAnimesSeasons } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 import Genres from "../Genres";
 import CardAnime from "../../CardAnime";
 import "./index.css";
+import "./responsive.css";
 
 const AnimesSeason = () => {
   const { valueInputAnimes } = useContext(AuthContext);

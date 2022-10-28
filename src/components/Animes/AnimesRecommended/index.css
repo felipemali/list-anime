@@ -8,6 +8,7 @@
 .container-animes-recommended {
   display: flex;
   max-width: 1800px;
+  width: 80%;
   margin: auto;
   margin-top: 0.3rem;
   background: #0f181d
@@ -44,41 +45,4 @@
   flex-wrap: wrap;
   border-top: 5px solid #f26420;
 }
-@media (max-width: 600px) {
-  .container-animes-recommended .swiper {
-    max-height: 350px;
-  }
-  .character-home img {
-    display: none;
-  }
-}
-@media (max-width: 900px) {
-  .swiper-container-animes-recommended {
-    width: 100%;
-  }
-  .container-animes-recommended .swiper {
-    height: 460px;
-  }
-  .character-home img {
-    display: none;
-  }
-}
-@media (max-width: 1024px) {
-  #container-animes-recommended #container-swiper {
-    width: 90%;
-  }
-}
-@media (max-width: 1200px) {
-  .character-home img {
-    height: 350px;
-  }
-  .character-home {
-    width: 30%;
-  }
-  .swiper-container-animes-recommended {
-    width: 70%;
-  }
-  .container-animes-recommended .swiper {
-    width: 100%;
-  }
-}
+

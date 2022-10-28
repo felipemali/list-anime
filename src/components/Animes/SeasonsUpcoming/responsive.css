@@ -1,0 +1,30 @@
+@media (min-width: 600px) and (max-width: 900px) {
+  .container-season-upcoming .swiper {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .container-season-upcoming-swiper {
+    width: 100%;
+  }
+  .container-season-upcoming .swiper {
+    height: 430px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .container-season-upcoming-swiper {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .character-home {
+    width: 30%;
+  }
+  .container-season-upcoming-swiper {
+    width: 70%;
+  }
+  .container-season-upcoming .swiper {
+    width: 100%;
+    height: 430px;
+  }
+}

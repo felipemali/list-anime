@@ -3,7 +3,7 @@ import InfoAnime from "../InfoAnime";
 import SearchAnime from "../SearchAnime";
 import { BackTop } from "antd";
 import ContentHome from "../ContentHome";
-import ProviderAnime from "../../providers/auth";
+import ProviderAnime from "../../providers/provider";
 import { routes } from "../../routes/routes";
 import Menu from "../../components/Menu/Menu";
 

@@ -1,6 +1,6 @@
 export const routes = {
   infoAnime: {
-    path: "/infoAnime",
+    path: "/info-anime",
     title: "informação do anime",
   },
 
@@ -9,7 +9,7 @@ export const routes = {
     title: "inicio",
   },
   searchMenu: {
-    path: "/searchMenu",
-    title: "Pesquisa do anime no Menu",
+    path: "/menu-anime",
+    title: "menu de animes",
   },
 };

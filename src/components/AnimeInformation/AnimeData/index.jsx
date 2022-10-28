@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import { Link } from "react-router-dom";
 import { Dropdown, Image } from "antd";
 import { CaretDownOutlined } from "@ant-design/icons";
@@ -8,29 +8,28 @@ import { Options } from "./Options";
 import { routes } from "../../../routes/routes";
 import { GetCharacter } from "../../../api/characters";
 import "./index.css";
+import "./responsive.css";
+import { useState } from "react";
 
 const AnimeData = () => {
-  const { anime, animes, setSearch, setNameAnime } = useContext(AuthContext);
+  const { anime, animes } = useContext(AuthContext);
   const episodes = GetEpisodes(anime.id);
   const character = GetCharacter(anime.id);
+  const [display, setDisplay] = useState("none");
   const imageError = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const { path } = routes.inicio;
-  const bollean = true;
 
   <Options />;
 
   return (
-    <div className="div-info-anime">
-      <div
-        className="banner"
-        style={{
-          backgroundImage: `url(${anime?.banner})`,
-        }}
-      ></div>
-
+    <div>
       <div className="info-anime">
         <div className="div-info-anime-img">
-          <img className="info-anime-img" src={anime?.image} alt="" />
+          <img
+            className="info-anime-img"
+            src={anime?.image}
+            alt="capa do anime"
+          />
           {anime.image && (
             <div className="butons-options">
               <button
@@ -60,15 +59,7 @@ const AnimeData = () => {
           )}
         </div>
         <Link to={path}>
-          <button
-            onClick={() => {
-              setSearch("");
-              setNameAnime("");
-            }}
-            className="button-out"
-          >
-            Voltar
-          </button>
+          <button className="button-out">Voltar</button>
         </Link>
         <div className="info-anime-synopse">
           <span className="title-character">Personagens</span>

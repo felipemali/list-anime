@@ -24,19 +24,17 @@
 
 .div-search-input {
   background-color: rgb(221, 218, 218);
-  color: #fff;
+  color: #000;
   display: flex;
   border-radius: 5px 5px;
 }
-.div-search-input:target {
-  border: 1px solid #fff;
-}
+
 .search-input {
   width: 100%;
   font-size: 17px;
   border: none;
   padding: 1%;
-  background-color: rgb(221, 218, 218);
+  background-color: #fff;
   text-align: center;
   border-radius: 5px 5px;
 }
@@ -44,10 +42,9 @@ input:focus {
   outline: 0;
 }
 input::placeholder {
-  background-color: rgb(221, 218, 218);
   text-align: center;
 }
-.search-icon-search {
+.search .icon-search {
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -98,14 +95,28 @@ input::placeholder {
   margin-top: 0.2%;
   font-family: Montserrat, sans-serif;
 }
-.button-goBack-home {
+.search .button-back {
+  margin-left: 1rem;
   margin-top: 3%;
+  padding: 0.3rem;
   cursor: pointer;
   display: block;
   font-weight: 600;
   background: #1b1b1b;
   border: 1px solid #1890ff;
   color: #1890ff;
+  padding: 0.3rem 2rem;
+  border-radius: 5px 5px;
+}
+.button-goBack-home {
+  margin-top: 3%;
+  padding: 0.3rem;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  background: #1b1b1b;
+  border: 1px solid red;
+  color: red;
   border-radius: 5px 5px;
 }
 .search-anime-found {
@@ -153,74 +164,4 @@ input::placeholder {
 }
 .icon {
   font-size: 20px;
-}
-
-@media (max-width: 600px) {
-  .icon {
-    text-align: right;
-    font-size: 20px;
-  }
-  .search-title-result {
-    text-align: center;
-    margin-top: 3rem;
-  }
-  .results-found {
-    margin: auto;
-    width: 90%;
-    justify-content: space-around;
-  }
-  .container-card-anime {
-    margin-top: 10rem;
-  }
-  .button-goBack-home {
-    margin-left: 1rem;
-    margin-top: 2rem;
-  }
-  .search-title {
-    width: 70%;
-    margin: 5em auto 0 auto;
-    padding: 0.5%;
-  }
-  .div-search-input {
-    width: 70%;
-    margin: auto;
-    padding: 1%;
-  }
-}
-@media (max-width: 900px) {
-  .results-found {
-    margin: auto;
-    width: 100%;
-    padding-left: 1rem;
-    justify-content: space-around;
-  }
-
-  .search-title {
-    width: 80%;
-    margin: 5em auto 0 auto;
-    padding: 0.5%;
-  }
-  .div-search-input {
-    width: 80%;
-    margin: auto;
-    padding: 1%;
-  }
-}
-@media (max-width: 1200px) {
-  .search-title-result {
-    text-align: center;
-  }
-  .button-goBack-home {
-    margin-left: 1rem;
-    margin-top: 2rem;
-  }
-  .search-title {
-    width: 90%;
-    margin: 5em auto 0 auto;
-    padding: 0.5%;
-  }
-  .div-search-input {
-    width: 90%;
-    margin: auto;
-  }
 }

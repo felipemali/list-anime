@@ -5,16 +5,15 @@ import ButtonsDrop from "../ButtonsDropDown";
 import Logo from "../../../assets/img/logo.png";
 import Drawerr from "../../Animes/FoundAnime/Drawer";
 import DrawerMenuLateral from "../DrawerMenuLateral";
-import { AuthContext } from "../../../providers/auth";
+import { AuthContext } from "../../../providers/provider";
 import "antd/dist/antd.css";
 import "./index.css";
+import "./responsive.css";
 import { Link } from "react-router-dom";
 import { routes } from "../../../routes/routes";
 
-// const { Meta } = Card;
-
 const Menu = () => {
-  const { menuSx, randomAnime } = useContext(AuthContext);
+  const { randomAnime } = useContext(AuthContext);
   const { path } = routes.infoAnime;
 
   return (

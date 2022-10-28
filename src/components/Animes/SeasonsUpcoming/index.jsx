@@ -8,6 +8,7 @@ import "swiper/css";
 import { GetAnimesNextSeason } from "../../../api/animes";
 import CardAnime from "../../CardAnime";
 import "./index.css";
+import "./responsive.css";
 import person from "../../../assets/img/character.png";
 
 const SeasonUpcoming = () => {
@@ -16,7 +17,7 @@ const SeasonUpcoming = () => {
   return (
     <div className="container-full-width">
       <div className="container-season-upcoming">
-        <div className="character-home ">
+        <div className="character-home">
           <img src={person} alt="imagem de uma personagem de anime" />
         </div>
         <div className="container-season-upcoming-swiper">
