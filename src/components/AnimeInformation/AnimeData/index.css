@@ -74,13 +74,13 @@
 .title-character {
   font-family: Montserrat, sans-serif !important;
   font-size: 20px;
-  border-bottom: 2px solid #fff;
+  font-weight: 600;
 }
 
 .title-synopse {
   font-family: Montserrat, sans-serif !important;
   font-size: 20px;
-  border-bottom: 2px solid #fff;
+  font-weight: 600;
 }
 .character {
   display: block;

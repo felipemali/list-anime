@@ -14,7 +14,9 @@ const LibraryAnime = () => {
   return (
     <div className="library">
       <div className="library-buttons">
-        <Divider style={{ color: "#fff" }}>Biblioteca</Divider>
+        <Divider style={{ color: "#fff", fontWeight: 600, fontSize: "20px" }}>
+          Biblioteca
+        </Divider>
         <button className="library-button-watch">
           <PlusOutlined style={{ paddingRight: "0.7em" }} />
           Assistir

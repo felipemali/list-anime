@@ -20,7 +20,10 @@ const Menu = () => {
     <div className="menu">
       <div className="container-drawer">
         <DrawerMenuLateral />
-        <img className="menu-logo" src={Logo} alt="icone do site" />
+
+        <Link to={"/"}>
+          <img className="menu-logo" src={Logo} alt="icone do site" />
+        </Link>
       </div>
 
       <div className="menu-buttons">
