@@ -1,4 +1,9 @@
-@media (min-width: 1400px) {
+@media (min-width: 1764px) {
+  .info-anime-synopse {
+    margin-top: 16rem;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1763px) {
   .info-anime-img {
     width: 70%;
   }

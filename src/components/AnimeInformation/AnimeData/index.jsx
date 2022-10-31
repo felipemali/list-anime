@@ -9,13 +9,11 @@ import { routes } from "../../../routes/routes";
 import { GetCharacter } from "../../../api/characters";
 import "./index.css";
 import "./responsive.css";
-import { useState } from "react";
 
 const AnimeData = () => {
   const { anime, animes } = useContext(AnimeContext);
   const episodes = GetEpisodes(anime.id);
   const character = GetCharacter(anime.id);
-  const [display, setDisplay] = useState("none");
   const imageError = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const { path } = routes.inicio;
 
@@ -37,7 +35,7 @@ const AnimeData = () => {
                 onClick={() => {
                   animes({
                     name: anime.title,
-                    img: anime.image_large,
+                    image: anime.image_large,
                     id: anime.id,
                   });
                 }}

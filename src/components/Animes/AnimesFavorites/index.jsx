@@ -13,12 +13,8 @@ import "./index.css";
 import "./responsive.css";
 
 const AnimesFavorites = () => {
-  const { valueInputAnimes, favorites } = useContext(AnimeContext);
+  const { favorites } = useContext(AnimeContext);
   SwiperCore.use([Autoplay]);
-  const newEpisodes = GetNewEpisodes();
-  const filter = newEpisodes.filter((anime) => {
-    return anime.title.toLowerCase().includes(valueInputAnimes);
-  });
   return (
     <div className="container-full-width">
       <div className="animes-favorites">
@@ -44,15 +40,18 @@ const AnimesFavorites = () => {
               disableOnInteraction: true,
             }}
           >
-            {favorites?.map((newEpisodes) => {
-              const { id, img, name, title } = newEpisodes;
+            {favorites?.map((favorites) => {
+              const { id, image, name } = favorites;
               return (
-                <SwiperSlide className="swiperSlide" key={`favorites-${id}`}>
+                <SwiperSlide
+                  className="swiperSlide"
+                  key={`animes-favorites-${id}`}
+                >
                   <CardAnime
-                    img={img}
+                    img={image}
                     title={name}
                     id={id}
-                    dataAnime={newEpisodes}
+                    dataAnime={favorites}
                   />
                 </SwiperSlide>
               );

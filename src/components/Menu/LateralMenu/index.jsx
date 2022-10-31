@@ -32,13 +32,16 @@ const LateralMenu = () => {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("");
   const [colorText, setColorText] = useState("");
+  const [animeSelect, setAnimeSelect] = useState();
 
-  const showModal = () => {
+  const showModal = (anime) => {
     setVisible(true);
+    setAnimeSelect(anime);
+    console.log(anime);
   };
 
   const handleOk = (nameAnime) => {
-    const exclued = favorites.filter((name) => name.id !== nameAnime);
+    const exclued = favorites.filter((name) => name.name !== nameAnime);
     setFavorites(exclued);
     localStorage.setItem("favorites", JSON.stringify(exclued));
 
@@ -51,7 +54,8 @@ const LateralMenu = () => {
   };
 
   const handleOkWatching = (nameAnime) => {
-    const exclued = animesWatching.filter((name) => name.id !== nameAnime.id);
+    console.log(nameAnime);
+    const exclued = animesWatching.filter((name) => name.name !== nameAnime);
     console.log(exclued);
 
     setAnimesWatching(exclued);
@@ -65,6 +69,7 @@ const LateralMenu = () => {
     }, 2000);
   };
   const handleOkComplete = (nameAnime) => {
+    console.log(nameAnime);
     const exclued = animesComplete.filter((name) => name.name !== nameAnime);
     setAnimesComplete(exclued);
     localStorage.setItem("complete", JSON.stringify(exclued));
@@ -77,7 +82,8 @@ const LateralMenu = () => {
     }, 2000);
   };
   const handleOkDrop = (nameAnime) => {
-    const exclued = animesDrop.filter((name) => name.id !== nameAnime.id);
+    console.log(nameAnime);
+    const exclued = animesDrop.filter((name) => name.name !== nameAnime);
     setAnimesDrop(exclued);
     localStorage.setItem("drop", JSON.stringify(exclued));
 
@@ -136,7 +142,7 @@ const LateralMenu = () => {
                       margin: "auto 0px",
                     }}
                     onClick={() => {
-                      showModal();
+                      showModal(name);
                       setModalText(`Deseja excluir ${name}?`);
                       setColorText({ color: "#5e1403", size: "18px" });
                     }}
@@ -146,7 +152,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOkWatching(anime)}
+                  onOk={() => handleOkWatching(animeSelect)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -195,7 +201,7 @@ const LateralMenu = () => {
                       margin: "auto 0px",
                     }}
                     onClick={() => {
-                      showModal();
+                      showModal(name);
                       setModalText(`Deseja excluir ${name}?`);
                       setColorText({ color: "#5e1403", size: "18px" });
                     }}
@@ -205,7 +211,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOkComplete(anime)}
+                  onOk={() => handleOkComplete(animeSelect)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -254,7 +260,7 @@ const LateralMenu = () => {
                       margin: "auto 0px",
                     }}
                     onClick={() => {
-                      showModal();
+                      showModal(name);
                       setModalText(`Deseja excluir ${name}?`);
                       setColorText({ color: "#5e1403", size: "18px" });
                     }}
@@ -264,7 +270,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOkDrop(anime)}
+                  onOk={() => handleOkDrop(animeSelect)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >
@@ -314,7 +320,7 @@ const LateralMenu = () => {
                       margin: "auto 0px",
                     }}
                     onClick={() => {
-                      showModal();
+                      showModal(name);
                       setModalText(`Deseja excluir ${name}?`);
                       setColorText({ color: "#5e1403", size: "18px" });
                     }}
@@ -324,7 +330,7 @@ const LateralMenu = () => {
                 <Modal
                   title={<DeleteOutlined />}
                   visible={visible}
-                  onOk={() => handleOk(id)}
+                  onOk={() => handleOk(animeSelect)}
                   confirmLoading={confirmLoading}
                   onCancel={handleCancel}
                 >

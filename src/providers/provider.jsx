@@ -130,7 +130,7 @@ const ProviderAnime = ({ children }) => {
       openNotification(
         "error",
         {
-          messagee: `${anime.title} já foi adicionado há lista de Completos`,
+          messagee: `${anime.title} já foi adicionado há lista de Dropados`,
           descriptionn: "Para removê-lo vá ao Menu na página Inicial",
         },
         "top"
@@ -139,8 +139,8 @@ const ProviderAnime = ({ children }) => {
       openNotification(
         "success",
         {
-          messagee: `${anime.title}  Adicionado há lista Completos`,
-          descriptionn: "Confira a lista de Completos na página Inicial",
+          messagee: `${anime.title}  Adicionado há lista Dropados`,
+          descriptionn: "Confira a lista de Dropados na página Inicial",
         },
         "top"
       );
