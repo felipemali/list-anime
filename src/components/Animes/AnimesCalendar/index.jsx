@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import { CaretRightOutlined, ContactsOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { GetAnimesSeasons } from "../../../api/animes";
@@ -8,7 +8,7 @@ import "./index.css";
 import "./responsive.css";
 
 const AnimesCalendar = () => {
-  const { setAnime } = useContext(AuthContext);
+  const { setAnime } = useContext(AnimeContext);
   const [selectedDay, setSelectedDay] = useState();
   const animeSeason = GetAnimesSeasons();
   const buttons = [

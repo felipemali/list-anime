@@ -5,11 +5,11 @@ import {
   CheckCircleOutlined,
   CheckOutlined,
 } from "@ant-design/icons";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import "../AnimeData/index.css";
 
 const LibraryAnime = () => {
-  const { anime } = useContext(AuthContext);
+  const { anime } = useContext(AnimeContext);
 
   return (
     <div className="library">

@@ -21,7 +21,10 @@ const SeasonUpcoming = () => {
           <img src={person} alt="imagem de uma personagem de anime" />
         </div>
         <div className="container-season-upcoming-swiper">
-          <h1>Próxima Temporada</h1>
+          <section>
+            <h1>Próxima Temporada</h1>
+          </section>
+
           <div className="container-swiper">
             <Swiper
               className="swiper"

@@ -22,7 +22,9 @@ const AnimesRecommended = () => {
           <img src={person} alt="imagem de uma personagem de anime" />
         </div>
         <div className="swiper-container-animes-recommended">
-          <h1>Recomendações para Você</h1>
+          <section>
+            <h1>Recomendações para Você</h1>
+          </section>
           <div className="container-swiper">
             <Swiper
               className="swiper"

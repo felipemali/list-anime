@@ -33,6 +33,7 @@
 .container-drawer {
   width: 10%;
   display: flex;
+  margin-left: 15px;
 }
 .menu-buttons-center {
   font-family: Montserrat, sans-serif !important;
@@ -91,5 +92,3 @@ a {
 a:hover {
   color: inherit;
 }
-
-

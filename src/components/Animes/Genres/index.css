@@ -10,8 +10,14 @@
   padding-top: 0.5%;
   border-radius: 8px 8px;
 }
+.container-genres section {
+  display: block;
+}
 .container-genres span {
+  text-align: center;
+  color: #fff;
   margin: 0 auto 6px auto;
+  font-weight: 600;
   font-size: 20px;
 }
 #container-animes-season #container-button {
@@ -33,4 +39,3 @@
 .container-button button:hover {
   background-color: #434a50;
 }
-

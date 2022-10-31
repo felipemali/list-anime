@@ -1,9 +1,9 @@
 import { Menu, Dropdown, Image } from "antd";
 import { useContext } from "react";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 
 export const Options = () => {
-  const { anime, watching, complete, drop } = useContext(AuthContext);
+  const { anime, watching, complete, drop } = useContext(AnimeContext);
 
   return (
     <Menu className="options-background">

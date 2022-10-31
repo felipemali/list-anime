@@ -1,9 +1,9 @@
 import { Divider } from "antd";
 import React, { useContext } from "react";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 
 const DetailsAnime = () => {
-  const { anime } = useContext(AuthContext);
+  const { anime } = useContext(AnimeContext);
 
   const {
     title,

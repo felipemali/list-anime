@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import { notification } from "antd";
 import { GetAnimesSeasons } from "../api/animes";
 
-export const AuthContext = createContext({});
+export const AnimeContext = createContext({});
 
 const ProviderAnime = ({ children }) => {
   const [favorites, setFavorites] = useState(
@@ -26,6 +26,7 @@ const ProviderAnime = ({ children }) => {
   const [topAnimes, setTopAnimes] = useState([]);
 
   const animesSeason = GetAnimesSeasons();
+
   const showDrawerMenuLateral = () => {
     setVisibleMenuLateral(true);
   };
@@ -157,7 +158,7 @@ const ProviderAnime = ({ children }) => {
   console.log(search);
 
   return (
-    <AuthContext.Provider
+    <AnimeContext.Provider
       value={{
         favorites,
         animesWatching,
@@ -186,7 +187,7 @@ const ProviderAnime = ({ children }) => {
       }}
     >
       {children}
-    </AuthContext.Provider>
+    </AnimeContext.Provider>
   );
 };
 

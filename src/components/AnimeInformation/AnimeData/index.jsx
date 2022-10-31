@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import { Link } from "react-router-dom";
 import { Dropdown, Image } from "antd";
 import { CaretDownOutlined } from "@ant-design/icons";
@@ -12,7 +12,7 @@ import "./responsive.css";
 import { useState } from "react";
 
 const AnimeData = () => {
-  const { anime, animes } = useContext(AuthContext);
+  const { anime, animes } = useContext(AnimeContext);
   const episodes = GetEpisodes(anime.id);
   const character = GetCharacter(anime.id);
   const [display, setDisplay] = useState("none");

@@ -3,7 +3,6 @@ import "./index.css";
 import "./responsive.css";
 
 const Genres = () => {
-  const [color, setColor] = useState();
   const buttons = [
     {
       genre: "Acao",
@@ -113,7 +112,8 @@ const Genres = () => {
   ];
   return (
     <div className="container-genres">
-      <span style={{ color: `${color}` }}>GÊNEROS</span>
+      <span>GÊNEROS</span>
+
       <div className="container-button">
         {buttons.map(({ color, genre, id }) => (
           <button key={id} style={{ color: `${color}` }}>

@@ -13,14 +13,14 @@ import "swiper/css";
 import "./index.css";
 import "./responsive.css";
 import { useContext } from "react";
-import { AuthContext } from "../../providers/provider";
+import { AnimeContext } from "../../providers/provider";
 import { Link } from "react-router-dom";
 import { GetAnimesSeasons } from "../../api/animes";
 import { routes } from "../../routes/routes";
 import { Button } from "antd";
 
 const Carousel = () => {
-  const { setAnime } = useContext(AuthContext);
+  const { setAnime } = useContext(AnimeContext);
 
   const animeSeason = GetAnimesSeasons();
   const { path } = routes.infoAnime;

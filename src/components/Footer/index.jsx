@@ -9,7 +9,7 @@ import "./responsive.css";
 
 const Footer = () => {
   return (
-    <div className="container-footer">
+    <footer className="container-footer">
       <div className="footer">
         <div className="icons">
           <span>Contate-nos:</span>
@@ -20,34 +20,34 @@ const Footer = () => {
           <img src={whatsapp} alt="logo do whatsapp" />
         </div>
         <img className="footer-logo" src={Logo} alt="imagem da logo do site" />
-        <div>
+        <section>
           <ul>
             LINKS
             <li>Início</li>
             <li>Lista de Animes</li>
             <li>Calendário</li>
           </ul>
-        </div>
-        <div>
+        </section>
+        <section>
           <ul>
             LEGAL
             <li>Privacy Notice</li>
             <li>Terms of Use</li>
             <li>Changelog</li>
           </ul>
-        </div>
-        <div>
+        </section>
+        <section>
           <ul>
             PLUS
             <li>Lendas</li>
             <li>Discord</li>
             <li>Instagram</li>
           </ul>
-        </div>
+        </section>
       </div>
 
       <h3 className="rights-reserved">©2022 - Todos direitos reservados </h3>
-    </div>
+    </footer>
   );
 };
 export default Footer;

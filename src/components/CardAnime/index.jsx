@@ -2,14 +2,14 @@ import { StarOutlined } from "@ant-design/icons";
 import { Popover } from "antd";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../providers/provider";
+import { AnimeContext } from "../../providers/provider";
 import { routes } from "../../routes/routes";
 import "./index.css";
 import "./responsive.css";
 
 const CardAnime = ({ img, title, dataAnime, id }) => {
   const [infoAnime, setInfoAnime] = useState([]);
-  const { setAnime, favorites } = useContext(AuthContext);
+  const { setAnime, favorites } = useContext(AnimeContext);
 
   const content = (
     <>

@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import { SearchAnime } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 import CardAnime from "../../CardAnime";
@@ -15,7 +15,7 @@ import "./responsive.css";
 import { useKey } from "../../../hooks";
 
 const FoundAnime = ({ setVisible }) => {
-  const { setAnime } = useContext(AuthContext);
+  const { setAnime } = useContext(AnimeContext);
   const [input, setInput] = useState("");
   const [textInput, setTextInput] = useState([""]);
   const found = SearchAnime(textInput);
@@ -27,9 +27,9 @@ const FoundAnime = ({ setVisible }) => {
   return (
     <div className="container-found-animee">
       <div className="search">
-        <div className="search-title">
+        <section className="search-title">
           <h1>Buscar por Animes</h1>
-        </div>
+        </section>
         <div className="div-search-input">
           <input
             value={input}

@@ -5,7 +5,7 @@ import ButtonsDrop from "../ButtonsDropDown";
 import Logo from "../../../assets/img/logo.png";
 import Drawerr from "../../Animes/FoundAnime/Drawer";
 import DrawerMenuLateral from "../DrawerMenuLateral";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import "antd/dist/antd.css";
 import "./index.css";
 import "./responsive.css";
@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 import { routes } from "../../../routes/routes";
 
 const Menu = () => {
-  const { randomAnime } = useContext(AuthContext);
+  const { randomAnime } = useContext(AnimeContext);
   const { path } = routes.infoAnime;
 
   return (
-    <div className="menu">
+    <header className="menu">
       <div className="container-drawer">
         <DrawerMenuLateral />
 
@@ -26,9 +26,9 @@ const Menu = () => {
         </Link>
       </div>
 
-      <div className="menu-buttons">
+      <nav className="menu-buttons">
         <ButtonsDrop />
-      </div>
+      </nav>
 
       <div className="div-menu-input"></div>
 
@@ -41,7 +41,7 @@ const Menu = () => {
         <Drawerr />
         <UserAddOutlined className="user" />
       </div>
-    </div>
+    </header>
   );
 };
 

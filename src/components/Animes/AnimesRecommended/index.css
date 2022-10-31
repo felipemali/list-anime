@@ -34,7 +34,7 @@
   font-size: 25px;
   font-weight: 600;
   color: #fff;
-  margin: 0 0 1rem 14%;
+  margin: 0 0 1rem 8%;
   padding-top: 2rem;
 }
 
@@ -45,4 +45,3 @@
   flex-wrap: wrap;
   border-top: 5px solid #f26420;
 }
-

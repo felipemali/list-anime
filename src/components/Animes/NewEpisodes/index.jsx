@@ -6,14 +6,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import { GetNewEpisodes } from "../../../api/newEpisodes";
 import CardAnime from "../../CardAnime";
 import "./index.css";
 import "./responsive.css";
 
 const NewEpisodes = () => {
-  const { valueInputAnimes } = useContext(AuthContext);
+  const { valueInputAnimes } = useContext(AnimeContext);
   SwiperCore.use([Autoplay]);
   const newEpisodes = GetNewEpisodes();
   const filter = newEpisodes.filter((anime) => {
@@ -22,7 +22,9 @@ const NewEpisodes = () => {
   return (
     <div className="container-full-width">
       <div className="new-episodes">
-        <h1>Novos Episódios</h1>
+        <section>
+          <h1>Novos Episódios</h1>
+        </section>
         <div className="swiper-anime">
           <Swiper
             className="swiper-new-episodes"

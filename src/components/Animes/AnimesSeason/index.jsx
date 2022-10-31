@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css";
-import { AuthContext } from "../../../providers/provider";
+import { AnimeContext } from "../../../providers/provider";
 import { GetAnimesSeasons } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 import Genres from "../Genres";
@@ -15,7 +15,7 @@ import "./index.css";
 import "./responsive.css";
 
 const AnimesSeason = () => {
-  const { valueInputAnimes } = useContext(AuthContext);
+  const { valueInputAnimes } = useContext(AnimeContext);
   SwiperCore.use([Autoplay]);
   const animesSeason = GetAnimesSeasons();
   const filter = animesSeason.filter((anime) => {
@@ -24,7 +24,10 @@ const AnimesSeason = () => {
   return (
     <div className="container-full-width">
       <div className="container-animes-season">
-        <h1>Animes da Temporada</h1>
+        <section>
+          <h1>Animes da Temporada</h1>
+        </section>
+
         <div className="border-title"></div>
         <div className="container-swiper">
           <Swiper
