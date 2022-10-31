@@ -1,0 +1,49 @@
+@media (max-width: 600px) {
+  .animes-favorites {
+    border-top: none;
+  }
+  .swiperSlide {
+    margin-left: 5rem;
+  }
+  .swiper-animes-favorites {
+    margin: 2% 0 0 0;
+    max-height: 400px;
+  }
+  div.swiper-button-prev {
+    display: none;
+  }
+  div.swiper-button-next {
+    display: none;
+  }
+  .div-animes-input {
+    width: 60%;
+  }
+}
+@media (max-width: 900px) {
+  .swiperSlide {
+    margin-left: 5rem;
+  }
+
+  .button-details {
+    display: none;
+  }
+  .animes-favorites {
+    border-top: none;
+  }
+  .swiper-animes-favorites {
+    margin: 2% auto 0 auto;
+    height: 450px;
+  }
+
+  div.swiper-button-prev {
+    display: none;
+  }
+  div.swiper-button-next {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .swiperSlide {
+    margin-left: 5rem;
+  }
+}
