@@ -37,7 +37,6 @@ const LateralMenu = () => {
   const showModal = (anime) => {
     setVisible(true);
     setAnimeSelect(anime);
-    console.log(anime);
   };
 
   const handleOk = (nameAnime) => {
@@ -54,7 +53,6 @@ const LateralMenu = () => {
   };
 
   const handleOkWatching = (nameAnime) => {
-    console.log(nameAnime);
     const exclued = animesWatching.filter((name) => name.name !== nameAnime);
     console.log(exclued);
 
@@ -82,7 +80,6 @@ const LateralMenu = () => {
     }, 2000);
   };
   const handleOkDrop = (nameAnime) => {
-    console.log(nameAnime);
     const exclued = animesDrop.filter((name) => name.name !== nameAnime);
     setAnimesDrop(exclued);
     localStorage.setItem("drop", JSON.stringify(exclued));

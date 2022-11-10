@@ -30,6 +30,11 @@
     padding: 1%;
   }
 }
+@media (min-width: 640px) {
+  .button-goBack-home {
+    display: none;
+  }
+}
 @media (max-width: 900px) {
   .results-found {
     margin: auto;

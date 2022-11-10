@@ -7,7 +7,7 @@ import "swiper/css/scrollbar";
 import "swiper/css";
 import { Link } from "react-router-dom";
 import { AnimeContext } from "../../../providers/provider";
-import { SearchAnime } from "../../../api/animes";
+import { GetAnimesSeasons, SearchAnime } from "../../../api/animes";
 import { routes } from "../../../routes/routes";
 import CardAnime from "../../CardAnime";
 import "./index.css";
@@ -19,6 +19,11 @@ const FoundAnime = ({ setVisible }) => {
   const [input, setInput] = useState("");
   const [textInput, setTextInput] = useState([""]);
   const found = SearchAnime(textInput);
+  const animesSeason = GetAnimesSeasons();
+
+  const filter = animesSeason.filter((anime) => {
+    return anime.title.toLowerCase().includes(input);
+  });
 
   const { path } = routes.infoAnime;
 
@@ -52,17 +57,9 @@ const FoundAnime = ({ setVisible }) => {
         </Link>
         {found.length !== 0 && (
           <>
-            <button
-              className="button-back"
-              onClick={() => {
-                setTextInput([]);
-              }}
-            >
-              voltar
-            </button>
             <Link to={path}>
               <div className="results-found">
-                {found.map((data) => {
+                {filter.map((data) => {
                   const { image, title, id } = data;
                   return (
                     <Link

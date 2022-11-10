@@ -95,19 +95,7 @@ input::placeholder {
   margin-top: 0.2%;
   font-family: Montserrat, sans-serif;
 }
-.search .button-back {
-  margin-left: 1rem;
-  margin-top: 3%;
-  padding: 0.3rem;
-  cursor: pointer;
-  display: block;
-  font-weight: 600;
-  background: #1b1b1b;
-  border: 1px solid #1890ff;
-  color: #1890ff;
-  padding: 0.3rem 2rem;
-  border-radius: 5px 5px;
-}
+
 .button-goBack-home {
   margin-top: 3%;
   padding: 0.3rem;
@@ -139,6 +127,7 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
   color: #fff;
+  justify-content: center;
 }
 
 .search-info-animes {

@@ -110,9 +110,9 @@
   .banner {
     display: none;
   }
-  .button-out {
+  /* .button-out {
     display: none;
-  }
+  } */
   .title-synopse {
     display: block;
     margin-top: 2rem;
@@ -133,9 +133,9 @@
   .banner {
     display: none;
   }
-  .button-out {
+  /* .button-out {
     display: none;
-  }
+  } */
   .div-info-anime-img {
     margin-top: 7%;
     margin-left: 10%;

@@ -1,7 +1,7 @@
-import FoundAnime from "../../components/Animes/FoundAnime";
+import AnimeFound from "../../components/Animes/AnimeFound";
 
 const SearchAnime = ({ setVisible }) => {
-  return <FoundAnime setVisible={setVisible} />;
+  return <AnimeFound setVisible={setVisible} />;
 };
 
 export default SearchAnime;

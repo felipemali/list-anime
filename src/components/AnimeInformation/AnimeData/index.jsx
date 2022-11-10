@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { AnimeContext } from "../../../providers/provider";
 import { Link } from "react-router-dom";
 import { Dropdown, Image } from "antd";
-import { CaretDownOutlined } from "@ant-design/icons";
+import { CaretDownFilled, CaretDownOutlined } from "@ant-design/icons";
+
 import { GetEpisodes } from "../../../api/animes";
 import { Options } from "./Options";
 import { routes } from "../../../routes/routes";
@@ -16,8 +17,6 @@ const AnimeData = () => {
   const character = GetCharacter(anime.id);
   const imageError = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const { path } = routes.inicio;
-
-  <Options />;
 
   return (
     <div>
@@ -49,17 +48,18 @@ const AnimeData = () => {
                     className="ant-dropdown-link menu-links"
                     onClick={(e) => e.preventDefault()}
                   >
-                    <CaretDownOutlined className="icon-options" />
+                    <CaretDownFilled className="icon-options" />
                   </a>
                 </Dropdown>
               </div>
             </div>
           )}
         </div>
-        <Link to={path}>
-          <button className="button-out">Voltar</button>
-        </Link>
+
         <div className="info-anime-synopse">
+          <Link to={path}>
+            <button className="button-out">Voltar</button>
+          </Link>
           <span className="title-character">Personagens</span>
           <div className="div-character">
             {character?.map(({ character, name }) => (

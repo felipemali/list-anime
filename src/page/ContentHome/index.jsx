@@ -6,7 +6,7 @@ import NewEpisodes from "../../components/Animes/NewEpisodes";
 import SeasonUpcoming from "../../components/Animes/SeasonsUpcoming";
 import Footer from "../../components/Footer";
 import Carousel from "../../components/Carousel";
-import AnimesFavorites from "../../components/Animes/AnimesFavorites";
+import FavoritesAnimes from "../../components/Animes/FavoritesAnimes";
 
 const ContentHome = () => {
   return (
@@ -14,7 +14,7 @@ const ContentHome = () => {
       {/* o problema da repetição de key ta no componente AnimesRecommended */}
       <Carousel />
       <AnimesCalendar />
-      <AnimesFavorites />
+      <FavoritesAnimes />
       <NewEpisodes />
       <AnimesRecommended />
       <AnimesSeason />
