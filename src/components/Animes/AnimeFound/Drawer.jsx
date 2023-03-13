@@ -25,9 +25,9 @@ const Drawerr = () => {
         placement={placement}
         width={500}
         height={1150}
-        onClose={onClose}
+       
+ onClose={onClose}
         visible={visible}
-
         // extra={
         //   <Space>
         //     <Button onClick={onClose}>Cancel</Button>
