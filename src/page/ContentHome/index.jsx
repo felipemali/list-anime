@@ -14,7 +14,6 @@ const ContentHome = () => {
       {/* o problema da repetição de key ta no componente AnimesRecommended */}
       <Carousel />
       <AnimesCalendar />
-      <FavoritesAnimes />
       <NewEpisodes />
       <AnimesRecommended />
       <AnimesSeason />

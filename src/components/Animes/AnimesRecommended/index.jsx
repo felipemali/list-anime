@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,8 +11,10 @@ import CardAnime from "../../CardAnime";
 import person from "../../../assets/img/character1.png";
 import "./index.css";
 import "./responsive.css";
+import axios from "axios";
 const AnimesRecommended = () => {
   const animesRecommended = GetAnimesRecommended();
+
   SwiperCore.use([Autoplay]);
 
   return (
